@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="Deb-mA-ZKB">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZgS-u2-gB5">
                             <connections>
-                                <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" id="HfN-eU-bjE"/>
+                                <action selector="takePicture" destination="BYZ-38-t0r" id="8HB-BL-cIg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
