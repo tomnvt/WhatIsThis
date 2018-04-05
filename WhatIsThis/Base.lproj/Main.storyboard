@@ -19,14 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-OI-d7P">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="195" width="375" height="472"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-x6-fkJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="131"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Rvd-OI-d7P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L7F-9t-Djx"/>
+                            <constraint firstItem="Rvd-OI-d7P" firstAttribute="top" secondItem="Noj-x6-fkJ" secondAttribute="bottom" id="D0w-jb-yhE"/>
+                            <constraint firstItem="Noj-x6-fkJ" firstAttribute="leading" secondItem="Rvd-OI-d7P" secondAttribute="leading" id="EFJ-UU-1xj"/>
+                            <constraint firstItem="Rvd-OI-d7P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="131" id="L7F-9t-Djx"/>
+                            <constraint firstItem="Noj-x6-fkJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="N5i-uD-DnA"/>
                             <constraint firstItem="Rvd-OI-d7P" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OpG-fO-Q3Y"/>
                             <constraint firstItem="Rvd-OI-d7P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bTS-5m-C6D"/>
+                            <constraint firstItem="Noj-x6-fkJ" firstAttribute="trailing" secondItem="Rvd-OI-d7P" secondAttribute="trailing" id="cT5-VN-F1N"/>
                             <constraint firstItem="Rvd-OI-d7P" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sbR-X0-Zcf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -40,6 +50,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="Rvd-OI-d7P" id="GxA-Gk-ihl"/>
+                        <outlet property="resultLabel" destination="Noj-x6-fkJ" id="ZIU-bk-AmI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@ import ImageIO
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var resultLabel: UILabel!
     
     let imagePicker = UIImagePickerController()
     var classificationResults : [VNClassificationObservation] = []
@@ -63,7 +64,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let descriptions = topClassifications.map { classification in
                     return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
-                print("Classification:\n" + descriptions.joined(separator: "\n"))
+                
+                let result = String(descriptions[0].split(separator: ",")[0].split(separator: ")")[1]).uppercased()
+                let rawPercentage = String(descriptions[0].split(separator: ",")[0].split(separator: " ")[0])
+                let start = rawPercentage.index(rawPercentage.startIndex, offsetBy: 3)
+                let end = rawPercentage.index(rawPercentage.endIndex, offsetBy: -1)
+                let range = start..<end
+                let percentage = rawPercentage[range] + " %"
+                print(percentage)
+                self.resultLabel.text = result + "\n" + percentage
+                print(descriptions)
             }
         }
     }

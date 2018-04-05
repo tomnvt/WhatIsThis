@@ -12,7 +12,7 @@
 		E32CC89F2072D5EA00424691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32CC89D2072D5EA00424691 /* Main.storyboard */; };
 		E32CC8A12072D5EA00424691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32CC8A02072D5EA00424691 /* Assets.xcassets */; };
 		E32CC8A42072D5EA00424691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */; };
-		E35AE6FC207570200089449D /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E35AE6FB207570200089449D /* MobileNet.mlmodel */; };
+		E35A50F12076901100C7D614 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E35A50F02076901100C7D614 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		E32CC8A02072D5EA00424691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E32CC8A32072D5EA00424691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E32CC8A52072D5EA00424691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E35AE6FB207570200089449D /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MobileNet.mlmodel; path = ../../../../../../Downloads/MobileNet.mlmodel; sourceTree = "<group>"; };
+		E35A50F02076901100C7D614 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				E32CC8A02072D5EA00424691 /* Assets.xcassets */,
 				E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */,
 				E32CC8A52072D5EA00424691 /* Info.plist */,
-				E35AE6FB207570200089449D /* MobileNet.mlmodel */,
+				E35A50F02076901100C7D614 /* MobileNet.mlmodel */,
 			);
 			path = WhatIsThis;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35AE6FC207570200089449D /* MobileNet.mlmodel in Sources */,
+				E35A50F12076901100C7D614 /* MobileNet.mlmodel in Sources */,
 				E32CC89C2072D5EA00424691 /* ViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
 			);
