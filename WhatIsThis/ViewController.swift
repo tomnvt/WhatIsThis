@@ -10,6 +10,7 @@ import UIKit
 import CoreML
 import Vision
 import ImageIO
+import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -18,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let imagePicker = UIImagePickerController()
     var classificationResults : [VNClassificationObservation] = []
+    var speechSynthesizer = AVSpeechSynthesizer()
     
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
@@ -74,6 +76,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print(percentage)
                 self.resultLabel.text = result + "\n" + percentage
                 print(descriptions)
+                let resultSentence = "This looks like a \(result).  I'm \(percentage) sure."
+                self.synthesizeSpeech(fromString: resultSentence)
             }
         }
     }
@@ -105,6 +109,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.sourceType = sourceType
         present(picker, animated: true)
     }
+    
+    func synthesizeSpeech(fromString string: String) {
+        let speechUtterance = AVSpeechUtterance(string: string)
+        speechSynthesizer.speak(speechUtterance)
+    }
+    
 }
 
 extension ViewController {
