@@ -11,6 +11,8 @@ import CoreML
 import Vision
 import ImageIO
 import AVFoundation
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -20,6 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
     var classificationResults : [VNClassificationObservation] = []
     var speechSynthesizer = AVSpeechSynthesizer()
+    let wikipediaURl = "https://en.wikipedia.org/w/api.php"
     
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
@@ -78,6 +81,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print(descriptions)
                 let resultSentence = "This looks like a \(result).  I'm \(percentage) sure."
                 self.synthesizeSpeech(fromString: resultSentence)
+                self.requestInfo(result: result)
             }
         }
     }
@@ -113,6 +117,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func synthesizeSpeech(fromString string: String) {
         let speechUtterance = AVSpeechUtterance(string: string)
         speechSynthesizer.speak(speechUtterance)
+    }
+    
+    func requestInfo(result: String) {
+        let parameters : [String:String] = ["format" : "json", "action" : "query", "prop" : "extracts|pageimages", "exintro" : "", "explaintext" : "", "titles" : result, "redirects" : "1", "pithumbsize" : "500", "indexpageids" : ""]
+        
+        Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
+            if response.result.isSuccess {
+                
+                print("Success! Got the  data")
+                let wikiJSON : JSON = JSON(response.result.value!)
+                
+                let pageid = wikiJSON["query"]["pageids"][0].stringValue
+                
+                let description = wikiJSON["query"]["pages"][pageid]["extract"].stringValue
+                
+                print("Description: \(description)")
+                
+                }
+            }
     }
     
 }
