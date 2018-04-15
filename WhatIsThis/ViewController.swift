@@ -18,11 +18,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var wikiButton: UIBarButtonItem!
     
     let imagePicker = UIImagePickerController()
     var classificationResults : [VNClassificationObservation] = []
     var speechSynthesizer = AVSpeechSynthesizer()
     let wikipediaURl = "https://en.wikipedia.org/w/api.php"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        wikiButton.isEnabled = false
+    }
     
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
@@ -70,14 +76,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
                 
-                let result = String(descriptions[0].split(separator: ",")[0].split(separator: ")")[1]).uppercased()
+                let result = String(descriptions[0].split(separator: ",")[0].split(separator: ")")[1])
+                let resultUppercased = result.uppercased()
                 let rawPercentage = String(descriptions[0].split(separator: ",")[0].split(separator: " ")[0])
                 let start = rawPercentage.index(rawPercentage.startIndex, offsetBy: 3)
                 let end = rawPercentage.index(rawPercentage.endIndex, offsetBy: -1)
                 let range = start..<end
                 let percentage = rawPercentage[range] + " %"
                 print(percentage)
-                self.resultLabel.text = result + "\n" + percentage
+                self.resultLabel.text = resultUppercased + "\n" + percentage
                 print(descriptions)
                 let resultSentence = "This looks like a \(result).  I'm \(percentage) sure."
                 self.synthesizeSpeech(fromString: resultSentence)
@@ -133,9 +140,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let description = wikiJSON["query"]["pages"][pageid]["extract"].stringValue
                 
                 print("Description: \(description)")
-                
-                }
+
+                self.wikiButton.isEnabled = true
             }
+        }
     }
     
 }

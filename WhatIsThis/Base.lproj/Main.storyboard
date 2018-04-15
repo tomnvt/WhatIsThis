@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--What is this?-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatIsThis" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Deb-mA-ZKB">
+                    <navigationItem key="navigationItem" title="What is this?" id="Deb-mA-ZKB">
+                        <barButtonItem key="leftBarButtonItem" title="Wiki" id="JDZ-bo-sSD"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZgS-u2-gB5">
                             <connections>
                                 <action selector="takePicture" destination="BYZ-38-t0r" id="8HB-BL-cIg"/>
@@ -51,6 +52,7 @@
                     <connections>
                         <outlet property="imageView" destination="Rvd-OI-d7P" id="GxA-Gk-ihl"/>
                         <outlet property="resultLabel" destination="Noj-x6-fkJ" id="ZIU-bk-AmI"/>
+                        <outlet property="wikiButton" destination="JDZ-bo-sSD" id="eBS-1F-2U3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
