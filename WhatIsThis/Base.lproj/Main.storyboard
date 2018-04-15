@@ -13,7 +13,7 @@
         <!--What is this?-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatIsThis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="WhatIsThis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="What is this?" id="Deb-mA-ZKB">
-                        <barButtonItem key="leftBarButtonItem" title="Wiki" id="JDZ-bo-sSD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Wiki" id="JDZ-bo-sSD">
+                            <connections>
+                                <action selector="wikiButtonPressed:" destination="BYZ-38-t0r" id="YJd-Fz-cRZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZgS-u2-gB5">
                             <connections>
                                 <action selector="takePicture" destination="BYZ-38-t0r" id="8HB-BL-cIg"/>
@@ -52,12 +56,40 @@
                     <connections>
                         <outlet property="imageView" destination="Rvd-OI-d7P" id="GxA-Gk-ihl"/>
                         <outlet property="resultLabel" destination="Noj-x6-fkJ" id="ZIU-bk-AmI"/>
-                        <outlet property="wikiButton" destination="JDZ-bo-sSD" id="eBS-1F-2U3"/>
+                        <outlet property="wikiButton" destination="JDZ-bo-sSD" id="yZd-aU-yaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="45N-g2-0Zk">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="Md8-kZ-Tdj" customClass="ResultsViewController" customModule="WhatIsThis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Imc-0J-rjh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m4R-du-CA6">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Hy8-t5-eM5"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="m4R-du-CA6" id="Sii-76-S0a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWA-uM-BN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Sh-hS-zUi">

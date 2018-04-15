@@ -14,6 +14,10 @@ import AVFoundation
 import Alamofire
 import SwiftyJSON
 
+protocol SendDescriptionDelegate {
+    func sendDescription()
+}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -24,10 +28,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var classificationResults : [VNClassificationObservation] = []
     var speechSynthesizer = AVSpeechSynthesizer()
     let wikipediaURl = "https://en.wikipedia.org/w/api.php"
+    var imageDescription = "XXX"
+    
+    var delegate : SendDescriptionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wikiButton.isEnabled = false
+//        wikiButton.isEnabled = false
     }
     
     lazy var classificationRequest: VNCoreMLRequest = {
@@ -137,15 +144,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 
                 let pageid = wikiJSON["query"]["pageids"][0].stringValue
                 
-                let description = wikiJSON["query"]["pages"][pageid]["extract"].stringValue
+                self.imageDescription = wikiJSON["query"]["pages"][pageid]["extract"].stringValue
                 
-                print("Description: \(description)")
+                print("Description: \(self.imageDescription)")
 
                 self.wikiButton.isEnabled = true
             }
         }
     }
     
+    
+    @IBAction func wikiButtonPressed(_ sender: UIBarButtonItem) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
+        self.present(vc, animated: true, completion: nil)
+        vc.sendDescription(text: imageDescription)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToWikiResult" {
+//            let vc = segue.destination as! ResultsViewController
+//            delegate = vc
+//            vc.sendDescription(text: "XXL")
+//        }
+//    }
 }
 
 extension ViewController {
