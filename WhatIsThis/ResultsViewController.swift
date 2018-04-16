@@ -8,16 +8,23 @@
 
 import UIKit
 
-class ResultsViewController: UIViewController {
+class ResultsViewController: UIViewController, ShowDescriptionDelegate {
     
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    var imageDescription = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        update()
     }
 
-    func sendDescription(text: String) {
-        descriptionTextView.text = text
+    func show(description: String) {
+        imageDescription = description
+    }
+    
+    func update() {
+        self.descriptionTextView.text = imageDescription
     }
     
 }
