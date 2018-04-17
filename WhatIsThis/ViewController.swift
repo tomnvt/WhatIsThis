@@ -24,6 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var wikiButton: UIBarButtonItem!
     
+    var image = UIImage()
     let imagePicker = UIImagePickerController()
     var classificationResults : [VNClassificationObservation] = []
     var speechSynthesizer = AVSpeechSynthesizer()
@@ -34,6 +35,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true)
+            image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            imageView.image = image
+            updateClassifications(for: image)
     }
     
     lazy var classificationRequest: VNCoreMLRequest = {
@@ -153,17 +161,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         delegate = vc
         vc.show(description: imageDescription)
     }
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(save(_:didFinishSavingWithError:contextInfo:)), nil)
+        
+    }
+    
+    @objc func save(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        print("trying to save")
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+    
 }
 
-extension ViewController {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        picker.dismiss(animated: true)
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imageView.image = image
-        updateClassifications(for: image)
-    }
-}
 
 extension CGImagePropertyOrientation {
     init(_ orientation: UIImageOrientation) {
