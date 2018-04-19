@@ -11,8 +11,6 @@ import CoreML
 import Vision
 import ImageIO
 import AVFoundation
-import Alamofire
-import SwiftyJSON
 
 protocol ShowDescriptionDelegate {
     func show(description: String)
@@ -29,13 +27,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
     var classificationResults : [VNClassificationObservation] = []
     var speechSynthesizer = AVSpeechSynthesizer()
-    let wikipediaURl = "https://en.wikipedia.org/w/api.php"
-    var imageDescription = "Nothing classified yet"
+    
+    let wikipediaQuery = WikipediaQuery()
     
     var delegate : ShowDescriptionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        wikiButton.isEnabled = false
         saveButton.isEnabled = false
     }
     
@@ -91,7 +90,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let descriptions = topClassifications.map { classification in
                     return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
-                
                 let result = String(descriptions[0].split(separator: ",")[0].split(separator: ")")[1])
                 let resultUppercased = result.uppercased()
                 let rawPercentage = String(descriptions[0].split(separator: ",")[0].split(separator: " ")[0])
@@ -104,7 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print(descriptions)
                 let resultSentence = "This looks like a \(result).  I'm \(percentage) sure."
                 self.synthesizeSpeech(fromString: resultSentence)
-                self.requestInfo(result: result)
+                self.wikipediaQuery.requestInfo(result: result)
                 self.saveButton.isEnabled = true
             }
         }
@@ -122,26 +120,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         speechSynthesizer.speak(speechUtterance)
     }
     
-    func requestInfo(result: String) {
-        let parameters : [String:String] = ["format" : "json", "action" : "query", "prop" : "extracts|pageimages", "exintro" : "", "explaintext" : "", "titles" : result, "redirects" : "1", "pithumbsize" : "500", "indexpageids" : ""]
-        
-        Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
-            if response.result.isSuccess {
-                
-                print("Success! Got the  data")
-                let wikiJSON : JSON = JSON(response.result.value!)
-                let pageid = wikiJSON["query"]["pageids"][0].stringValue
-                self.imageDescription = wikiJSON["query"]["pages"][pageid]["extract"].stringValue
-                print("Description: \(self.imageDescription)")
-                self.wikiButton.isEnabled = true
-            }
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ResultsViewController
         delegate = vc
-        vc.show(description: imageDescription)
+        vc.show(description: wikipediaQuery.queryResult)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DDCCC4138631BC8CE609C35 /* Pods_WhatIsThis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F35A1F09C573581A071E7D /* Pods_WhatIsThis.framework */; };
+		E3293E672089240400786AD9 /* WikipediaQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3293E662089240400786AD9 /* WikipediaQuery.swift */; };
 		E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32CC8992072D5EA00424691 /* AppDelegate.swift */; };
 		E32CC89C2072D5EA00424691 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32CC89B2072D5EA00424691 /* ViewController.swift */; };
 		E32CC89F2072D5EA00424691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32CC89D2072D5EA00424691 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		798CD09F34ABADBC6840FD15 /* Pods-WhatIsThis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatIsThis.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatIsThis/Pods-WhatIsThis.release.xcconfig"; sourceTree = "<group>"; };
 		94DD13190E685FE5C07E2FA8 /* Pods-WhatIsThis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatIsThis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatIsThis/Pods-WhatIsThis.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F35A1F09C573581A071E7D /* Pods_WhatIsThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatIsThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3293E662089240400786AD9 /* WikipediaQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQuery.swift; sourceTree = "<group>"; };
 		E32CC8962072D5EA00424691 /* WhatIsThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatIsThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32CC8992072D5EA00424691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E32CC89B2072D5EA00424691 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */,
 				E32CC8A52072D5EA00424691 /* Info.plist */,
 				E35A50F02076901100C7D614 /* MobileNet.mlmodel */,
+				E3293E662089240400786AD9 /* WikipediaQuery.swift */,
 			);
 			path = WhatIsThis;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3293E672089240400786AD9 /* WikipediaQuery.swift in Sources */,
 				E35A50F12076901100C7D614 /* MobileNet.mlmodel in Sources */,
 				E32CC89C2072D5EA00424691 /* ViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
