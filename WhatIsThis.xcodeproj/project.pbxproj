@@ -16,6 +16,7 @@
 		E32CC8A42072D5EA00424691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */; };
 		E35A50F12076901100C7D614 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E35A50F02076901100C7D614 /* MobileNet.mlmodel */; };
 		E388D42D2083607D00EB04CE /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* ResultsViewController.swift */; };
+		E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */; };
 		E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF8AA72089E11600E930B4 /* Classifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		E32CC8A52072D5EA00424691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E35A50F02076901100C7D614 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
 		E3FF8AA72089E11600E930B4 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 			children = (
 				E32CC89B2072D5EA00424691 /* ViewController.swift */,
 				E388D42C2083607D00EB04CE /* ResultsViewController.swift */,
+				E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -89,7 +92,6 @@
 			children = (
 				E32CC8992072D5EA00424691 /* AppDelegate.swift */,
 				E32CC8A52072D5EA00424691 /* Info.plist */,
-				E35A50F02076901100C7D614 /* MobileNet.mlmodel */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -128,6 +130,7 @@
 				E329106C208A7F2C00C5B962 /* View */,
 				E329106B208A7F1800C5B962 /* Controller */,
 				E329106D208A7F3E00C5B962 /* Support Files */,
+				E35A50F02076901100C7D614 /* MobileNet.mlmodel */,
 			);
 			path = WhatIsThis;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3293E672089240400786AD9 /* WikipediaQuery.swift in Sources */,
+				E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */,
 				E35A50F12076901100C7D614 /* MobileNet.mlmodel in Sources */,
 				E32CC89C2072D5EA00424691 /* ViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,

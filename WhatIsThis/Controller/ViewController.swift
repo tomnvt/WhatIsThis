@@ -51,9 +51,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(picker, animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ResultsViewController
-        delegate = vc
-        vc.show(description: wikipediaQuery.queryResult)
+        if segue.identifier == "goToWiki" {
+            let vc = segue.destination as! ResultsViewController
+            delegate = vc
+            vc.show(description: wikipediaQuery.queryResult)
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {

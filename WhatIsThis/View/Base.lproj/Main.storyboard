@@ -72,7 +72,12 @@
                     <navigationItem key="navigationItem" title="What is this?" id="Deb-mA-ZKB">
                         <barButtonItem key="leftBarButtonItem" title="Wiki" id="JDZ-bo-sSD">
                             <connections>
-                                <segue destination="Md8-kZ-Tdj" kind="show" identifier="goWiki" id="8pq-9t-1Ig"/>
+                                <segue destination="Md8-kZ-Tdj" kind="show" identifier="goToWiki" id="8pq-9t-1Ig"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="uWm-hs-FgR">
+                            <connections>
+                                <segue destination="QGs-5o-Etc" kind="show" identifier="goToSettings" id="sWJ-hb-2IP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -86,6 +91,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Settings Table Table View Controller-->
+        <scene sceneID="IOo-Ic-9zo">
+            <objects>
+                <tableViewController id="QGs-5o-Etc" customClass="SettingsTableTableViewController" customModule="WhatIsThis" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j16-tJ-LAn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="pVq-Qd-CzS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pVq-Qd-CzS" id="CQw-X3-3Sr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QGs-5o-Etc" id="paB-qI-Egg"/>
+                            <outlet property="delegate" destination="QGs-5o-Etc" id="oga-C8-8IL"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfj-F4-Ocy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262" y="437"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="45N-g2-0Zk">
@@ -118,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWA-uM-BN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1262" y="-269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Sh-hS-zUi">
