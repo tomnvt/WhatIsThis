@@ -9,9 +9,11 @@
 import UIKit
 import CoreML
 import Vision
-
+import AVFoundation
 
 class Classifier {
+    
+    var speechSynthesizer = AVSpeechSynthesizer()
     
     func classify(image: CIImage) -> String {
         var result = ""
@@ -35,6 +37,9 @@ class Classifier {
             let range = start..<end
             let percentage = rawPercentage[range] + " %"
             result = resultUppercased + "\n" + percentage
+            
+            let resultSentence = "This looks like a \(requestResult).  I'm \(percentage) sure."
+            self.synthesizeSpeech(fromString: resultSentence)
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
@@ -47,6 +52,12 @@ class Classifier {
             print(error)
         }
         return result
+    }
+    
+    
+    func synthesizeSpeech(fromString string: String) {
+        let speechUtterance = AVSpeechUtterance(string: string)
+        speechSynthesizer.speak(speechUtterance)
     }
     
 }

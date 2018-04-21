@@ -8,7 +8,6 @@
 
 import UIKit
 import ImageIO
-import AVFoundation
 
 protocol ShowDescriptionDelegate {
     func show(description: String)
@@ -23,7 +22,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var image = UIImage()
     let imagePicker = UIImagePickerController()
-    var speechSynthesizer = AVSpeechSynthesizer()
     
     let wikipediaQuery = WikipediaQuery()
     let classifier = Classifier()
@@ -52,12 +50,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.sourceType = sourceType
         present(picker, animated: true)
     }
-    
-    func synthesizeSpeech(fromString string: String) {
-        let speechUtterance = AVSpeechUtterance(string: string)
-        speechSynthesizer.speak(speechUtterance)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ResultsViewController
         delegate = vc
@@ -102,7 +94,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(photoSourcePicker, animated: true)
     }
 }
-
 
 extension CGImagePropertyOrientation {
     init(_ orientation: UIImageOrientation) {
