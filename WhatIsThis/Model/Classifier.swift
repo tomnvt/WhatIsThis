@@ -13,7 +13,8 @@ import AVFoundation
 
 class Classifier {
     
-    var speechSynthesizer = AVSpeechSynthesizer()
+    lazy var speechSynthesizer = AVSpeechSynthesizer()
+    let defaults = UserDefaults.standard
     
     func classify(image: CIImage) -> String {
         var result = ""
@@ -39,7 +40,9 @@ class Classifier {
             result = resultUppercased + "\n" + percentage
             
             let resultSentence = "This looks like a \(requestResult).  I'm \(percentage) sure."
-            self.synthesizeSpeech(fromString: resultSentence)
+            if self.defaults.bool(forKey: "speechSynthesisIsOn") == true {
+                self.synthesizeSpeech(fromString: resultSentence)
+            }
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
