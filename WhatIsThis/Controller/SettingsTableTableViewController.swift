@@ -10,13 +10,16 @@ import UIKit
 
 class SettingsTableTableViewController: UITableViewController {
 
-    let settings = ["Soeech synthesizer", "Save location", "CoreML Model"]
+    var settings = ["Soeech synthesizer: ", "CoreML Model", "Save location"]
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settings[0] = defaults.bool(forKey: "speechSynthesisIsOn") ? "Soeech synthesizer: ON" : "Soeech synthesizer: OFF"
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,11 +37,10 @@ class SettingsTableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedItem = settings[indexPath.row]
-        switch selectedItem {
-        case "Soeech synthesizer":
+        switch settings[indexPath.row] {
+        case ("Soeech synthesizer: ON"), ("Soeech synthesizer: OFF"):
             defaults.set(!defaults.bool(forKey: "speechSynthesisIsOn"), forKey: "speechSynthesisIsOn")
-            print(defaults.bool(forKey: "speechSynthesisIsOn"))
+            viewDidLoad()
             break
         default:
             break

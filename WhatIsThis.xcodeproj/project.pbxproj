@@ -80,9 +80,9 @@
 		E329106C208A7F2C00C5B962 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */,
 				E32CC89D2072D5EA00424691 /* Main.storyboard */,
 				E32CC8A02072D5EA00424691 /* Assets.xcassets */,
-				E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,8 +99,8 @@
 		E3293E68208951D500786AD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E3293E662089240400786AD9 /* WikipediaQuery.swift */,
 				E3FF8AA72089E11600E930B4 /* Classifier.swift */,
+				E3293E662089240400786AD9 /* WikipediaQuery.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
