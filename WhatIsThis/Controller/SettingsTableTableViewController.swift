@@ -19,6 +19,7 @@ class SettingsTableTableViewController: UITableViewController {
         settings[0] = defaults.bool(forKey: "speechSynthesisIsOn") ? "Soeech synthesizer: ON" : "Soeech synthesizer: OFF"
     }
 
+    // Add models
     
     // MARK: - Table view data source
 
@@ -41,6 +42,9 @@ class SettingsTableTableViewController: UITableViewController {
         case ("Soeech synthesizer: ON"), ("Soeech synthesizer: OFF"):
             defaults.set(!defaults.bool(forKey: "speechSynthesisIsOn"), forKey: "speechSynthesisIsOn")
             viewDidLoad()
+            break
+        case "CoreML Model":
+            performSegue(withIdentifier: "goToModels", sender: send)
             break
         default:
             break
