@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreML
 import Vision
 import AVFoundation
 
@@ -15,10 +14,11 @@ class Classifier {
     
     lazy var speechSynthesizer = AVSpeechSynthesizer()
     let defaults = UserDefaults.standard
+    let models = CoreMLModels()
     
     func classify(image: CIImage) -> String {
         var result = ""
-        guard let model = try? VNCoreMLModel(for: MobileNet().model) else {
+        guard let model = try? VNCoreMLModel(for: models[0]) else {
             fatalError("Failed to load MobileNet model.")
         }
         
@@ -56,7 +56,6 @@ class Classifier {
         }
         return result
     }
-    
     
     func synthesizeSpeech(fromString string: String) {
         let speechUtterance = AVSpeechUtterance(string: string)
