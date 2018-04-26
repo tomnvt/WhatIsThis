@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsTableTableViewController: UITableViewController {
 
-    var settings = ["Speech synthesizer: ON/OFF", "CoreML Model", "Save location"]
+    var settings = ["Speech synthesizer: ON/OFF", "CoreML Model"]
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {

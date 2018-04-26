@@ -19,8 +19,10 @@
 		E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */; };
 		E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */; };
 		E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */; };
+		E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */; };
 		E388D42D2083607D00EB04CE /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* ResultsViewController.swift */; };
 		E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */; };
+		E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */; };
 		E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF8AA72089E11600E930B4 /* Classifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +43,10 @@
 		E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
 		E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
+		E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
 		E3FF8AA72089E11600E930B4 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +155,8 @@
 				E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */,
 				E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */,
 				E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */,
+				E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */,
+				E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */,
 			);
 			path = "CoreML Models";
 			sourceTree = "<group>";
@@ -295,7 +301,9 @@
 				E32CC89C2072D5EA00424691 /* ViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
 				E34B64E820912D71009E57CC /* CoreMLModelsTableViewController.swift in Sources */,
+				E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */,
 				E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */,
+				E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */,
 				E388D42D2083607D00EB04CE /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

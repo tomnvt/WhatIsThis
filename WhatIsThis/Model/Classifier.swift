@@ -18,7 +18,7 @@ class Classifier {
     
     func classify(image: CIImage) -> String {
         var result = ""
-        guard let model = try? VNCoreMLModel(for: models[0]) else {
+        guard let model = try? VNCoreMLModel(for: models[defaults.integer(forKey: "selecteModelNumber")]) else {
             fatalError("Failed to load MobileNet model.")
         }
         

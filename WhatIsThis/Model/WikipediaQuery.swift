@@ -16,15 +16,15 @@ class WikipediaQuery {
     var queryResult = "nothing classified yet"
     
     func requestInfo(result: String) {
+        let result = String(result.split(separator: "\n")[0]).lowercased()
         let parameters : [String:String] = ["format" : "json", "action" : "query", "prop" : "extracts|pageimages", "exintro" : "", "explaintext" : "", "titles" : result, "redirects" : "1", "pithumbsize" : "500", "indexpageids" : ""]
         
         Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
             if response.result.isSuccess {
-                
-                print("Success! Got the  data")
                 let wikiJSON : JSON = JSON(response.result.value!)
                 let pageid = wikiJSON["query"]["pageids"][0].stringValue
                 self.queryResult = wikiJSON["query"]["pages"][pageid]["extract"].stringValue
+                print(self.queryResult)
             }
         }
     }

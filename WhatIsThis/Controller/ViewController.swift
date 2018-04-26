@@ -42,6 +42,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             fatalError("Could not convert image to CIImage.")
         }
         resultLabel.text = classifier.classify(image: ciimage)
+        wikipediaQuery.requestInfo(result: resultLabel.text!)
+        wikiButton.isEnabled = true
+        saveButton.isEnabled = true
     }
     
     func presentPhotoPicker(sourceType: UIImagePickerControllerSourceType) {
