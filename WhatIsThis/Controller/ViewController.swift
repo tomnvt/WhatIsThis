@@ -53,6 +53,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.sourceType = sourceType
         present(picker, animated: true)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToWiki" {
             let vc = segue.destination as! ResultsViewController
@@ -99,19 +100,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(photoSourcePicker, animated: true)
     }
 }
-
-extension CGImagePropertyOrientation {
-    init(_ orientation: UIImageOrientation) {
-        switch orientation {
-        case .up: self = .up
-        case .upMirrored: self = .upMirrored
-        case .down: self = .down
-        case .downMirrored: self = .downMirrored
-        case .left: self = .left
-        case .leftMirrored: self = .leftMirrored
-        case .right: self = .right
-        case .rightMirrored: self = .rightMirrored
-        }
-    }
-}
-

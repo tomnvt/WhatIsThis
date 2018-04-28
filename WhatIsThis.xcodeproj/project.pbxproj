@@ -15,6 +15,7 @@
 		E32CC8A12072D5EA00424691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32CC8A02072D5EA00424691 /* Assets.xcassets */; };
 		E32CC8A42072D5EA00424691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */; };
 		E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */; };
+		E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */; };
 		E34B64E820912D71009E57CC /* CoreMLModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */; };
 		E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */; };
 		E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */; };
@@ -39,6 +40,7 @@
 		E32CC8A32072D5EA00424691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E32CC8A52072D5EA00424691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModels.swift; sourceTree = "<group>"; };
+		E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
 		E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModelsTableViewController.swift; sourceTree = "<group>"; };
 		E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				E3293E68208951D500786AD9 /* Model */,
 				E329106C208A7F2C00C5B962 /* View */,
 				E329106B208A7F1800C5B962 /* Controller */,
+				E3308B5F20928B980004C211 /* Extension */,
 				E32DBB162091C8220083E589 /* CoreML Models */,
 				E329106D208A7F3E00C5B962 /* Support Files */,
 			);
@@ -159,6 +162,14 @@
 				E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */,
 			);
 			path = "CoreML Models";
+			sourceTree = "<group>";
+		};
+		E3308B5F20928B980004C211 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 				E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */,
 				E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */,
 				E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */,
+				E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */,
 				E32CC89C2072D5EA00424691 /* ViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
 				E34B64E820912D71009E57CC /* CoreMLModelsTableViewController.swift in Sources */,

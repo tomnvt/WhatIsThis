@@ -6,7 +6,6 @@
 //  Copyright © 2018 NVT. All rights reserved.
 //
 
-import UIKit
 import Vision
 import AVFoundation
 
@@ -19,7 +18,7 @@ class Classifier {
     func classify(image: CIImage) -> String {
         var result = ""
         guard let model = try? VNCoreMLModel(for: models[defaults.integer(forKey: "selecteModelNumber")]) else {
-            fatalError("Failed to load MobileNet model.")
+            fatalError("Failed to load \(models.modelNames[defaults.integer(forKey: "selecteModelNumber")]) model.")
         }
         
         let request = VNCoreMLRequest(model: model) { (request, error) in
