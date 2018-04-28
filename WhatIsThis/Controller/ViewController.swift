@@ -36,15 +36,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true)
-        image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imageView.image = image
-        guard let ciimage = CIImage(image: image) else {
-            fatalError("Could not convert image to CIImage.")
+        resultLabel.text = "Processing..."
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+            guard let ciimage = CIImage(image: image) else {
+                fatalError("Could not convert image to CIImage.")
+            }
+            DispatchQueue.main.async {
+                self.resultLabel.text = self.classifier.classify(image: ciimage)
+                self.wikipediaQuery.requestInfo(result: self.resultLabel.text!)
+                self.wikiButton.isEnabled = true
+                self.saveButton.isEnabled = true
+            }
         }
-        resultLabel.text = classifier.classify(image: ciimage)
-        wikipediaQuery.requestInfo(result: resultLabel.text!)
-        wikiButton.isEnabled = true
-        saveButton.isEnabled = true
     }
     
     func presentPhotoPicker(sourceType: UIImagePickerControllerSourceType) {
