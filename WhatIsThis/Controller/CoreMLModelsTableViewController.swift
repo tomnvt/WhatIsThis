@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class CoreMLModelsTableViewController: UITableViewController {
 
@@ -15,6 +16,7 @@ class CoreMLModelsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

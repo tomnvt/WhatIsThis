@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class SettingsTableTableViewController: UITableViewController {
 
     var settings = ["Speech synthesizer: ON/OFF", "CoreML Model"]
     let defaults = UserDefaults.standard
+    let hud = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         settings[0] = defaults.bool(forKey: "speechSynthesisIsOn") ? "Speech synthesizer: ON" : "Speech synthesizer: OFF"
     }
 
@@ -42,7 +43,11 @@ class SettingsTableTableViewController: UITableViewController {
             viewDidLoad()
             break
         case "CoreML Model":
-            performSegue(withIdentifier: "goToModels", sender: send)
+            hud.show(in: self.view)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "goToModels", sender: send)
+            }
+            hud.dismiss()
             break
         default:
             break
