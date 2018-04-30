@@ -10,12 +10,14 @@
 		0DDCCC4138631BC8CE609C35 /* Pods_WhatIsThis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F35A1F09C573581A071E7D /* Pods_WhatIsThis.framework */; };
 		E3293E672089240400786AD9 /* WikipediaQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3293E662089240400786AD9 /* WikipediaQuery.swift */; };
 		E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32CC8992072D5EA00424691 /* AppDelegate.swift */; };
-		E32CC89C2072D5EA00424691 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32CC89B2072D5EA00424691 /* ViewController.swift */; };
+		E32CC89C2072D5EA00424691 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32CC89B2072D5EA00424691 /* MainViewController.swift */; };
 		E32CC89F2072D5EA00424691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32CC89D2072D5EA00424691 /* Main.storyboard */; };
 		E32CC8A12072D5EA00424691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32CC8A02072D5EA00424691 /* Assets.xcassets */; };
 		E32CC8A42072D5EA00424691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */; };
 		E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */; };
 		E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */; };
+		E33116292097D07E002E5986 /* MainScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33116282097D07E002E5986 /* MainScreenButton.swift */; };
+		E331162B2097DE41002E5986 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E331162A2097DE41002E5986 /* UIColor.swift */; };
 		E34B64E820912D71009E57CC /* CoreMLModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */; };
 		E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */; };
 		E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */; };
@@ -34,13 +36,15 @@
 		E3293E662089240400786AD9 /* WikipediaQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQuery.swift; sourceTree = "<group>"; };
 		E32CC8962072D5EA00424691 /* WhatIsThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatIsThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32CC8992072D5EA00424691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E32CC89B2072D5EA00424691 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E32CC89B2072D5EA00424691 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E32CC89E2072D5EA00424691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E32CC8A02072D5EA00424691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E32CC8A32072D5EA00424691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E32CC8A52072D5EA00424691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModels.swift; sourceTree = "<group>"; };
 		E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
+		E33116282097D07E002E5986 /* MainScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButton.swift; sourceTree = "<group>"; };
+		E331162A2097DE41002E5986 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModelsTableViewController.swift; sourceTree = "<group>"; };
 		E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
@@ -84,7 +88,7 @@
 		E329106B208A7F1800C5B962 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E32CC89B2072D5EA00424691 /* ViewController.swift */,
+				E32CC89B2072D5EA00424691 /* MainViewController.swift */,
 				E388D42C2083607D00EB04CE /* ResultsViewController.swift */,
 				E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */,
 				E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */,
@@ -98,6 +102,7 @@
 				E32CC89D2072D5EA00424691 /* Main.storyboard */,
 				E32CC8A22072D5EA00424691 /* LaunchScreen.storyboard */,
 				E32CC8A02072D5EA00424691 /* Assets.xcassets */,
+				E33116282097D07E002E5986 /* MainScreenButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */,
+				E331162A2097DE41002E5986 /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -251,15 +257,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WhatIsThis/Pods-WhatIsThis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,11 +316,13 @@
 				E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */,
 				E3293E672089240400786AD9 /* WikipediaQuery.swift in Sources */,
 				E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */,
+				E33116292097D07E002E5986 /* MainScreenButton.swift in Sources */,
 				E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */,
+				E331162B2097DE41002E5986 /* UIColor.swift in Sources */,
 				E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */,
 				E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */,
 				E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */,
-				E32CC89C2072D5EA00424691 /* ViewController.swift in Sources */,
+				E32CC89C2072D5EA00424691 /* MainViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
 				E34B64E820912D71009E57CC /* CoreMLModelsTableViewController.swift in Sources */,
 				E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */,
