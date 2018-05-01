@@ -16,7 +16,7 @@ class MainScreenButton: UIButton {
         setTitle(title, for: .normal)
         setTitleColor(.black, for: .normal)
         
-        backgroundColor = UIColor(hex: 0xF9F9F9)
+        backgroundColor = UIColor(hexString: "F9F9F9")
         
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1.0
