@@ -16,12 +16,12 @@ protocol ShowDescriptionDelegate {
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var wikiButton: UIBarButtonItem!
 
     var saveButton = MainScreenButton(title: "Save")
     var classifyButton = MainScreenButton(title: "Classify")
+    var imageView = UIImageView()
+    var resultLabel = UILabel()
     
     var image = UIImage()
     let imagePicker = UIImagePickerController()
@@ -37,24 +37,41 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         saveButton.isEnabled = false
         
         view.addSubview(saveButton)
-        view.addSubview(classifyButton)
-        
         saveButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalTo(view.snp.right).dividedBy(2).inset(10)
             make.left.equalToSuperview().offset(20)
             make.height.equalTo(view.snp.height).dividedBy(15)
             make.bottom.equalToSuperview().inset(20)
         })
+        saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         
+        view.addSubview(classifyButton)
         classifyButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalToSuperview().inset(20)
             make.left.equalTo(view.snp.right).dividedBy(2).offset(10)
             make.height.equalTo(view.snp.height).dividedBy(15)
             make.bottom.equalToSuperview().inset(20)
         })
-        
-        saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         classifyButton.addTarget(self, action: #selector(classifyButtonPressed(_:)), for: .touchUpInside)
+
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints( { (make) -> Void in
+            make.right.left.equalToSuperview()
+            make.height.equalTo(view.snp.height).dividedBy(2)
+            make.bottom.equalTo(view.snp.bottom).dividedBy(1.2)
+        })
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        
+        view.addSubview(resultLabel)
+        resultLabel.snp.makeConstraints( { (make) -> Void in
+            make.right.left.equalToSuperview()
+            make.top.equalToSuperview().offset(view.frame.height / 10)
+            make.bottom.equalTo(imageView.snp.top)
+        })
+        resultLabel.numberOfLines = 2
+        resultLabel.textAlignment = .center
+        resultLabel.font = resultLabel.font.withSize(view.frame.height / 25)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

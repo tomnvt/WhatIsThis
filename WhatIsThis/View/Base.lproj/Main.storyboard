@@ -17,34 +17,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-OI-d7P">
-                                <rect key="frame" x="0.0" y="195" width="375" height="384"/>
-                                <color key="tintColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="384" id="xXn-LE-m9J"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-x6-fkJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="131"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="131" id="pwh-u7-FLA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.82352941176470584" green="0.97680455450000003" blue="0.42996493980870959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Noj-x6-fkJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1f1-ch-6qb"/>
-                            <constraint firstItem="Noj-x6-fkJ" firstAttribute="leading" secondItem="Rvd-OI-d7P" secondAttribute="leading" id="S2b-pk-VTW"/>
-                            <constraint firstItem="Rvd-OI-d7P" firstAttribute="top" secondItem="Noj-x6-fkJ" secondAttribute="bottom" id="SaT-TU-cLD"/>
-                            <constraint firstAttribute="trailing" secondItem="Noj-x6-fkJ" secondAttribute="trailing" id="Vgg-iX-WKf"/>
-                            <constraint firstItem="Noj-x6-fkJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qkK-kJ-os9"/>
-                            <constraint firstItem="Noj-x6-fkJ" firstAttribute="trailing" secondItem="Rvd-OI-d7P" secondAttribute="trailing" id="sig-Di-hcF"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="What is this?" id="Deb-mA-ZKB">
@@ -60,8 +34,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="Rvd-OI-d7P" id="GxA-Gk-ihl"/>
-                        <outlet property="resultLabel" destination="Noj-x6-fkJ" id="ZIU-bk-AmI"/>
                         <outlet property="wikiButton" destination="JDZ-bo-sSD" id="yZd-aU-yaB"/>
                     </connections>
                 </viewController>
