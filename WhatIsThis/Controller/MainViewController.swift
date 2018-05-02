@@ -16,12 +16,13 @@ protocol ShowDescriptionDelegate {
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var wikiButton: UIBarButtonItem!
-
+    var wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: self, action: nil)
+    var settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: nil)
+    
     var saveButton = MainScreenButton(title: "Save")
     var classifyButton = MainScreenButton(title: "Classify")
     var imageView = UIImageView()
-    var resultLabel = UILabel()
+    var resultLabel = ResultLabel()
     
     var image = UIImage()
     let imagePicker = UIImagePickerController()
@@ -33,6 +34,11 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = wikiButton
+        navigationItem.rightBarButtonItem = settingsButton
+        
+        
         wikiButton.isEnabled = false
         saveButton.isEnabled = false
         
@@ -68,8 +74,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             make.top.equalToSuperview().offset(view.frame.height / 10)
             make.bottom.equalTo(imageView.snp.top)
         })
-        resultLabel.numberOfLines = 2
-        resultLabel.textAlignment = .center
         resultLabel.font = resultLabel.font.withSize(view.frame.height / 25)
         
     }
