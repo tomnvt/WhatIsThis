@@ -30,7 +30,7 @@
         <!--Settings Table Table View Controller-->
         <scene sceneID="IOo-Ic-9zo">
             <objects>
-                <tableViewController id="QGs-5o-Etc" customClass="SettingsTableTableViewController" customModule="WhatIsThis" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsTableTableViewController" id="QGs-5o-Etc" customClass="SettingsTableTableViewController" customModule="WhatIsThis" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j16-tJ-LAn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +122,6 @@
         <!--Navigation Controller-->
         <scene sceneID="4Sh-hS-zUi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lun-cc-SEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FXz-hR-NHU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JNb-H4-vK9">
@@ -134,6 +133,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cKm-tC-wqO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lun-cc-SEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-249" y="134"/>
         </scene>

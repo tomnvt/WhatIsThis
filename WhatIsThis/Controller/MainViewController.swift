@@ -16,8 +16,8 @@ protocol ShowDescriptionDelegate {
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: self, action: nil)
-    var settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: nil)
+    var wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: nil, action: #selector(wikiButtonPressed))
+    var settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: nil, action: #selector(settingsButtonPresed))
     
     var saveButton = MainScreenButton(title: "Save")
     var classifyButton = MainScreenButton(title: "Classify")
@@ -38,6 +38,11 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         navigationItem.leftBarButtonItem = wikiButton
         navigationItem.rightBarButtonItem = settingsButton
         
+        wikiButton.target = self
+        settingsButton.target = self
+        
+        wikiButton.tag = 0
+        settingsButton.tag = 1
         
         wikiButton.isEnabled = false
         saveButton.isEnabled = false
@@ -103,12 +108,16 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         present(picker, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToWiki" {
-            let vc = segue.destination as! ResultsViewController
-            delegate = vc
-            vc.show(description: wikipediaQuery.queryResult)
-        }
+    @IBAction func wikiButtonPressed() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
+        delegate = vc
+        vc.show(description: wikipediaQuery.queryResult)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func settingsButtonPresed() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsTableTableViewController") as! SettingsTableTableViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {

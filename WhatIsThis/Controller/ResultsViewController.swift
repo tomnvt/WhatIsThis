@@ -10,12 +10,13 @@ import UIKit
 
 class ResultsViewController: UIViewController, ShowDescriptionDelegate {
     
-    @IBOutlet weak var descriptionTextView: UITextView!
+    var descriptionTextView: UITextView!
     
     var imageDescription = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(descriptionTextView)
         update()
     }
 
