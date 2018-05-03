@@ -109,7 +109,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func wikiButtonPressed() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
+        let vc = WikipediaQueryViewController()
         delegate = vc
         vc.show(description: wikipediaQuery.queryResult)
         navigationController?.pushViewController(vc, animated: true)

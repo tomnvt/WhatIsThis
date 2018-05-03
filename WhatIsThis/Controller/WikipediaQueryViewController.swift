@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import SnapKit
 
-class ResultsViewController: UIViewController, ShowDescriptionDelegate {
+class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
     
-    var descriptionTextView: UITextView!
+    var descriptionTextView = UITextView()
     
     var imageDescription = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        
         view.addSubview(descriptionTextView)
+        descriptionTextView.snp.makeConstraints( { (make) -> Void in
+            make.right.left.top.bottom.equalToSuperview().inset(10)
+        })
+        
         update()
     }
 
