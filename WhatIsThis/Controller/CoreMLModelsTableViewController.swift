@@ -16,7 +16,7 @@ class CoreMLModelsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

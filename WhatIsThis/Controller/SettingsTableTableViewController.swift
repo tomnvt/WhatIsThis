@@ -17,6 +17,7 @@ class SettingsTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         settings[0] = defaults.bool(forKey: "speechSynthesisIsOn") ? "Speech synthesizer: ON" : "Speech synthesizer: OFF"
     }
 
@@ -45,7 +46,8 @@ class SettingsTableTableViewController: UITableViewController {
         case "CoreML Model":
             hud.show(in: self.view)
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "goToModels", sender: send)
+                let vc = CoreMLModelsTableViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
             }
             hud.dismiss()
             break

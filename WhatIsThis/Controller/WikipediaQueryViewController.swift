@@ -18,12 +18,11 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
         view.addSubview(descriptionTextView)
         descriptionTextView.snp.makeConstraints( { (make) -> Void in
             make.right.left.top.bottom.equalToSuperview().inset(10)
         })
-        
+        descriptionTextView.font = .systemFont(ofSize: 16)
         update()
     }
 

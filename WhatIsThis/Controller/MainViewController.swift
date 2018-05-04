@@ -35,6 +35,10 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "What is this?"
+        
+        view.backgroundColor = .white
+
         navigationItem.leftBarButtonItem = wikiButton
         navigationItem.rightBarButtonItem = settingsButton
         
@@ -116,7 +120,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func settingsButtonPresed() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsTableTableViewController") as! SettingsTableTableViewController
+        let vc = SettingsTableTableViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
