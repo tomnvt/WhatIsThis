@@ -26,6 +26,7 @@
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
 		E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */; };
 		E3E2AF19209D0844006EFE4F /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */; };
+		E3E2AF1B209D8FC9006EFE4F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF1A209D8FC9006EFE4F /* MainView.swift */; };
 		E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */; };
 		E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF8AA72089E11600E930B4 /* Classifier.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
 		E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
 		E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		E3E2AF1A209D8FC9006EFE4F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
 		E3FF8AA72089E11600E930B4 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				E32CC8A02072D5EA00424691 /* Assets.xcassets */,
 				E33116282097D07E002E5986 /* MainScreenButton.swift */,
 				E370391E2098E7F300C76B9B /* ResultLabel.swift */,
+				E3E2AF1A209D8FC9006EFE4F /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */,
 				E33116292097D07E002E5986 /* MainScreenButton.swift in Sources */,
 				E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */,
+				E3E2AF1B209D8FC9006EFE4F /* MainView.swift in Sources */,
 				E331162B2097DE41002E5986 /* UIColor.swift in Sources */,
 				E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */,
 				E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */,

@@ -18,11 +18,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: nil, action: #selector(wikiButtonPressed))
     var settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: nil, action: #selector(settingsButtonPresed))
-    
-    var saveButton = MainScreenButton(title: "Save")
-    var classifyButton = MainScreenButton(title: "Classify")
-    var imageView = UIImageView()
-    var resultLabel = ResultLabel()
+
+    let mainView = MainView()
     
     var image = UIImage()
     let imagePicker = UIImagePickerController()
@@ -45,62 +42,29 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         wikiButton.target = self
         settingsButton.target = self
         
-        wikiButton.tag = 0
-        settingsButton.tag = 1
-        
         wikiButton.isEnabled = false
-        saveButton.isEnabled = false
+        mainView.saveButton.isEnabled = false
         
-        view.addSubview(saveButton)
-        saveButton.snp.makeConstraints( { (make) -> Void in
-            make.right.equalTo(view.snp.right).dividedBy(2).inset(10)
-            make.left.equalToSuperview().offset(20)
-            make.height.equalTo(view.snp.height).dividedBy(15)
-            make.bottom.equalToSuperview().inset(20)
-        })
-        saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
-        
-        view.addSubview(classifyButton)
-        classifyButton.snp.makeConstraints( { (make) -> Void in
-            make.right.equalToSuperview().inset(20)
-            make.left.equalTo(view.snp.right).dividedBy(2).offset(10)
-            make.height.equalTo(view.snp.height).dividedBy(15)
-            make.bottom.equalToSuperview().inset(20)
-        })
-        classifyButton.addTarget(self, action: #selector(classifyButtonPressed(_:)), for: .touchUpInside)
+        view.addSubview(mainView)
 
-        view.addSubview(imageView)
-        imageView.snp.makeConstraints( { (make) -> Void in
-            make.right.left.equalToSuperview()
-            make.height.equalTo(view.snp.height).dividedBy(2)
-            make.bottom.equalTo(view.snp.bottom).dividedBy(1.2)
-        })
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
-        
-        view.addSubview(resultLabel)
-        resultLabel.snp.makeConstraints( { (make) -> Void in
-            make.right.left.equalToSuperview()
-            make.top.equalToSuperview().offset(view.frame.height / 10)
-            make.bottom.equalTo(imageView.snp.top)
-        })
-        resultLabel.font = resultLabel.font.withSize(view.frame.height / 25)
-        
+        mainView.saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
+        mainView.classifyButton.addTarget(self, action: #selector(classifyButtonPressed(_:)), for: .touchUpInside)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true)
-        resultLabel.text = "Processing..."
+        mainView.resultLabel.text = "Processing..."
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.image = image
+            mainView.imageView.image = image
             guard let ciimage = CIImage(image: image) else {
                 fatalError("Could not convert image to CIImage.")
             }
             DispatchQueue.main.async {
-                self.resultLabel.text = self.classifier.classify(image: ciimage)
-                self.wikipediaQuery.requestInfo(result: self.resultLabel.text!)
+                self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)
+                self.wikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!)
                 self.wikiButton.isEnabled = true
-                self.saveButton.isEnabled = true
+                self.mainView.saveButton.isEnabled = true
             }
         }
     }
