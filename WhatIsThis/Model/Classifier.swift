@@ -7,11 +7,9 @@
 //
 
 import Vision
-import AVFoundation
 
 class Classifier {
-    
-    lazy var speechSynthesizer = AVSpeechSynthesizer()
+
     let defaults = UserDefaults.standard
     let models = CoreMLModels()
     
@@ -40,7 +38,7 @@ class Classifier {
             
             let resultSentence = "This looks like a \(requestResult).  I'm \(percentage) sure."
             if self.defaults.bool(forKey: "speechSynthesisIsOn") == true {
-                self.synthesizeSpeech(fromString: resultSentence)
+                SpeechSynthesizer.synthesizeSpeech(fromString: resultSentence)
             }
         }
         
@@ -54,11 +52,6 @@ class Classifier {
             print(error)
         }
         return result
-    }
-    
-    func synthesizeSpeech(fromString string: String) {
-        let speechUtterance = AVSpeechUtterance(string: string)
-        speechSynthesizer.speak(speechUtterance)
     }
     
 }
