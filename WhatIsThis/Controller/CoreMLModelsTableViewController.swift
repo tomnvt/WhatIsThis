@@ -16,6 +16,9 @@ class CoreMLModelsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "CoreML Models"
+        
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     

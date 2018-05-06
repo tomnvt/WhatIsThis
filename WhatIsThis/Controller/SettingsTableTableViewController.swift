@@ -17,6 +17,9 @@ class SettingsTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Settings"
+        
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         settings[0] = defaults.bool(forKey: "speechSynthesisIsOn") ? "Speech synthesizer: ON" : "Speech synthesizer: OFF"
     }
