@@ -47,7 +47,7 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
     @IBAction func showSearchWikiDialog() {
         let searchWikiDialogViewController = SearchWikiDialogViewController()
         
-        let popup = PopupDialog(viewController: searchWikiDialogViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
+        let popup = PopupDialog(viewController: searchWikiDialogViewController, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true)
         
         let buttonOne = CancelButton(title: "Cancel", height: 60, action: nil)
         
