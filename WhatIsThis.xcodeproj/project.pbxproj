@@ -24,6 +24,8 @@
 		E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */; };
 		E370391F2098E7F300C76B9B /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370391E2098E7F300C76B9B /* ResultLabel.swift */; };
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
+		E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */; };
+		E3C44509209EF7A2005976F3 /* SearchWikiDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */; };
 		E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */; };
 		E3E2AF19209D0844006EFE4F /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */; };
 		E3E2AF1B209D8FC9006EFE4F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF1A209D8FC9006EFE4F /* MainView.swift */; };
@@ -53,6 +55,8 @@
 		E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 		E370391E2098E7F300C76B9B /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
+		E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikiDialogViewController.swift; sourceTree = "<group>"; };
+		E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchWikiDialogViewController.xib; sourceTree = "<group>"; };
 		E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
 		E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		E3E2AF1A209D8FC9006EFE4F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				E33116282097D07E002E5986 /* MainScreenButton.swift */,
 				E370391E2098E7F300C76B9B /* ResultLabel.swift */,
 				E3E2AF1A209D8FC9006EFE4F /* MainView.swift */,
+				E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */,
+				E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3C44509209EF7A2005976F3 /* SearchWikiDialogViewController.xib in Resources */,
 				E3502602209C3979003CF237 /* Main.storyboard in Resources */,
 				E32CC8A12072D5EA00424691 /* Assets.xcassets in Resources */,
 			);
@@ -262,14 +269,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WhatIsThis/Pods-WhatIsThis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -325,6 +336,7 @@
 				E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */,
 				E3E2AF1B209D8FC9006EFE4F /* MainView.swift in Sources */,
 				E331162B2097DE41002E5986 /* UIColor.swift in Sources */,
+				E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */,
 				E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */,
 				E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */,
 				E3E2AF19209D0844006EFE4F /* SpeechSynthesizer.swift in Sources */,

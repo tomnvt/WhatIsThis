@@ -10,5 +10,6 @@ pod 'Alamofire', '~> 4.4'
 pod 'SwiftyJSON'
 pod 'SnapKit'
 pod 'JGProgressHUD'
+pod 'PopupDialog', '~> 0.7'
 
 end

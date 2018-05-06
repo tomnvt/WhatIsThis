@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchWikiDialogViewController" customModule="WhatIsThis" customModuleProvider="target">
+            <connections>
+                <outlet property="searchTextView" destination="qRi-68-xLN" id="DqX-Gl-eQe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="105"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to search for?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ6-jd-RPF">
+                    <rect key="frame" x="0.0" y="0.0" width="336" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="zN0-6q-DUe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qRi-68-xLN">
+                    <rect key="frame" x="24" y="52" width="288" height="33"/>
+                    <color key="backgroundColor" red="0.94810834390862941" green="0.94810834390862941" blue="0.94810834390862941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="Ads-cU-UUX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dZ6-jd-RPF" firstAttribute="centerX" secondItem="qRi-68-xLN" secondAttribute="centerX" id="ACx-t0-vUP"/>
+                <constraint firstItem="qRi-68-xLN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="GDr-l6-OFT"/>
+                <constraint firstItem="dZ6-jd-RPF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HJN-8a-hhe"/>
+                <constraint firstItem="qRi-68-xLN" firstAttribute="top" secondItem="dZ6-jd-RPF" secondAttribute="bottom" constant="8" symbolic="YES" id="hUD-g0-gQk"/>
+                <constraint firstAttribute="trailing" secondItem="dZ6-jd-RPF" secondAttribute="trailing" id="v09-qx-qKl"/>
+                <constraint firstItem="dZ6-jd-RPF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vbD-6f-Fqf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qRi-68-xLN" secondAttribute="bottom" constant="20" id="xrd-Jf-9aP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="13" y="127.5"/>
+        </view>
+    </objects>
+</document>
