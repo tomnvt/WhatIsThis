@@ -11,5 +11,6 @@ pod 'SwiftyJSON'
 pod 'SnapKit'
 pod 'JGProgressHUD'
 pod 'PopupDialog', '~> 0.7'
+pod 'RxSwift'
 
 end

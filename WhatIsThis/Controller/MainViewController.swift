@@ -42,7 +42,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         wikiButton.target = self
         settingsButton.target = self
         
-        wikiButton.isEnabled = false
+//        wikiButton.isEnabled = false
         mainView.saveButton.isEnabled = false
         
         view.addSubview(mainView)
