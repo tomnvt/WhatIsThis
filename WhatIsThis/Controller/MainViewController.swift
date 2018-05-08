@@ -42,7 +42,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         wikiButton.target = self
         settingsButton.target = self
         
-//        wikiButton.isEnabled = false
+        wikiButton.isEnabled = false
         mainView.saveButton.isEnabled = false
         
         view.addSubview(mainView)
@@ -53,18 +53,19 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true)
-        mainView.resultLabel.text = "Processing..."
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             mainView.imageView.image = image
             guard let ciimage = CIImage(image: image) else {
                 fatalError("Could not convert image to CIImage.")
             }
+            mainView.resultLabel.text = "Processing..."
+            wikiButton.isEnabled = false
             DispatchQueue.main.async {
                 self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)
                 self.wikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!)
-                self.wikiButton.isEnabled = true
                 self.mainView.saveButton.isEnabled = true
+                self.wikiButton.isEnabled = true
             }
         }
     }
@@ -125,4 +126,5 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         present(photoSourcePicker, animated: true)
     }
+    
 }

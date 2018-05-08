@@ -10,11 +10,14 @@ import UIKit
 import SnapKit
 import PopupDialog
 import RxSwift
+import JGProgressHUD
 
 class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
     
     let wikipediaQuery = WikipediaQuery()
     private let bag = DisposeBag()
+    
+    let hud = JGProgressHUD()
     
     var descriptionTextView = UITextView()
     var searchMore = UIBarButtonItem(title: "Search", style: .plain, target: nil, action: #selector(showSearchWikiDialog))
@@ -32,7 +35,7 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
             make.right.left.top.bottom.equalToSuperview().inset(10)
         })
         descriptionTextView.font = .systemFont(ofSize: 16)
-        descriptionTextView.isUserInteractionEnabled = false
+        descriptionTextView.isEditable = false
         
         navigationItem.rightBarButtonItem = searchMore
         searchMore.target = self
@@ -67,16 +70,15 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
     }
     
     func updateAfterNewSearch(query: String?) {
+        hud.show(in: self.view)
         guard let enteredText = query else { return }
         wikipediaQuery.queryObservable
             .subscribe(onNext: {
-                print("I'm here!")
-                print($0)
+                self.hud.dismiss()
                 self.descriptionTextView.text = $0
             })
             .disposed(by: bag)
         wikipediaQuery.requestInfo(result: enteredText)
-        
     }
     
 }

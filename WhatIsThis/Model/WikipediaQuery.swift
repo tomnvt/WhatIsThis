@@ -47,8 +47,4 @@ class WikipediaQuery {
         }
     }
     
-    func update() -> String {
-        return queryResult
-    }
-    
 }
