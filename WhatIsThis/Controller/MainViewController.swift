@@ -9,6 +9,7 @@
 import UIKit
 import ImageIO
 import SnapKit
+import RxSwift
 
 protocol ShowDescriptionDelegate {
     func show(description: String)
@@ -28,6 +29,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     let classifier = Classifier()
     
     var delegate : ShowDescriptionDelegate?
+    
+    let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,13 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
         mainView.saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         mainView.classifyButton.addTarget(self, action: #selector(classifyButtonPressed(_:)), for: .touchUpInside)
+        
+        wikipediaQuery.queryObservable
+            .subscribe({_ in
+                self.wikiButton.isEnabled = true
+            })
+            .disposed(by: bag)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -59,13 +69,12 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             guard let ciimage = CIImage(image: image) else {
                 fatalError("Could not convert image to CIImage.")
             }
+            self.wikiButton.isEnabled = false
             mainView.resultLabel.text = "Processing..."
-            wikiButton.isEnabled = false
             DispatchQueue.main.async {
                 self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)
                 self.wikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!)
                 self.mainView.saveButton.isEnabled = true
-                self.wikiButton.isEnabled = true
             }
         }
     }
