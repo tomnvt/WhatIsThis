@@ -78,7 +78,7 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
                 self.descriptionTextView.text = $0
             })
             .disposed(by: bag)
-        wikipediaQuery.requestInfo(result: enteredText)
+        wikipediaQuery.requestInfo(result: enteredText, longVersion: false)
     }
     
 }

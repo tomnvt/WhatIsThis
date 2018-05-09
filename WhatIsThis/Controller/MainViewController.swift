@@ -73,7 +73,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             mainView.resultLabel.text = "Processing..."
             DispatchQueue.main.async {
                 self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)
-                self.wikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!)
+                self.wikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!, longVersion: false)
                 self.mainView.saveButton.isEnabled = true
             }
         }
