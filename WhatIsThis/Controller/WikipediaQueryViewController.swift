@@ -20,7 +20,8 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
     let hud = JGProgressHUD()
     
     var descriptionTextView = UITextView()
-    var searchMore = UIBarButtonItem(title: "Search", style: .plain, target: nil, action: #selector(showSearchWikiDialog))
+    var searchMoreBarButton = UIBarButtonItem(title: "Search", style: .plain, target: nil, action: #selector(showSearchWikiDialog))
+    var moreButton = MainScreenButton(title: "More")
     
     var imageDescription = ""
     
@@ -32,13 +33,22 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
         view.backgroundColor = .white
         view.addSubview(descriptionTextView)
         descriptionTextView.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.bottom.equalToSuperview().inset(10)
+            make.right.left.top.equalToSuperview().inset(10)
+            make.bottom.equalToSuperview().inset(88)
         })
         descriptionTextView.font = .systemFont(ofSize: 16)
         descriptionTextView.isEditable = false
         
-        navigationItem.rightBarButtonItem = searchMore
-        searchMore.target = self
+        view.addSubview(moreButton)
+        moreButton.snp.makeConstraints( { (make) -> Void in
+            make.right.equalToSuperview().inset(20)
+            make.left.equalTo(view.snp.right).dividedBy(2).offset(10)
+            make.height.equalTo(view.snp.height).dividedBy(15)
+            make.bottom.equalToSuperview().inset(20)
+        })
+        
+        navigationItem.rightBarButtonItem = searchMoreBarButton
+        searchMoreBarButton.target = self
         
         update()
     }
