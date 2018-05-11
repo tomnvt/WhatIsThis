@@ -25,7 +25,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var image = UIImage()
     let imagePicker = UIImagePickerController()
     
-    let wikipediaQuery = WikipediaQuery()
+    var result = ""
+    
     let classifier = Classifier()
     
     var delegate : ShowDescriptionDelegate?
@@ -52,7 +53,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         mainView.saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         mainView.classifyButton.addTarget(self, action: #selector(classifyButtonPressed(_:)), for: .touchUpInside)
         
-        wikipediaQuery.queryObservable
+        WikipediaQuery.queryObservable
             .subscribe({_ in
                 self.wikiButton.isEnabled = true
             })
@@ -71,8 +72,9 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.wikiButton.isEnabled = false
             mainView.resultLabel.text = "Processing..."
             DispatchQueue.main.async {
-                self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)
-                self.wikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!, longVersion: false)
+                self.result = self.classifier.classify(image: ciimage)
+                self.mainView.resultLabel.text = self.result
+                WikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!, longVersion: false)
                 self.mainView.saveButton.isEnabled = true
             }
         }
@@ -86,9 +88,9 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func wikiButtonPressed() {
-        let vc = WikipediaQueryViewController()
+        let vc = WikipediaQueryTabBarController()
         delegate = vc
-        vc.show(description: wikipediaQuery.queryResult)
+        vc.show(description: result)
         navigationController?.pushViewController(vc, animated: true)
     }
     

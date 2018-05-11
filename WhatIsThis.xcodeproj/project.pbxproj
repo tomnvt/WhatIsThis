@@ -30,6 +30,7 @@
 		E3E2AF19209D0844006EFE4F /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */; };
 		E3E2AF1B209D8FC9006EFE4F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF1A209D8FC9006EFE4F /* MainView.swift */; };
 		E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */; };
+		E3F6F34020A625C100314218 /* WikipediaQueryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */; };
 		E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF8AA72089E11600E930B4 /* Classifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		E3E2AF1A209D8FC9006EFE4F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
+		E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaQueryTabBarController.swift; sourceTree = "<group>"; };
 		E3FF8AA72089E11600E930B4 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */,
 				E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */,
 				E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */,
+				E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */,
 				E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */,
 				E3E2AF19209D0844006EFE4F /* SpeechSynthesizer.swift in Sources */,
+				E3F6F34020A625C100314218 /* WikipediaQueryTabBarController.swift in Sources */,
 				E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */,
 				E32CC89C2072D5EA00424691 /* MainViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,

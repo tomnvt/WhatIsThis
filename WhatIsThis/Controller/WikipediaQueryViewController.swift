@@ -12,19 +12,17 @@ import PopupDialog
 import RxSwift
 import JGProgressHUD
 
-class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
+class WikipediaQueryViewController: UIViewController {
     
-    let wikipediaQuery = WikipediaQuery()
     private let bag = DisposeBag()
     
     let hud = JGProgressHUD()
     
     var descriptionTextView = UITextView()
     var searchMoreBarButton = UIBarButtonItem(title: "Search", style: .plain, target: nil, action: #selector(showSearchWikiDialog))
-    var moreButton = MainScreenButton(title: "More")
+    var moreButton = MainScreenButton(title: "+")
     
     var imageDescription = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +33,7 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
         view.addSubview(descriptionTextView)
         descriptionTextView.snp.makeConstraints( { (make) -> Void in
             make.right.left.top.equalToSuperview().inset(10)
-            make.bottom.equalToSuperview().inset(88)
+            make.bottom.equalToSuperview().inset(51)
         })
         descriptionTextView.font = .systemFont(ofSize: 16)
         descriptionTextView.isEditable = false
@@ -43,32 +41,27 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
         view.addSubview(moreButton)
         moreButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalToSuperview().inset(20)
-            make.left.equalTo(view.snp.right).dividedBy(2).offset(10)
-            make.height.equalTo(view.snp.height).dividedBy(15)
-            make.bottom.equalToSuperview().inset(20)
+            make.left.equalTo(view.snp.right).dividedBy(1.2)
+            make.height.equalTo(view.snp.height).dividedBy(20)
+            make.bottom.equalToSuperview().inset(60
+            )
         })
+        moreButton.isEnabled = false
         moreButton.addTarget(self, action: #selector(moreButtonPressed), for: .touchUpInside)
         
         navigationItem.rightBarButtonItem = searchMoreBarButton
         searchMoreBarButton.target = self
         
-        update()
-        
-        wikipediaQuery.queryObservable
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        WikipediaQuery.queryObservable
             .subscribe(onNext: {
                 self.hud.dismiss()
                 self.descriptionTextView.text = $0
+                self.moreButton.isEnabled = true
             })
             .disposed(by: bag)
-    }
-    
-    
-    func show(description: String) {
-        imageDescription = description
-    }
-    
-    func update() {
-        self.descriptionTextView.text = imageDescription
     }
     
     
@@ -90,18 +83,18 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
         
     }
     
-    
     func updateAfterNewSearch(query: String?) {
         hud.show(in: self.view)
         guard let enteredText = query else { return }
         imageDescription = enteredText
-        wikipediaQuery.requestInfo(result: imageDescription, longVersion: false)
+        print(imageDescription)
+        WikipediaQuery.requestInfo(result: imageDescription, longVersion: false)
     }
     
     
     @IBAction func moreButtonPressed() {
         hud.show(in: self.view)
-        wikipediaQuery.requestInfo(result: imageDescription, longVersion: true)
+        WikipediaQuery.requestInfo(result: imageDescription, longVersion: true)
     }
     
 }
