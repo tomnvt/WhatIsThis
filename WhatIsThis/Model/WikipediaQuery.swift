@@ -47,7 +47,7 @@ class WikipediaQuery {
                 if response.result.isSuccess {
                     let wikiJSON : JSON = JSON(response.result.value!)
                     let pageid = wikiJSON["query"]["pageids"][0].stringValue
-                    self.queryResult = wikiJSON["query"]["pages"][pageid]["extract"].stringValue
+                    self.queryResult = wikiJSON["query"]["pages"][pageid]["extract"].stringValue.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
                     self.querySubject.onNext(self.queryResult)
                 }
             }
