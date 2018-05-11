@@ -25,6 +25,7 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
     
     var imageDescription = ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,12 +47,21 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
             make.height.equalTo(view.snp.height).dividedBy(15)
             make.bottom.equalToSuperview().inset(20)
         })
+        moreButton.addTarget(self, action: #selector(moreButtonPressed), for: .touchUpInside)
         
         navigationItem.rightBarButtonItem = searchMoreBarButton
         searchMoreBarButton.target = self
         
         update()
+        
+        wikipediaQuery.queryObservable
+            .subscribe(onNext: {
+                self.hud.dismiss()
+                self.descriptionTextView.text = $0
+            })
+            .disposed(by: bag)
     }
+    
     
     func show(description: String) {
         imageDescription = description
@@ -60,6 +70,7 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
     func update() {
         self.descriptionTextView.text = imageDescription
     }
+    
     
     @IBAction func showSearchWikiDialog() {
         let searchWikiDialogViewController = SearchWikiDialogViewController()
@@ -79,16 +90,18 @@ class WikipediaQueryViewController: UIViewController, ShowDescriptionDelegate {
         
     }
     
+    
     func updateAfterNewSearch(query: String?) {
         hud.show(in: self.view)
         guard let enteredText = query else { return }
-        wikipediaQuery.queryObservable
-            .subscribe(onNext: {
-                self.hud.dismiss()
-                self.descriptionTextView.text = $0
-            })
-            .disposed(by: bag)
-        wikipediaQuery.requestInfo(result: enteredText, longVersion: false)
+        imageDescription = enteredText
+        wikipediaQuery.requestInfo(result: imageDescription, longVersion: false)
+    }
+    
+    
+    @IBAction func moreButtonPressed() {
+        hud.show(in: self.view)
+        wikipediaQuery.requestInfo(result: imageDescription, longVersion: true)
     }
     
 }
