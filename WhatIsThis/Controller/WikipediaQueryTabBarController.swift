@@ -40,7 +40,6 @@ class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDele
         super.viewWillAppear(animated)
         let icon1 = UITabBarItem(title: "Title", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
         item1.tabBarItem = icon1
-        
         let controllers = [item1, item2]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
     }
@@ -53,6 +52,7 @@ class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDele
     override func viewDidAppear(_ animated: Bool) {
         guard imageDescription != "" else { return }
         item1.updateAfterNewSearch(query: imageDescription)
+        item2.queryHistory.append(imageDescription)
     }
     
     func show(description: String) {
@@ -85,6 +85,7 @@ class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDele
     func updateAfterNewSearch(query: String?) {
         hud.show(in: self.view)
         guard let enteredText = query else { return }
+        item2.queryHistory.append(enteredText.uppercased())
         item1.imageDescription = enteredText
         WikipediaQuery.requestInfo(result: enteredText, longVersion: false)
     }

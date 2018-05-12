@@ -10,14 +10,16 @@ import UIKit
 
 class QueryHistoryTableViewController: UITableViewController {
 
+    var queryHistory : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "History"
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -27,11 +29,12 @@ class QueryHistoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return queryHistory.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = queryHistory[indexPath.row]
         return cell
     }
 
