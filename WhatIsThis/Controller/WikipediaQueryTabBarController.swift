@@ -10,11 +10,14 @@ import UIKit
 import RxSwift
 import PopupDialog
 import JGProgressHUD
+import CoreData
 
 class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDelegate, ShowDescriptionDelegate {
 
     let item1 = WikipediaQueryViewController()
     let item2 = QueryHistoryTableViewController()
+    var queries = [SearchQuery]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var searchMoreBarButton = UIBarButtonItem(title: "Search", style: .plain, target: nil, action: #selector(showSearchWikiDialog))
     let bag = DisposeBag()
@@ -31,6 +34,7 @@ class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDele
         WikipediaQuery.queryObservable
             .subscribe({_ in 
                 self.hud.dismiss()
+                self.saveQuery()
             })
             .disposed(by: bag)
 
@@ -59,11 +63,6 @@ class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDele
         imageDescription = description
     }
     
-    func update() {
-        WikipediaQuery.requestInfo(result: imageDescription, longVersion: false)
-    }
-    
-    
     @IBAction func showSearchWikiDialog() {
         let searchWikiDialogViewController = SearchWikiDialogViewController()
         
@@ -87,7 +86,20 @@ class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDele
         guard let enteredText = query else { return }
         item2.queryHistory.append(enteredText.uppercased())
         item1.imageDescription = enteredText
+        imageDescription = enteredText
         WikipediaQuery.requestInfo(result: enteredText, longVersion: false)
     }
 
+    func saveQuery() {
+        let newQuery = SearchQuery(context: self.context)
+        newQuery.query = imageDescription
+        self.queries.append(newQuery)
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error saving category \(error)")
+        }
+    }
+    
 }
