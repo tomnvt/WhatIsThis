@@ -14,7 +14,7 @@ import JGProgressHUD
 class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDelegate, ShowDescriptionDelegate {
 
     let item1 = WikipediaQueryViewController()
-    let item2 = SettingsTableTableViewController()
+    let item2 = QueryHistoryTableViewController()
     
     var searchMoreBarButton = UIBarButtonItem(title: "Search", style: .plain, target: nil, action: #selector(showSearchWikiDialog))
     let bag = DisposeBag()
@@ -41,7 +41,7 @@ class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDele
         let icon1 = UITabBarItem(title: "Title", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
         item1.tabBarItem = icon1
         
-        let controllers = [item1]  //array of the root view controllers displayed by the tab bar interface
+        let controllers = [item1, item2]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
     }
     

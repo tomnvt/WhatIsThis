@@ -24,6 +24,7 @@
 		E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */; };
 		E370391F2098E7F300C76B9B /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370391E2098E7F300C76B9B /* ResultLabel.swift */; };
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
+		E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */; };
 		E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */; };
 		E3C44509209EF7A2005976F3 /* SearchWikiDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */; };
 		E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */; };
@@ -56,6 +57,7 @@
 		E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 		E370391E2098E7F300C76B9B /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
+		E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryHistoryTableViewController.swift; sourceTree = "<group>"; };
 		E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikiDialogViewController.swift; sourceTree = "<group>"; };
 		E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchWikiDialogViewController.xib; sourceTree = "<group>"; };
 		E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */,
 				E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */,
 				E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */,
+				E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */,
 				E33116292097D07E002E5986 /* MainScreenButton.swift in Sources */,
 				E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */,
+				E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */,
 				E3E2AF1B209D8FC9006EFE4F /* MainView.swift in Sources */,
 				E331162B2097DE41002E5986 /* UIColor.swift in Sources */,
 				E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */,
