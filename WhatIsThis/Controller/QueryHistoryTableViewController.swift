@@ -17,7 +17,6 @@ class QueryHistoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "History"
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
@@ -48,8 +47,6 @@ class QueryHistoryTableViewController: UITableViewController {
         
         do{
             queries = try context.fetch(request)
-            print("yea")
-            print(queries)
         } catch {
             print("Error loading categories \(error)")
         }

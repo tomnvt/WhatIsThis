@@ -19,12 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController = MainTabBarController()
         
-        let mainWiewController = MainViewController(nibName: nil, bundle: nil)
+        let mainViewController = MainViewController(nibName: nil, bundle: nil)
         let wikipediaQueryViewController = WikipediaQueryViewController(nibName: nil, bundle: nil)
         let queryHistoryTableViewController = QueryHistoryTableViewController(nibName: nil, bundle: nil)
         let settingsTableViewController = SettingsTableTableViewController(nibName: nil, bundle: nil)
         
-        tabBarController.viewControllers = [mainWiewController,
+        mainViewController.tabBarItem = UITabBarItem(title: "What is this?", image: TabBarImages.searchImage, tag: 0)
+        wikipediaQueryViewController.tabBarItem = UITabBarItem(title: "Wikipedia", image: TabBarImages.wikipediaImage, tag: 0)
+        queryHistoryTableViewController.tabBarItem = UITabBarItem(title: "History", image: TabBarImages.historyImage, tag: 0)
+        settingsTableViewController.tabBarItem = UITabBarItem(title: "Settings", image: TabBarImages.settingsImage, tag: 0)
+        
+        tabBarController.viewControllers = [mainViewController,
                                                 wikipediaQueryViewController,
                                                 queryHistoryTableViewController,
                                                 settingsTableViewController]

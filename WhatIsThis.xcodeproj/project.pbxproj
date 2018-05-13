@@ -34,6 +34,8 @@
 		E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */; };
 		E3F6F34020A625C100314218 /* WikipediaQueryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */; };
 		E3F8EAAF20A8336D00EDB751 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8EAAE20A8336D00EDB751 /* MainTabBarController.swift */; };
+		E3F8EAB120A8412C00EDB751 /* UIImageFromSystemBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8EAB020A8412C00EDB751 /* UIImageFromSystemBarButton.swift */; };
+		E3F8EAB320A8424D00EDB751 /* TabBarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8EAB220A8424D00EDB751 /* TabBarImages.swift */; };
 		E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF8AA72089E11600E930B4 /* Classifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
 		E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaQueryTabBarController.swift; sourceTree = "<group>"; };
 		E3F8EAAE20A8336D00EDB751 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		E3F8EAB020A8412C00EDB751 /* UIImageFromSystemBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageFromSystemBarButton.swift; sourceTree = "<group>"; };
+		E3F8EAB220A8424D00EDB751 /* TabBarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarImages.swift; sourceTree = "<group>"; };
 		E3FF8AA72089E11600E930B4 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +129,7 @@
 				E3E2AF1A209D8FC9006EFE4F /* MainView.swift */,
 				E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */,
 				E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */,
+				E3F8EAB220A8424D00EDB751 /* TabBarImages.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			children = (
 				E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */,
 				E331162A2097DE41002E5986 /* UIColor.swift */,
+				E3F8EAB020A8412C00EDB751 /* UIImageFromSystemBarButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -361,10 +367,12 @@
 				E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */,
 				E32CC89C2072D5EA00424691 /* MainViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
+				E3F8EAB120A8412C00EDB751 /* UIImageFromSystemBarButton.swift in Sources */,
 				E34B64E820912D71009E57CC /* CoreMLModelsTableViewController.swift in Sources */,
 				E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */,
 				E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */,
 				E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */,
+				E3F8EAB320A8424D00EDB751 /* TabBarImages.swift in Sources */,
 				E370391F2098E7F300C76B9B /* ResultLabel.swift in Sources */,
 				E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */,
 			);

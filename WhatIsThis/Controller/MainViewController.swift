@@ -36,8 +36,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "What is this?"
-        
         view.backgroundColor = .white
 
         navigationItem.leftBarButtonItem = wikiButton
@@ -59,7 +57,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.wikiButton.isEnabled = true
             })
             .disposed(by: bag)
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

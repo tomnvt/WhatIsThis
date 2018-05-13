@@ -27,8 +27,6 @@ class WikipediaQueryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Wiki"
-        
         view.backgroundColor = .white
         view.addSubview(descriptionTextView)
         descriptionTextView.snp.makeConstraints( { (make) -> Void in
