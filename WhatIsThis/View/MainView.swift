@@ -50,18 +50,7 @@ class MainView: UIView {
         })
         resultLabel.font = resultLabel.font.withSize(self.frame.height / 25)
         
-        self.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
-        })
-        titleLabel.layer.borderColor = UIColor.darkGray.cgColor
-        titleLabel.layer.borderWidth = 0.2
-        titleLabel.backgroundColor = UIColor(hexString: "F9F9F9")
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
-        titleLabel.numberOfLines = 3
-        titleLabel.textAlignment = .center
-        titleLabel.text = "\nWhat is this?"
+
     }
     
     required init?(coder aDecoder: NSCoder) {

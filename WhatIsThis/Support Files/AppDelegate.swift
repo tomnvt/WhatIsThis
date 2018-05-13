@@ -17,19 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let tabBarViewController = UITabBarController()
+        let tabBarController = MainTabBarController()
         
         let mainWiewController = MainViewController(nibName: nil, bundle: nil)
         let wikipediaQueryViewController = WikipediaQueryViewController(nibName: nil, bundle: nil)
         let queryHistoryTableViewController = QueryHistoryTableViewController(nibName: nil, bundle: nil)
         let settingsTableViewController = SettingsTableTableViewController(nibName: nil, bundle: nil)
         
-        tabBarViewController.viewControllers = [mainWiewController,
+        tabBarController.viewControllers = [mainWiewController,
                                                 wikipediaQueryViewController,
                                                 queryHistoryTableViewController,
                                                 settingsTableViewController]
 
-        self.window!.rootViewController = tabBarViewController
+        self.window!.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
         return true
