@@ -49,6 +49,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         mainView.saveButton.isEnabled = false
         
         view.addSubview(mainView)
+        
 
         mainView.saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         mainView.classifyButton.addTarget(self, action: #selector(classifyButtonPressed(_:)), for: .touchUpInside)

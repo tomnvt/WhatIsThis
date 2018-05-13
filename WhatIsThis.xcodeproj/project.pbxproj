@@ -106,8 +106,8 @@
 				E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */,
 				E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */,
 				E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */,
-				E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */,
 				E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */,
+				E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

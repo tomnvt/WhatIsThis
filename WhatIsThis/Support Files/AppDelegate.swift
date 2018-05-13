@@ -17,11 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let nav = UINavigationController()
+        let tabBarViewController = UITabBarController()
+        
         let mainWiewController = MainViewController(nibName: nil, bundle: nil)
-        nav.viewControllers = [mainWiewController]
+        let wikipediaQueryViewController = WikipediaQueryViewController(nibName: nil, bundle: nil)
+        let queryHistoryTableViewController = QueryHistoryTableViewController(nibName: nil, bundle: nil)
+        let settingsTableViewController = SettingsTableTableViewController(nibName: nil, bundle: nil)
+        
+        tabBarViewController.viewControllers = [mainWiewController,
+                                                wikipediaQueryViewController,
+                                                queryHistoryTableViewController,
+                                                settingsTableViewController]
 
-        self.window!.rootViewController = nav
+        self.window!.rootViewController = tabBarViewController
         self.window?.makeKeyAndVisible()
         
         return true
@@ -53,11 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
-        
         let container = NSPersistentContainer(name: "SearchHistory")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -72,7 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
