@@ -30,8 +30,9 @@ class WikipediaQueryViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(descriptionTextView)
         descriptionTextView.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.equalToSuperview().inset(10)
-            make.bottom.equalToSuperview().inset(51)
+            make.right.left.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(70)
+            make.bottom.equalToSuperview().inset(52)
         })
         descriptionTextView.font = .systemFont(ofSize: 16)
         descriptionTextView.isEditable = false
@@ -41,8 +42,7 @@ class WikipediaQueryViewController: UIViewController {
             make.right.equalToSuperview().inset(20)
             make.left.equalTo(view.snp.right).dividedBy(1.2)
             make.height.equalTo(view.snp.height).dividedBy(20)
-            make.bottom.equalToSuperview().inset(60
-            )
+            make.bottom.equalToSuperview().inset(60)
         })
         moreButton.isEnabled = false
         moreButton.addTarget(self, action: #selector(moreButtonPressed), for: .touchUpInside)

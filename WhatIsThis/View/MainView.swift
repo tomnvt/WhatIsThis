@@ -23,7 +23,7 @@ class MainView: UIView {
             make.right.equalTo(self.snp.right).dividedBy(2).inset(10)
             make.left.equalToSuperview().offset(20)
             make.height.equalTo(self.snp.height).dividedBy(15)
-            make.bottom.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(70)
         })
         
         self.addSubview(classifyButton)
@@ -31,7 +31,7 @@ class MainView: UIView {
             make.right.equalToSuperview().inset(20)
             make.left.equalTo(self.snp.right).dividedBy(2).offset(10)
             make.height.equalTo(self.snp.height).dividedBy(15)
-            make.bottom.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(70)
         })
         
         self.addSubview(imageView)
