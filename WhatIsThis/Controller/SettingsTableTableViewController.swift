@@ -7,38 +7,51 @@
 //
 
 import UIKit
+import SnapKit
 import JGProgressHUD
 
-class SettingsTableTableViewController: UITableViewController {
+class SettingsTableTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var settings = ["Speech synthesizer: ON/OFF", "CoreML Model"]
-    let defaults = UserDefaults.standard
-    let hud = JGProgressHUD(style: .dark)
+    private var settings = ["Speech synthesizer: ON/OFF", "CoreML Model"]
+    private let defaults = UserDefaults.standard
+    private var myTableView: UITableView!
+    private let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let displayWidth: CGFloat = self.view.frame.width
+        let displayHeight: CGFloat = self.view.frame.height
+
+        myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
+        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
+        myTableView.dataSource = self
+        myTableView.delegate = self
+        self.view.addSubview(myTableView)
+        
+        view.addSubview(myTableView)
+        myTableView.snp.makeConstraints( { (make) -> Void in
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            make.top.equalTo(view.snp.bottom).dividedBy(11)
+            make.bottom.equalTo(view.snp.bottom)
+        })
+        
         settings[0] = defaults.bool(forKey: "speechSynthesisIsOn") ? "Speech synthesizer: ON" : "Speech synthesizer: OFF"
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.count
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = settings[indexPath.row]
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
+        cell.textLabel!.text = "\(settings[indexPath.row])"
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch settings[indexPath.row] {
         case ("Speech synthesizer: ON"), ("Speech synthesizer: OFF"):
             defaults.set(!defaults.bool(forKey: "speechSynthesisIsOn"), forKey: "speechSynthesisIsOn")
