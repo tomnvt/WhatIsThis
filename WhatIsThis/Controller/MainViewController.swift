@@ -19,7 +19,12 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: nil, action: #selector(wikiButtonPressed))
     var settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: nil, action: #selector(settingsButtonPresed))
-
+    
+    let resultSubject = PublishSubject<String>()
+    var resultObservable: Observable<String> {
+        return resultSubject.asObservable()
+    }
+    
     let mainView = MainView()
     
     var image = UIImage()
@@ -47,7 +52,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         mainView.saveButton.isEnabled = false
         
         view.addSubview(mainView)
-        
 
         mainView.saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         mainView.classifyButton.addTarget(self, action: #selector(classifyButtonPressed(_:)), for: .touchUpInside)
@@ -57,6 +61,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.wikiButton.isEnabled = true
             })
             .disposed(by: bag)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -72,8 +77,10 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             DispatchQueue.main.async {
                 self.result = self.classifier.classify(image: ciimage)
                 self.mainView.resultLabel.text = self.result
+                WikipediaQuery.query = self.result
                 WikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!, longVersion: false)
                 self.mainView.saveButton.isEnabled = true
+                self.resultSubject.onNext(self.result)
             }
         }
     }

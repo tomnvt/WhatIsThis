@@ -22,7 +22,7 @@ class WikipediaQueryViewController: UIViewController {
     var searchMoreBarButton = UIBarButtonItem(title: "Search", style: .plain, target: nil, action: #selector(showSearchWikiDialog))
     var moreButton = MainScreenButton(title: "+")
     
-    var imageDescription = ""
+    var imageDescription = "test"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,7 @@ class WikipediaQueryViewController: UIViewController {
                 self.moreButton.isEnabled = true
             })
             .disposed(by: bag)
+        print(imageDescription)
     }
     
     
@@ -92,7 +93,7 @@ class WikipediaQueryViewController: UIViewController {
     
     @IBAction func moreButtonPressed() {
         hud.show(in: self.view)
-        WikipediaQuery.requestInfo(result: imageDescription, longVersion: true)
+        WikipediaQuery.requestInfo(result: WikipediaQuery.query, longVersion: true)
     }
     
 }

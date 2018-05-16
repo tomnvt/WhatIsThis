@@ -13,6 +13,7 @@ import RxSwift
 class WikipediaQuery {
     
     static private let wikipediaURl = "https://en.wikipedia.org/w/api.php"
+    static var query = ""
     static var queryResult = "No Wikipedia query yet."
     static let querySubject = PublishSubject<String>()
     static var queryObservable: Observable<String> {
