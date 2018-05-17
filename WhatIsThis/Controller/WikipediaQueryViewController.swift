@@ -15,14 +15,14 @@ import JGProgressHUD
 class WikipediaQueryViewController: UIViewController {
     
     private let bag = DisposeBag()
-    
     let hud = JGProgressHUD()
-    
     var descriptionTextView = UITextView()
     var searchMoreBarButton = UIBarButtonItem(title: "Search", style: .plain, target: nil, action: #selector(showSearchWikiDialog))
     var moreButton = MainScreenButton(title: "+")
+    var queries = [SearchQuery]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var imageDescription = "test"
+    var imageDescription = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,7 @@ class WikipediaQueryViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        imageDescription = WikipediaQuery.query
         WikipediaQuery.queryObservable
             .subscribe(onNext: {
                 self.hud.dismiss()
@@ -96,4 +97,15 @@ class WikipediaQueryViewController: UIViewController {
         WikipediaQuery.requestInfo(result: WikipediaQuery.query, longVersion: true)
     }
     
+    func saveQuery() {
+        let newQuery = SearchQuery(context: self.context)
+        newQuery.query = imageDescription
+        self.queries.append(newQuery)
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error saving category \(error)")
+        }
+    }
 }

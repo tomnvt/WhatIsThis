@@ -19,6 +19,8 @@ class WikipediaQuery {
     static var queryObservable: Observable<String> {
         return querySubject.asObservable()
     }
+    static var queries = [SearchQuery]()
+    static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     static func requestInfo(result: String, longVersion: Bool) {
         let result = String(result.split(separator: "\n")[0]).lowercased()
@@ -52,10 +54,24 @@ class WikipediaQuery {
                     self.querySubject.onNext(self.queryResult)
                     print(queryResult)
                 }
+                if !longVersion {
+                    save(query: query)
+                }
             }
         } else {
             queryResult = "No internet connection"
         }
     }
     
+    static func save(query: String) {
+        let newQuery = SearchQuery(context: self.context)
+        newQuery.query = query
+        self.queries.append(newQuery)
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error saving category \(error)")
+        }
+    }
 }
