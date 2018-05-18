@@ -12,7 +12,11 @@ import JGProgressHUD
 
 class SettingsTableTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    private let titles = ["Speech synthesizer", "CoreML Model"]
+    private let speechSynthesizerOption = ["ON", "OFF"]
     private var settings = ["Speech synthesizer: ON/OFF", "CoreML Model"]
+    private let models = CoreMLModels().modelNames
+    private let options = [["ON", "OFF"], CoreMLModels().modelNames]
     private let defaults = UserDefaults.standard
     private var myTableView: UITableView!
     private let hud = JGProgressHUD()
@@ -41,34 +45,42 @@ class SettingsTableTableViewController: UIViewController, UITableViewDataSource,
         settings[0] = defaults.bool(forKey: "speechSynthesisIsOn") ? "Speech synthesizer: ON" : "Speech synthesizer: OFF"
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return settings.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return options[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return titles[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(settings[indexPath.row])"
+        cell.textLabel!.text = options[indexPath.section][indexPath.row]
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch settings[indexPath.row] {
-        case ("Speech synthesizer: ON"), ("Speech synthesizer: OFF"):
-            defaults.set(!defaults.bool(forKey: "speechSynthesisIsOn"), forKey: "speechSynthesisIsOn")
-            viewDidLoad()
-            break
-        case "CoreML Model":
-            hud.show(in: self.view)
-            DispatchQueue.main.async {
-                let vc = CoreMLModelsTableViewController()
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            hud.dismiss()
-            break
-        default:
-            break
-        }
-        tableView.reloadData()
+//        switch settings[indexPath.row] {
+//        case ("Speech synthesizer: ON"), ("Speech synthesizer: OFF"):
+//            defaults.set(!defaults.bool(forKey: "speechSynthesisIsOn"), forKey: "speechSynthesisIsOn")
+//            viewDidLoad()
+//            break
+//        case "CoreML Model":
+//            hud.show(in: self.view)
+//            DispatchQueue.main.async {
+//                let vc = CoreMLModelsTableViewController()
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }
+//            hud.dismiss()
+//            break
+//        default:
+//            break
+//        }
+//        tableView.reloadData()
     }
 
 }
