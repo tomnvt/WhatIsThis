@@ -15,7 +15,7 @@ class SettingsTableTableViewController: UIViewController, UITableViewDataSource,
     private let titles = ["Speech synthesizer", "CoreML Model"]
     private let speechSynthesizerOption = ["ON", "OFF"]
     private var settings = ["Speech synthesizer: ON/OFF", "CoreML Model"]
-    private let models = CoreMLModels().modelNames
+    private let models = CoreMLModels()
     private let options = [["ON", "OFF"], CoreMLModels().modelNames]
     private let defaults = UserDefaults.standard
     private var myTableView: UITableView!
@@ -56,31 +56,69 @@ class SettingsTableTableViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return titles[section]
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
         cell.textLabel!.text = options[indexPath.section][indexPath.row]
+        
+        switch indexPath.section {
+            
+        case 0:
+            switch indexPath.row {
+            case 0:
+                cell.accessoryType = defaults.bool(forKey: "speechSynthesisIsOn") ? .checkmark : .none
+                break
+            case 1:
+                cell.accessoryType = !defaults.bool(forKey: "speechSynthesisIsOn") ? .checkmark : .none
+                break
+            default:
+                break
+            }
+            
+        case 1:
+            switch indexPath.row {
+            case defaults.integer(forKey: "selecteModelNumber"):
+                cell.accessoryType = .checkmark
+            default:
+                cell.accessoryType = .none
+                break
+            }
+            break
+            
+        default:
+            break
+        }
+        
         return cell
     }
 
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch settings[indexPath.row] {
-//        case ("Speech synthesizer: ON"), ("Speech synthesizer: OFF"):
-//            defaults.set(!defaults.bool(forKey: "speechSynthesisIsOn"), forKey: "speechSynthesisIsOn")
-//            viewDidLoad()
-//            break
-//        case "CoreML Model":
-//            hud.show(in: self.view)
-//            DispatchQueue.main.async {
-//                let vc = CoreMLModelsTableViewController()
-//                self.navigationController?.pushViewController(vc, animated: true)
-//            }
-//            hud.dismiss()
-//            break
-//        default:
-//            break
-//        }
-//        tableView.reloadData()
+        switch indexPath.section {
+            
+        case 0:
+            switch options[indexPath.section][indexPath.row] {
+            case "ON":
+                defaults.set(true, forKey: "speechSynthesisIsOn")
+                break
+            case "OFF":
+                defaults.set(false, forKey: "speechSynthesisIsOn")
+                break
+            default:
+                break
+            }
+            break
+            
+        case 1:
+            defaults.set(indexPath.row, forKey: "selecteModelNumber")
+            break
+            
+        default:
+            break
+        }
+        
+        tableView.reloadData()
     }
 
 }
