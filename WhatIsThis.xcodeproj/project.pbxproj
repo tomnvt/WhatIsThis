@@ -29,8 +29,10 @@
 		E3C44509209EF7A2005976F3 /* SearchWikiDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */; };
 		E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D5CB20A799A100534507 /* SearchHistory.xcdatamodeld */; };
 		E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */; };
+		E3DF26A020B179E100BD74AE /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF269F20B179E100BD74AE /* WikipediaView.swift */; };
 		E3E2AF19209D0844006EFE4F /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */; };
 		E3E2AF1B209D8FC9006EFE4F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF1A209D8FC9006EFE4F /* MainView.swift */; };
+		E3F1FFEE20B0C58100B0A144 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1FFED20B0C58100B0A144 /* TopBar.swift */; };
 		E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */; };
 		E3F6F34020A625C100314218 /* WikipediaQueryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */; };
 		E3F8EAAF20A8336D00EDB751 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8EAAE20A8336D00EDB751 /* MainTabBarController.swift */; };
@@ -66,8 +68,10 @@
 		E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchWikiDialogViewController.xib; sourceTree = "<group>"; };
 		E3C6D5CC20A799A100534507 /* SearchHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchHistory.xcdatamodel; sourceTree = "<group>"; };
 		E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
+		E3DF269F20B179E100BD74AE /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		E3E2AF1A209D8FC9006EFE4F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E3F1FFED20B0C58100B0A144 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
 		E3F6F33F20A625C000314218 /* WikipediaQueryTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaQueryTabBarController.swift; sourceTree = "<group>"; };
 		E3F8EAAE20A8336D00EDB751 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -127,9 +131,11 @@
 				E33116282097D07E002E5986 /* MainScreenButton.swift */,
 				E370391E2098E7F300C76B9B /* ResultLabel.swift */,
 				E3E2AF1A209D8FC9006EFE4F /* MainView.swift */,
+				E3DF269F20B179E100BD74AE /* WikipediaView.swift */,
 				E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */,
 				E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */,
 				E3F8EAB220A8424D00EDB751 /* TabBarImages.swift */,
+				E3F1FFED20B0C58100B0A144 /* TopBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3DF26A020B179E100BD74AE /* WikipediaView.swift in Sources */,
 				E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */,
 				E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */,
 				E3F8EAAF20A8336D00EDB751 /* MainTabBarController.swift in Sources */,
@@ -365,6 +372,7 @@
 				E3E2AF19209D0844006EFE4F /* SpeechSynthesizer.swift in Sources */,
 				E3F6F34020A625C100314218 /* WikipediaQueryTabBarController.swift in Sources */,
 				E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */,
+				E3F1FFEE20B0C58100B0A144 /* TopBar.swift in Sources */,
 				E32CC89C2072D5EA00424691 /* MainViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
 				E3F8EAB120A8412C00EDB751 /* UIImageFromSystemBarButton.swift in Sources */,

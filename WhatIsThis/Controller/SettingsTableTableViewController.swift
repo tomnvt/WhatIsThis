@@ -20,9 +20,16 @@ class SettingsTableTableViewController: UIViewController, UITableViewDataSource,
     private let defaults = UserDefaults.standard
     private var myTableView: UITableView!
     private let hud = JGProgressHUD()
+    var topBar = TopBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.addSubview(topBar)
+        topBar.snp.makeConstraints( { (make) -> Void in
+            make.right.left.top.equalToSuperview()
+            make.bottom.equalTo(view.snp.bottom).dividedBy(11)
+        })
         
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.view.frame.width

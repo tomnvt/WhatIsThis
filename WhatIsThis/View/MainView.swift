@@ -9,12 +9,12 @@
 import UIKit
 
 class MainView: UIView {
- 
+    
     var saveButton = MainScreenButton(title: "Save")
     var classifyButton = MainScreenButton(title: "Classify")
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
-    var titleLabel = UILabel()
+    var topBar = TopBar()
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -50,7 +50,12 @@ class MainView: UIView {
         })
         resultLabel.font = resultLabel.font.withSize(self.frame.height / 25)
         
-
+        addSubview(topBar)
+        topBar.snp.makeConstraints( { (make) -> Void in
+            make.right.left.top.equalToSuperview()
+            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
+        })
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
