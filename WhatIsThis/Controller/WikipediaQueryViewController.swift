@@ -30,42 +30,20 @@ class WikipediaQueryViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(wikipediaView)
-        
-//        view.backgroundColor = .white
-//        view.addSubview(descriptionTextView)
-//        descriptionTextView.snp.makeConstraints( { (make) -> Void in
-//            make.right.left.equalToSuperview().inset(10)
-//            make.top.equalToSuperview().inset(70)
-//            make.bottom.equalToSuperview().inset(52)
-//        })
-//        descriptionTextView.font = .systemFont(ofSize: 16)
-//        descriptionTextView.isEditable = false
-//
-//        view.addSubview(moreButton)
-//        moreButton.snp.makeConstraints( { (make) -> Void in
-//            make.right.equalToSuperview().inset(20)
-//            make.left.equalTo(view.snp.right).dividedBy(1.2)
-//            make.height.equalTo(view.snp.height).dividedBy(20)
-//            make.bottom.equalToSuperview().inset(60)
-//        })
-//        moreButton.isEnabled = false
-//        moreButton.addTarget(self, action: #selector(moreButtonPressed), for: .touchUpInside)
-//
-//        navigationItem.rightBarButtonItem = searchMoreBarButton
-//        searchMoreBarButton.target = self
+        wikipediaView.moreButton.addTarget(self, action: #selector(moreButtonPressed), for: .touchUpInside)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        imageDescription = WikipediaQuery.query
-//        WikipediaQuery.queryObservable
-//            .subscribe(onNext: {
-//                self.hud.dismiss()
-//                self.descriptionTextView.text = $0
-//                self.moreButton.isEnabled = true
-//            })
-//            .disposed(by: bag)
-//        print(imageDescription)
+        imageDescription = WikipediaQuery.query
+        WikipediaQuery.queryObservable
+            .subscribe(onNext: {
+                self.hud.dismiss()
+                self.wikipediaView.descriptionTextView.text = $0
+                self.wikipediaView.moreButton.isEnabled = true
+            })
+            .disposed(by: bag)
+        print(imageDescription)
     }
     
     
