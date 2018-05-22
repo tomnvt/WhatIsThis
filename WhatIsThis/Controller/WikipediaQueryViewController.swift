@@ -31,7 +31,6 @@ class WikipediaQueryViewController: UIViewController {
         
         view.addSubview(wikipediaView)
         wikipediaView.moreButton.addTarget(self, action: #selector(moreButtonPressed), for: .touchUpInside)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

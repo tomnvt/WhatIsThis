@@ -17,38 +17,22 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     private var tableView: UITableView!
     var topBar = TopBar()
     
+    let historyTableView = HistoryTableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(topBar)
-        topBar.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(view.snp.bottom).dividedBy(11)
-        })
-        
-        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-        let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
 
-        tableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints( { (make) -> Void in
-            make.left.equalTo(view.snp.left)
-            make.right.equalTo(view.snp.right)
-            make.top.equalTo(view.snp.bottom).dividedBy(11)
-            make.bottom.equalTo(view.snp.bottom)
-        })
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        view.addSubview(historyTableView)
+
+        historyTableView.tableView.dataSource = self
+        historyTableView.tableView.delegate = self
+
+        historyTableView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         loadQueries()
-        tableView.reloadData()
+        historyTableView.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -77,7 +61,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
             print("Error loading categories \(error)")
         }
         
-        tableView.reloadData()
+        historyTableView.tableView.reloadData()
         
     }
 

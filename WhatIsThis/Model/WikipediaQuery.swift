@@ -23,6 +23,7 @@ class WikipediaQuery {
     static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     static func requestInfo(result: String, longVersion: Bool) {
+        guard result != "" else { return }
         let result = String(result.split(separator: "\n")[0]).lowercased()
         let parametersShortQuery : [String:String] = ["format" : "json",
                                                       "action" : "query",
