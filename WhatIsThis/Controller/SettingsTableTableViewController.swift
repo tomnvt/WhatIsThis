@@ -22,32 +22,15 @@ class SettingsTableTableViewController: UIViewController, UITableViewDataSource,
     private let hud = JGProgressHUD()
     var topBar = TopBar()
     
+    let settingsTableView = SettingsTableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(topBar)
-        topBar.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(view.snp.bottom).dividedBy(11)
-        })
+        view.addSubview(settingsTableView)
         
-        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-        let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
-
-        myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
-        myTableView.dataSource = self
-        myTableView.delegate = self
-        self.view.addSubview(myTableView)
-        
-        view.addSubview(myTableView)
-        myTableView.snp.makeConstraints( { (make) -> Void in
-            make.left.equalTo(view.snp.left)
-            make.right.equalTo(view.snp.right)
-            make.top.equalTo(view.snp.bottom).dividedBy(11)
-            make.bottom.equalTo(view.snp.bottom)
-        })
+        settingsTableView.tableView.dataSource = self
+        settingsTableView.tableView.delegate = self
         
         settings[0] = defaults.bool(forKey: "speechSynthesisIsOn") ? "Speech synthesizer: ON" : "Speech synthesizer: OFF"
     }

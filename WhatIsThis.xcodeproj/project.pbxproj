@@ -23,6 +23,7 @@
 		E3502602209C3979003CF237 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3502601209C3979003CF237 /* Main.storyboard */; };
 		E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */; };
 		E370391F2098E7F300C76B9B /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370391E2098E7F300C76B9B /* ResultLabel.swift */; };
+		E385D18920B60DBB006C7518 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E385D18820B60DBB006C7518 /* SettingsTableView.swift */; };
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
 		E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */; };
 		E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */; };
@@ -63,6 +64,7 @@
 		E3502601209C3979003CF237 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 		E370391E2098E7F300C76B9B /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
+		E385D18820B60DBB006C7518 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
 		E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryHistoryTableViewController.swift; sourceTree = "<group>"; };
 		E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikiDialogViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				E3E2AF1A209D8FC9006EFE4F /* MainView.swift */,
 				E3DF269F20B179E100BD74AE /* WikipediaView.swift */,
 				E3DD196C20B4C519009B2435 /* HistoryTableView.swift */,
+				E385D18820B60DBB006C7518 /* SettingsTableView.swift */,
 				E3502601209C3979003CF237 /* Main.storyboard */,
 				E32CC8A02072D5EA00424691 /* Assets.xcassets */,
 				E33116282097D07E002E5986 /* MainScreenButton.swift */,
@@ -386,6 +389,7 @@
 				E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */,
 				E3F8EAB320A8424D00EDB751 /* TabBarImages.swift in Sources */,
 				E370391F2098E7F300C76B9B /* ResultLabel.swift in Sources */,
+				E385D18920B60DBB006C7518 /* SettingsTableView.swift in Sources */,
 				E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
