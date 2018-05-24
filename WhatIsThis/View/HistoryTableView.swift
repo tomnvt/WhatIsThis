@@ -12,6 +12,7 @@ class HistoryTableView: UIView {
     
     var tableView: UITableView!
     var topBar = TopBar()
+    let clearButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -35,6 +36,16 @@ class HistoryTableView: UIView {
             make.right.equalTo(self.snp.right)
             make.top.equalTo(self.snp.bottom).dividedBy(11)
             make.bottom.equalTo(self.snp.bottom)
+        })
+        
+        self.addSubview(clearButton)
+        clearButton.setTitle("Clear", for: .normal)
+        clearButton.setTitleColor(.blue, for: .normal)
+        clearButton.snp.makeConstraints( { (make) -> Void in
+            make.right.equalToSuperview().inset(10)
+            make.left.equalTo(snp.right).inset(60)
+            make.top.equalTo(snp.top).offset(20)
+            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
         })
     }
     
