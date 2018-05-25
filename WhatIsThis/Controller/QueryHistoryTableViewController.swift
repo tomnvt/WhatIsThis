@@ -28,6 +28,8 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         historyTableView.tableView.delegate = self
 
         historyTableView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        historyTableView.clearButton.addTarget(self, action: #selector(clearQueries), for: .touchUpInside)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,17 +54,22 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func loadQueries() {
-        
         let request : NSFetchRequest<SearchQuery> = SearchQuery.fetchRequest()
         
         do{
             queries = try context.fetch(request)
         } catch {
-            print("Error loading categories \(error)")
+            print("Error loading queriws \(error)")
         }
         
         historyTableView.tableView.reloadData()
-        
     }
 
+    @IBAction func clearQueries() {
+        for query in queries {
+            context.delete(query)
+        }
+        viewWillAppear(true)
+    }
+    
 }
