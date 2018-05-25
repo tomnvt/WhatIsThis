@@ -66,10 +66,20 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     }
 
     @IBAction func clearQueries() {
-        for query in queries {
-            context.delete(query)
+        let clearConfirmation = UIAlertController()
+        clearConfirmation.title = "Are you sure you want to clear the history?"
+        
+        let yesButton = UIAlertAction(title: "Yes, clear it!", style: .destructive) { _ in
+            for query in self.queries {
+                self.context.delete(query)
+            }
+            self.viewWillAppear(true)
         }
-        viewWillAppear(true)
+        
+        clearConfirmation.addAction(yesButton)
+        clearConfirmation.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(clearConfirmation, animated: true)
     }
-    
+
 }
