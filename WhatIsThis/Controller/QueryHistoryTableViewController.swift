@@ -66,6 +66,13 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     }
 
     @IBAction func clearQueries() {
+        guard queries != [] else {
+            let nothingToClearAlert = UIAlertController(title: "Nothing to clear here.", message: nil, preferredStyle: .alert)
+            nothingToClearAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(nothingToClearAlert, animated: true)
+            return
+        }
+        
         let clearConfirmation = UIAlertController()
         clearConfirmation.title = "Are you sure you want to clear the history?"
         
