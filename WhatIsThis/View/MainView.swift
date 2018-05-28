@@ -38,7 +38,7 @@ class MainView: UIView {
         imageView.snp.makeConstraints( { (make) -> Void in
             make.right.left.equalToSuperview()
             make.height.equalTo(self.snp.height).dividedBy(2)
-            make.bottom.equalTo(self.snp.bottom).dividedBy(1.2)
+            make.bottom.equalTo(self.saveButton.snp.top).multipliedBy(0.95)
         })
         imageView.contentMode = UIViewContentMode.scaleAspectFit
         
