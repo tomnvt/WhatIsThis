@@ -15,7 +15,6 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     var queries = [SearchQuery]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var tableView: UITableView!
-    var topBar = TopBar()
     
     let historyTableView = HistoryTableView()
     

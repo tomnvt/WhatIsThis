@@ -10,7 +10,7 @@ import UIKit
 
 class WikipediaView: UIView {
     
-    var topBar = TopBar()
+    var topBar = TopBar(text: "\nWikipedia")
     var descriptionTextView = UITextView()
     var moreButton = MainScreenButton(title: "+")
     

@@ -10,7 +10,7 @@ import UIKit
 
 class TopBar: UILabel {
     
-    required init() {
+    required init(text: String) {
         super.init(frame: .zero)
         
         layer.borderColor = UIColor.darkGray.cgColor
@@ -19,7 +19,7 @@ class TopBar: UILabel {
         font = UIFont.boldSystemFont(ofSize: 18.0)
         numberOfLines = 3
         textAlignment = .center
-        text = "\nWhat is this?"
+        self.text = text
     }
     
     required init?(coder aDecoder: NSCoder) {

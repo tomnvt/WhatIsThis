@@ -20,7 +20,6 @@ class SettingsTableTableViewController: UIViewController, UITableViewDataSource,
     private let defaults = UserDefaults.standard
     private var myTableView: UITableView!
     private let hud = JGProgressHUD()
-    var topBar = TopBar()
     
     let settingsTableView = SettingsTableView()
     

@@ -11,7 +11,7 @@ import UIKit
 class HistoryTableView: UIView {
     
     var tableView: UITableView!
-    var topBar = TopBar()
+    var topBar = TopBar(text: "\nHistory")
     let clearButton = UIButton()
     
     override init(frame: CGRect) {
