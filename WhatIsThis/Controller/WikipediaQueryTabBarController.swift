@@ -12,7 +12,7 @@ import PopupDialog
 import JGProgressHUD
 import CoreData
 
-class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDelegate, ShowDescriptionDelegate {
+class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     let item1 = WikipediaQueryViewController()
     let item2 = QueryHistoryTableViewController()
@@ -57,10 +57,6 @@ class WikipediaQueryTabBarController: UITabBarController, UITabBarControllerDele
         guard imageDescription != "" else { return }
         item1.updateAfterNewSearch(query: imageDescription)
         item2.queryHistory.append(imageDescription)
-    }
-    
-    func show(description: String) {
-        imageDescription = description
     }
     
     @IBAction func showSearchWikiDialog() {

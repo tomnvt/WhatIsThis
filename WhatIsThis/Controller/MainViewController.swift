@@ -11,15 +11,8 @@ import ImageIO
 import SnapKit
 import RxSwift
 
-protocol ShowDescriptionDelegate {
-    func show(description: String)
-}
-
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    var wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: nil, action: #selector(wikiButtonPressed))
-    var settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: nil, action: #selector(settingsButtonPresed))
-    
+
     let resultSubject = PublishSubject<String>()
     var resultObservable: Observable<String> {
         return resultSubject.asObservable()
@@ -27,28 +20,15 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     let mainView = MainView()
     
-    var image = UIImage()
-    let imagePicker = UIImagePickerController()
-    
     var result = ""
     
     let classifier = Classifier()
-    
-    var delegate : ShowDescriptionDelegate?
-    
-    let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
 
-        navigationItem.leftBarButtonItem = wikiButton
-        navigationItem.rightBarButtonItem = settingsButton
-        
-        wikiButton.target = self
-        settingsButton.target = self
-        
         mainView.saveButton.isEnabled = false
         
         view.addSubview(mainView)
@@ -56,11 +36,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         mainView.saveButton.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         mainView.classifyButton.addTarget(self, action: #selector(classifyButtonPressed(_:)), for: .touchUpInside)
         
-        WikipediaQuery.queryObservable
-            .subscribe({_ in
-                self.wikiButton.isEnabled = true
-            })
-            .disposed(by: bag)
         
     }
     
@@ -72,11 +47,9 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             guard let ciimage = CIImage(image: image) else {
                 fatalError("Could not convert image to CIImage.")
             }
-            self.wikiButton.isEnabled = false
             mainView.resultLabel.text = "Processing..."
             DispatchQueue.main.async {
-                self.result = self.classifier.classify(image: ciimage)
-                self.mainView.resultLabel.text = self.result
+                self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)
                 WikipediaQuery.query = self.result
                 WikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!, longVersion: false)
                 self.mainView.saveButton.isEnabled = true
@@ -92,20 +65,10 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         present(picker, animated: true)
     }
     
-    @IBAction func wikiButtonPressed() {
-        let vc = WikipediaQueryTabBarController()
-        delegate = vc
-        vc.show(description: result)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @IBAction func settingsButtonPresed() {
-        let vc = SettingsTableTableViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(save(_:didFinishSavingWithError:contextInfo:)), nil)
+        if let image = mainView.imageView.image {
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(save(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
     }
     
     @objc func save(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
