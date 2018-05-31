@@ -14,7 +14,7 @@ class MainView: UIView {
     var classifyButton = MainScreenButton(title: "Classify")
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
-    var topBar = TopBar(text: "\nWhat is this")
+    var topBar = TopBar(text: "\nWhat is this?")
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)

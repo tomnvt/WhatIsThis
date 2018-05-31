@@ -56,7 +56,7 @@ class WikipediaQuery {
                     print(queryResult)
                 }
                 if !longVersion {
-                    save(query: query)
+                    save(query: result)
                 }
             }
         } else {
@@ -71,6 +71,7 @@ class WikipediaQuery {
         
         do {
             try context.save()
+            print("Saved \(String(describing: newQuery.query))")
         } catch {
             print("Error saving category \(error)")
         }
