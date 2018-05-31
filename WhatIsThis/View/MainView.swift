@@ -10,8 +10,8 @@ import UIKit
 
 class MainView: UIView {
     
-    var saveButton = MainScreenButton(title: "Save")
-    var classifyButton = MainScreenButton(title: "Classify")
+    var saveButton = CustomButton(title: "Save")
+    var classifyButton = CustomButton(title: "Classify")
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
     var topBar = TopBar(text: "\nWhat is this?")

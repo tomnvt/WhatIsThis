@@ -17,7 +17,6 @@ class WikipediaQueryViewController: UIViewController {
     private let bag = DisposeBag()
     let hud = JGProgressHUD()
     var descriptionTextView = UITextView()
-    var moreButton = MainScreenButton(title: "+")
     var queries = [SearchQuery]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
