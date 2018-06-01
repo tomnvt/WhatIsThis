@@ -14,10 +14,39 @@ class MainView: UIView {
     var classifyButton = CustomButton(title: "Classify")
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
+    var startInfo = UILabel()
     var topBar = TopBar(text: "\nWhat is this?")
-    
+
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
+        self.addSubview(imageView)
+        imageView.snp.makeConstraints( { (make) -> Void in
+            make.right.left.top.bottom.equalToSuperview()
+        })
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        
+        addSubview(startInfo)
+        startInfo.snp.makeConstraints( { (make) -> Void in
+            make.right.left.top.bottom.equalToSuperview()
+        })
+        startInfo.textAlignment = .center
+        startInfo.numberOfLines = 3
+        startInfo.text = "TAKE A PHOTO\nOR\nCHOOSE ONE FROM YOUR LIBRARY"
+        
+        self.addSubview(resultLabel)
+        resultLabel.snp.makeConstraints( { (make) -> Void in
+            make.right.left.equalToSuperview().inset(50)
+            make.top.equalToSuperview().offset(self.frame.height / 8.5)
+            make.bottom.equalTo(self.snp.bottom).multipliedBy(0.30)
+        })
+        resultLabel.font = resultLabel.font.withSize(self.frame.height / 25)
+        
+        addSubview(topBar)
+        topBar.snp.makeConstraints( { (make) -> Void in
+            make.right.left.top.equalToSuperview()
+            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
+        })
+        
         self.addSubview(saveButton)
         saveButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalTo(self.snp.right).dividedBy(2).inset(10)
@@ -25,6 +54,7 @@ class MainView: UIView {
             make.height.equalTo(self.snp.height).dividedBy(15)
             make.bottom.equalToSuperview().inset(70)
         })
+        saveButton.isHidden = true
         
         self.addSubview(classifyButton)
         classifyButton.snp.makeConstraints( { (make) -> Void in
@@ -34,27 +64,7 @@ class MainView: UIView {
             make.bottom.equalToSuperview().inset(70)
         })
         
-        self.addSubview(imageView)
-        imageView.snp.makeConstraints( { (make) -> Void in
-            make.right.left.equalToSuperview()
-            make.height.equalTo(self.snp.height).dividedBy(2)
-            make.bottom.equalTo(self.saveButton.snp.top).multipliedBy(0.95)
-        })
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
-        
-        self.addSubview(resultLabel)
-        resultLabel.snp.makeConstraints( { (make) -> Void in
-            make.right.left.equalToSuperview()
-            make.top.equalToSuperview().offset(self.frame.height / 10)
-            make.bottom.equalTo(imageView.snp.top)
-        })
-        resultLabel.font = resultLabel.font.withSize(self.frame.height / 25)
-        
-        addSubview(topBar)
-        topBar.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
-        })
+        self.backgroundColor = UIColor(hexString: "D9DADA")
         
     }
     

@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Takes pictures to demonstrate image recognition.</string>
+	<string>Give me your camera!</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Please allow photo library addition.</string>
 	<key>UILaunchStoryboardName</key>
