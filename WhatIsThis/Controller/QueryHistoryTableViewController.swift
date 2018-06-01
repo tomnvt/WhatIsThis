@@ -11,12 +11,10 @@ import CoreData
 
 class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var queryHistory : [String] = []
-    var queries = [SearchQuery]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private var tableView: UITableView!
+    private var queries = [SearchQuery]()
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    let historyTableView = HistoryTableView()
+    private let historyTableView = HistoryTableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +29,13 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         historyTableView.clearButton.addTarget(self, action: #selector(clearQueries), for: .touchUpInside)
     }
 
+    
     override func viewWillAppear(_ animated: Bool) {
         loadQueries()
         historyTableView.tableView.reloadData()
     }
 
+    
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,6 +52,9 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         return cell
     }
     
+    
+    //: MARK: - Method for loading saved queries from context
+    
     func loadQueries() {
         let request : NSFetchRequest<SearchQuery> = SearchQuery.fetchRequest()
         
@@ -64,6 +67,9 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         historyTableView.tableView.reloadData()
     }
 
+    
+    //: MARK: - Method for removing all saved queries from the context
+    
     @IBAction func clearQueries() {
         guard queries != [] else {
             let nothingToClearAlert = UIAlertController(title: "Nothing to clear here.", message: nil, preferredStyle: .alert)

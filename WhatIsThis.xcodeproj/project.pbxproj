@@ -15,7 +15,6 @@
 		E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */; };
 		E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */; };
 		E331162B2097DE41002E5986 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E331162A2097DE41002E5986 /* UIColor.swift */; };
-		E34B64E820912D71009E57CC /* CoreMLModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */; };
 		E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */; };
 		E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */; };
 		E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */; };
@@ -55,7 +54,6 @@
 		E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModels.swift; sourceTree = "<group>"; };
 		E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
 		E331162A2097DE41002E5986 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModelsTableViewController.swift; sourceTree = "<group>"; };
 		E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
 		E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */,
 				E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */,
 				E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */,
-				E34B64E720912D71009E57CC /* CoreMLModelsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -379,7 +376,6 @@
 				E32CC89C2072D5EA00424691 /* MainViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
 				E3F8EAB120A8412C00EDB751 /* UIImageFromSystemBarButton.swift in Sources */,
-				E34B64E820912D71009E57CC /* CoreMLModelsTableViewController.swift in Sources */,
 				E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */,
 				E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */,
 				E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */,

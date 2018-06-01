@@ -8,18 +8,14 @@
 
 import UIKit
 import SnapKit
-import JGProgressHUD
 
 class SettingsTableTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     private let titles = ["Speech synthesizer", "CoreML Model"]
-    private let speechSynthesizerOption = ["ON", "OFF"]
     private var settings = ["Speech synthesizer: ON/OFF", "CoreML Model"]
     private let models = CoreMLModels()
     private let options = [["ON", "OFF"], CoreMLModels().modelNames]
     private let defaults = UserDefaults.standard
-    private var myTableView: UITableView!
-    private let hud = JGProgressHUD()
     
     let settingsTableView = SettingsTableView()
     

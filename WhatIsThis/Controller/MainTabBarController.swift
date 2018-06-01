@@ -15,6 +15,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
     }
     
+    //: MARK: UITabBarController method for view change animation
+    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         let fromView: UIView = tabBarController.selectedViewController!.view
