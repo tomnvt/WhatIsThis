@@ -35,6 +35,8 @@ class WikipediaQueryViewController: UIViewController {
                 self.hud.dismiss()
                 self.wikipediaView.descriptionTextView.text = $0
                 self.wikipediaView.moreButton.isEnabled = true
+                self.wikipediaView.startInfoLabel.isHidden = true
+                self.wikipediaView.descriptionTextView.isHidden = false
             })
             .disposed(by: bag)
     }
