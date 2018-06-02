@@ -22,13 +22,13 @@ class WikipediaView: UIView {
         addSubview(topBar)
         topBar.snp.makeConstraints( { (make) -> Void in
             make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
+            make.bottom.equalTo(self.snp.bottom).dividedBy(10)
         })
         
         addSubview(descriptionTextView)
         descriptionTextView.snp.makeConstraints( { (make) -> Void in
             make.right.left.equalToSuperview().inset(10)
-            make.top.equalToSuperview().inset(70)
+            make.top.equalTo(topBar.snp.bottom).offset(10)
             make.bottom.equalToSuperview().inset(52)
         })
         descriptionTextView.font = .systemFont(ofSize: 16)
@@ -38,9 +38,10 @@ class WikipediaView: UIView {
         moreButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(70)
-            make.width.height.equalTo(50)
+            make.height.equalTo(self.snp.height).dividedBy(10)
+            make.width.equalTo(moreButton   .snp.height)
         })
-        
+        moreButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
     required init?(coder aDecoder: NSCoder) {

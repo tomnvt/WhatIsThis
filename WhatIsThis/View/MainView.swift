@@ -12,7 +12,7 @@ import SwiftRichString
 class MainView: UIView {
     
     var saveButton = CustomButton(title: "Save")
-    var classifyButton = CustomButton(title: "Classify")
+    var classifyButton = CustomButton(title: "")
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
     var startInfoLabel = UILabel()
@@ -46,7 +46,6 @@ class MainView: UIView {
         let startInfoText = "<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>"
         startInfoLabel.attributedText = startInfoText.set(style: styleGroup)
         
-        
         self.addSubview(resultLabel)
         resultLabel.snp.makeConstraints( { (make) -> Void in
             make.right.left.equalToSuperview().inset(50)
@@ -58,26 +57,27 @@ class MainView: UIView {
         addSubview(topBar)
         topBar.snp.makeConstraints( { (make) -> Void in
             make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
+            make.bottom.equalTo(self.snp.bottom).dividedBy(10)
         })
         
         self.addSubview(saveButton)
         saveButton.snp.makeConstraints( { (make) -> Void in
-            make.right.equalTo(self.snp.right).dividedBy(2).inset(10)
             make.left.equalToSuperview().offset(20)
-            make.height.equalTo(self.snp.height).dividedBy(15)
             make.bottom.equalToSuperview().inset(70)
+            make.height.equalTo(self.snp.height).dividedBy(10)
+            make.width.equalTo(saveButton.snp.height)
         })
         saveButton.isHidden = true
-        
+
         self.addSubview(classifyButton)
         classifyButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalToSuperview().inset(20)
-            make.left.equalTo(self.snp.right).dividedBy(2).offset(10)
-            make.height.equalTo(self.snp.height).dividedBy(15)
             make.bottom.equalToSuperview().inset(70)
+            make.height.equalTo(self.snp.height).dividedBy(10)
+            make.width.equalTo(classifyButton.snp.height)
         })
-        
+        classifyButton.setImage(TabBarImages.cameraImage, for: .normal)
+            
         self.backgroundColor = UIColor(hexString: "D9DADA")
         
     }

@@ -13,8 +13,8 @@ class TopBar: UILabel {
     required init(text: String) {
         super.init(frame: .zero)
         
-        layer.borderColor = UIColor.darkGray.cgColor
-        layer.borderWidth = 0.2
+        layer.borderColor = UIColor.gray.cgColor
+        layer.borderWidth = 0.5
         backgroundColor = UIColor(hexString: "F9F9F9")
         font = UIFont.boldSystemFont(ofSize: 18.0)
         numberOfLines = 3

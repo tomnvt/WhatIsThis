@@ -11,7 +11,7 @@ import UIKit
 class CustomButton: UIButton {
     
     required init(title: String) {
-        super.init(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
+        super.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         
         setTitle(title, for: .normal)
         setTitleColor(.black, for: .normal)
@@ -26,7 +26,9 @@ class CustomButton: UIButton {
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = 2
         
-        layer.cornerRadius = frame.width / 2
+        layer.cornerRadius = frame.width / 3
+        
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
     }
     
     required init?(coder aDecoder: NSCoder) {

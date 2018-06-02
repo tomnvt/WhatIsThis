@@ -14,5 +14,6 @@ class TabBarImages {
     static let wikipediaImage = UIImage.imageFromSystemBarButton(.bookmarks)
     static let historyImage = UIImage.imageFromSystemBarButton(.reply)
     static let settingsImage = UIImage.imageFromSystemBarButton(.organize)
+    static let cameraImage = UIImage.imageFromSystemBarButton(.camera)
 
 }

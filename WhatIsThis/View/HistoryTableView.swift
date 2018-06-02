@@ -20,7 +20,7 @@ class HistoryTableView: UIView {
         self.addSubview(topBar)
         topBar.snp.makeConstraints( { (make) -> Void in
             make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
+            make.bottom.equalTo(self.snp.bottom).dividedBy(10)
         })
         
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
@@ -34,7 +34,7 @@ class HistoryTableView: UIView {
         tableView.snp.makeConstraints( { (make) -> Void in
             make.left.equalTo(self.snp.left)
             make.right.equalTo(self.snp.right)
-            make.top.equalTo(self.snp.bottom).dividedBy(11)
+            make.top.equalTo(self.topBar.snp.bottom)
             make.bottom.equalTo(self.snp.bottom)
         })
         
@@ -44,8 +44,8 @@ class HistoryTableView: UIView {
         clearButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalToSuperview().inset(10)
             make.left.equalTo(snp.right).inset(60)
-            make.top.equalTo(snp.top).offset(20)
-            make.bottom.equalTo(self.snp.bottom).dividedBy(11)
+            make.top.equalTo(snp.top).offset(24)
+            make.bottom.equalTo(topBar.snp.bottom)
         })
     }
     

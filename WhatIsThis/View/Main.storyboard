@@ -13,6 +13,7 @@
         <!--Wikipedia Query Tab Bar Controller-->
         <scene sceneID="ZwV-Zg-Xa3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIn-c3-aZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Cr2-3y-xlA" customClass="WikipediaQueryTabBarController" customModule="WhatIsThis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LzX-5c-uCQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -24,7 +25,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" id="cua-2v-UnO"/>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XIn-c3-aZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="583.20000000000005" y="1100.5997001499252"/>
         </scene>
