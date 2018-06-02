@@ -53,6 +53,7 @@ class WikipediaQuery {
                     let pageid = wikiJSON["query"]["pageids"][0].stringValue
                     self.queryResult = wikiJSON["query"]["pages"][pageid]["extract"].stringValue.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
                     self.querySubject.onNext(self.queryResult)
+                    print("Result:")
                     print(queryResult)
                 }
                 if !longVersion {

@@ -27,16 +27,19 @@ class WikipediaQueryViewController: UIViewController {
         
         view.addSubview(wikipediaView)
         wikipediaView.moreButton.addTarget(self, action: #selector(moreButtonPressed), for: .touchUpInside)
+        wikipediaView.newQueryButton.addTarget(self, action: #selector(showSearchWikiDialog), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print(WikipediaQuery.query)
         WikipediaQuery.queryObservable
             .subscribe(onNext: {
                 self.hud.dismiss()
-                self.wikipediaView.descriptionTextView.text = $0
+                self.wikipediaView.descriptionTextView.text = $0 + "\n\n\n\n"
                 self.wikipediaView.moreButton.isEnabled = true
                 self.wikipediaView.startInfoLabel.isHidden = true
                 self.wikipediaView.descriptionTextView.isHidden = false
+                self.wikipediaView.moreButton.isHidden = false
             })
             .disposed(by: bag)
     }
@@ -63,6 +66,7 @@ class WikipediaQueryViewController: UIViewController {
     func updateAfterNewSearch(query: String?) {
         hud.show(in: self.view)
         guard let enteredText = query else { return }
+        WikipediaQuery.query = enteredText
         WikipediaQuery.requestInfo(result: enteredText, longVersion: false)
     }
     

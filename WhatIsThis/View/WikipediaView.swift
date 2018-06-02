@@ -14,6 +14,7 @@ class WikipediaView: UIView {
     var topBar = TopBar(text: "\nWikipedia")
     var descriptionTextView = UITextView()
     var moreButton = CustomButton(title: "+")
+    var newQueryButton = CustomButton(title: "")
     let startInfoLabel = UILabel()
     
     override init(frame: CGRect) {
@@ -56,6 +57,17 @@ class WikipediaView: UIView {
             make.width.equalTo(moreButton.snp.height)
         })
         moreButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        moreButton.isHidden = true
+        
+        self.addSubview(newQueryButton)
+        newQueryButton.snp.makeConstraints( { (make) -> Void in
+            make.left.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().inset(70)
+            make.height.equalTo(self.snp.height).dividedBy(10)
+            make.width.equalTo(newQueryButton.snp.height)
+        })
+        newQueryButton.setImage(TabBarImages.searchImage, for: .normal)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

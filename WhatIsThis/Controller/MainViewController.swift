@@ -53,7 +53,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             mainView.saveButton.isHidden = false
             DispatchQueue.main.async {
                 self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)
-                WikipediaQuery.query = self.result
+                WikipediaQuery.query = self.mainView.resultLabel.text!
                 WikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!, longVersion: false)
                 self.mainView.saveButton.isEnabled = true
                 self.resultSubject.onNext(self.result)
