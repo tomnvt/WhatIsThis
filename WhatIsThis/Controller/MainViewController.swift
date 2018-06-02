@@ -49,7 +49,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
             mainView.resultLabel.text = "Processing..."
             mainView.resultLabel.backgroundColor = UIColor(hexString: "F9F9F9")
-            mainView.startInfo.isHidden = true
+            mainView.startInfoLabel.isHidden = true
             mainView.saveButton.isHidden = false
             DispatchQueue.main.async {
                 self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)

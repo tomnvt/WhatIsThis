@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftRichString
 
 class MainView: UIView {
     
@@ -14,9 +15,17 @@ class MainView: UIView {
     var classifyButton = CustomButton(title: "Classify")
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
-    var startInfo = UILabel()
+    var startInfoLabel = UILabel()
     var topBar = TopBar(text: "\nWhat is this?")
-
+    
+    let normal = Style {
+        $0.font = SystemFonts.Helvetica_Light.font(size: 30)
+    }
+    
+    let bold = Style {
+        $0.font = SystemFonts.Helvetica_Bold.font(size: 30)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         self.addSubview(imageView)
@@ -25,13 +34,18 @@ class MainView: UIView {
         })
         imageView.contentMode = UIViewContentMode.scaleAspectFill
         
-        addSubview(startInfo)
-        startInfo.snp.makeConstraints( { (make) -> Void in
+        addSubview(startInfoLabel)
+        startInfoLabel.snp.makeConstraints( { (make) -> Void in
             make.right.left.top.bottom.equalToSuperview()
         })
-        startInfo.textAlignment = .center
-        startInfo.numberOfLines = 3
-        startInfo.text = "TAKE A PHOTO\nOR\nCHOOSE ONE FROM YOUR LIBRARY"
+        
+        let styleGroup = StyleGroup(base: normal, ["bold": bold])
+        
+        startInfoLabel.textAlignment = .center
+        startInfoLabel.numberOfLines = 3
+        let startInfoText = "<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>"
+        startInfoLabel.attributedText = startInfoText.set(style: styleGroup)
+        
         
         self.addSubview(resultLabel)
         resultLabel.snp.makeConstraints( { (make) -> Void in

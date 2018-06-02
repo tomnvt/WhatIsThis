@@ -14,7 +14,7 @@
 		E32CC8A12072D5EA00424691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32CC8A02072D5EA00424691 /* Assets.xcassets */; };
 		E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */; };
 		E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */; };
-		E331162B2097DE41002E5986 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E331162A2097DE41002E5986 /* UIColor.swift */; };
+		E331162B2097DE41002E5986 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E331162A2097DE41002E5986 /* UIColor+Hex.swift */; };
 		E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */; };
 		E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */; };
 		E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */; };
@@ -29,6 +29,7 @@
 		E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D5CB20A799A100534507 /* SearchHistory.xcdatamodeld */; };
 		E3C75E6920C0185800B335A2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C75E6820C0185800B335A2 /* CustomButton.swift */; };
 		E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */; };
+		E3D06A3C20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D06A3B20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift */; };
 		E3DD196D20B4C519009B2435 /* HistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD196C20B4C519009B2435 /* HistoryTableView.swift */; };
 		E3DF26A020B179E100BD74AE /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF269F20B179E100BD74AE /* WikipediaView.swift */; };
 		E3E2AF19209D0844006EFE4F /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */; };
@@ -36,7 +37,7 @@
 		E3F1FFEE20B0C58100B0A144 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1FFED20B0C58100B0A144 /* TopBar.swift */; };
 		E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */; };
 		E3F8EAAF20A8336D00EDB751 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8EAAE20A8336D00EDB751 /* MainTabBarController.swift */; };
-		E3F8EAB120A8412C00EDB751 /* UIImageFromSystemBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8EAB020A8412C00EDB751 /* UIImageFromSystemBarButton.swift */; };
+		E3F8EAB120A8412C00EDB751 /* UIImage+SystemBarButtonExtraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8EAB020A8412C00EDB751 /* UIImage+SystemBarButtonExtraction.swift */; };
 		E3F8EAB320A8424D00EDB751 /* TabBarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8EAB220A8424D00EDB751 /* TabBarImages.swift */; };
 		E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF8AA72089E11600E930B4 /* Classifier.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +54,7 @@
 		E32CC8A52072D5EA00424691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModels.swift; sourceTree = "<group>"; };
 		E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
-		E331162A2097DE41002E5986 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E331162A2097DE41002E5986 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
 		E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		E3C6D5CC20A799A100534507 /* SearchHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchHistory.xcdatamodel; sourceTree = "<group>"; };
 		E3C75E6820C0185800B335A2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
+		E3D06A3B20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Formatting.swift"; sourceTree = "<group>"; };
 		E3DD196C20B4C519009B2435 /* HistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableView.swift; sourceTree = "<group>"; };
 		E3DF269F20B179E100BD74AE /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 		E3F1FFED20B0C58100B0A144 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		E3F5D1EC2092560500F04248 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
 		E3F8EAAE20A8336D00EDB751 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		E3F8EAB020A8412C00EDB751 /* UIImageFromSystemBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageFromSystemBarButton.swift; sourceTree = "<group>"; };
+		E3F8EAB020A8412C00EDB751 /* UIImage+SystemBarButtonExtraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SystemBarButtonExtraction.swift"; sourceTree = "<group>"; };
 		E3F8EAB220A8424D00EDB751 /* TabBarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarImages.swift; sourceTree = "<group>"; };
 		E3FF8AA72089E11600E930B4 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,8 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */,
-				E331162A2097DE41002E5986 /* UIColor.swift */,
-				E3F8EAB020A8412C00EDB751 /* UIImageFromSystemBarButton.swift */,
+				E331162A2097DE41002E5986 /* UIColor+Hex.swift */,
+				E3F8EAB020A8412C00EDB751 /* UIImage+SystemBarButtonExtraction.swift */,
+				E3D06A3B20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftRichString/SwiftRichString.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -308,6 +312,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRichString.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D06A3C20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift in Sources */,
 				E3DF26A020B179E100BD74AE /* WikipediaView.swift in Sources */,
 				E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */,
 				E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */,
@@ -365,7 +371,7 @@
 				E3DD196D20B4C519009B2435 /* HistoryTableView.swift in Sources */,
 				E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */,
 				E3E2AF1B209D8FC9006EFE4F /* MainView.swift in Sources */,
-				E331162B2097DE41002E5986 /* UIColor.swift in Sources */,
+				E331162B2097DE41002E5986 /* UIColor+Hex.swift in Sources */,
 				E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */,
 				E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */,
 				E3C75E6920C0185800B335A2 /* CustomButton.swift in Sources */,
@@ -375,7 +381,7 @@
 				E3F1FFEE20B0C58100B0A144 /* TopBar.swift in Sources */,
 				E32CC89C2072D5EA00424691 /* MainViewController.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
-				E3F8EAB120A8412C00EDB751 /* UIImageFromSystemBarButton.swift in Sources */,
+				E3F8EAB120A8412C00EDB751 /* UIImage+SystemBarButtonExtraction.swift in Sources */,
 				E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */,
 				E3FF8AA82089E11600E930B4 /* Classifier.swift in Sources */,
 				E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */,

@@ -12,5 +12,6 @@ pod 'SnapKit'
 pod 'JGProgressHUD'
 pod 'PopupDialog', '~> 0.7'
 pod 'RxSwift'
+pod 'SwiftRichString'
 
 end
