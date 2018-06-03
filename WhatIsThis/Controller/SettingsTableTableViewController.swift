@@ -11,7 +11,7 @@ import SnapKit
 
 class SettingsTableTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    private let titles = ["Speech synthesizer", "CoreML Model"]
+    private let titles = ["Speech synthesizer", "Classification Model"]
     private var settings = ["Speech synthesizer: ON/OFF", "CoreML Model"]
     private let models = CoreMLModels()
     private let options = [["ON", "OFF"], CoreMLModels().modelNames]

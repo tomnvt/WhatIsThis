@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let tabBarController = MainTabBarController()
@@ -25,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settingsTableViewController = SettingsTableTableViewController(nibName: nil, bundle: nil)
         
         mainViewController.tabBarItem = UITabBarItem(title: "What is this?", image: TabBarImages.searchImage, tag: 0)
-        wikipediaQueryViewController.tabBarItem = UITabBarItem(title: "Wikipedia", image: TabBarImages.wikipediaImage, tag: 0)
-        queryHistoryTableViewController.tabBarItem = UITabBarItem(title: "History", image: TabBarImages.historyImage, tag: 0)
-        settingsTableViewController.tabBarItem = UITabBarItem(title: "Settings", image: TabBarImages.settingsImage, tag: 0)
+        wikipediaQueryViewController.tabBarItem = UITabBarItem(title: "Wikipedia", image: TabBarImages.wikipediaImage, tag: 1)
+        queryHistoryTableViewController.tabBarItem = UITabBarItem(title: "History", image: TabBarImages.historyImage, tag: 2)
+        settingsTableViewController.tabBarItem = UITabBarItem(title: "Settings", image: TabBarImages.settingsImage, tag: 3)
         
         tabBarController.viewControllers = [mainViewController,
                                             wikipediaQueryViewController,
