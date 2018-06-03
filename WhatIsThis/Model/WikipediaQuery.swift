@@ -22,7 +22,7 @@ class WikipediaQuery {
     static var queries = [SearchQuery]()
     static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    static func requestInfo(result: String, longVersion: Bool) {
+    static func requestInfo(result: String, longVersion: Bool, repeatedSearch: Bool = false) {
         guard result != "" else { return }
         let result = String(result.split(separator: "\n")[0]).lowercased()
         let parametersShortQuery : [String:String] = ["format" : "json",
@@ -56,7 +56,7 @@ class WikipediaQuery {
                     print("Result:")
                     print(queryResult)
                 }
-                if !longVersion {
+                if !longVersion && !repeatedSearch {
                     save(query: result)
                 }
             }
