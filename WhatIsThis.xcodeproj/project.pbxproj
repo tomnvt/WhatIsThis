@@ -22,6 +22,7 @@
 		E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */; };
 		E370391F2098E7F300C76B9B /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370391E2098E7F300C76B9B /* ResultLabel.swift */; };
 		E385D18920B60DBB006C7518 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E385D18820B60DBB006C7518 /* SettingsTableView.swift */; };
+		E386F8B420C3E4DE004604B8 /* SearchQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386F8B320C3E4DE004604B8 /* SearchQueries.swift */; };
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
 		E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */; };
 		E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */; };
@@ -62,6 +63,7 @@
 		E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 		E370391E2098E7F300C76B9B /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
 		E385D18820B60DBB006C7518 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		E386F8B320C3E4DE004604B8 /* SearchQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueries.swift; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
 		E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryHistoryTableViewController.swift; sourceTree = "<group>"; };
 		E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikiDialogViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				E3293E662089240400786AD9 /* WikipediaQuery.swift */,
 				E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */,
 				E3E2AF18209D0844006EFE4F /* SpeechSynthesizer.swift */,
+				E386F8B320C3E4DE004604B8 /* SearchQueries.swift */,
 				E3C6D5CB20A799A100534507 /* SearchHistory.xcdatamodeld */,
 			);
 			path = Model;
@@ -380,6 +383,7 @@
 				E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */,
 				E3F1FFEE20B0C58100B0A144 /* TopBar.swift in Sources */,
 				E32CC89C2072D5EA00424691 /* MainViewController.swift in Sources */,
+				E386F8B420C3E4DE004604B8 /* SearchQueries.swift in Sources */,
 				E32CC89A2072D5EA00424691 /* AppDelegate.swift in Sources */,
 				E3F8EAB120A8412C00EDB751 /* UIImage+SystemBarButtonExtraction.swift in Sources */,
 				E3F5D1ED2092560600F04248 /* GenderNet.mlmodel in Sources */,

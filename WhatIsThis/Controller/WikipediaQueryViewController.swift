@@ -31,11 +31,10 @@ class WikipediaQueryViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(WikipediaQuery.query)
         WikipediaQuery.queryObservable
             .subscribe(onNext: {
                 self.hud.dismiss()
-                self.wikipediaView.descriptionTextView.text = $0 + "\n\n\n\n"
+                self.wikipediaView.descriptionTextView.text = $0 + "\n\n\n\n\n"
                 self.wikipediaView.moreButton.isEnabled = true
                 self.wikipediaView.startInfoLabel.isHidden = true
                 self.wikipediaView.descriptionTextView.isHidden = false

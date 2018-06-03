@@ -11,7 +11,7 @@ import CoreData
 
 class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    private var queries = [SearchQuery]()
+    var queries : SearchQueries?
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private let historyTableView = HistoryTableView()
@@ -26,13 +26,21 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
 
         historyTableView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        historyTableView.clearButton.addTarget(self, action: #selector(clearQueries), for: .touchUpInside)
+        historyTableView.clearButton.addTarget(self, action: #selector(clearButtonPressed), for: .touchUpInside)
+        
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
-        loadQueries()
+        print(historyTableView.startInfoLabel.isHidden)
+        queries = SearchQueries()
         historyTableView.tableView.reloadData()
+        if queries?.queries.count == 0 {
+            historyTableView.tableView.isHidden = true
+            historyTableView.startInfoLabel.isHidden = false
+        } else {
+            historyTableView.tableView.isHidden = false
+            historyTableView.startInfoLabel.isHidden = true
+        }
     }
 
     
@@ -43,35 +51,17 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return queries.count
+        return queries?.queries.count ?? 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = queries[indexPath.row].query
+        cell.textLabel?.text = queries?.queries[indexPath.row].query
         return cell
     }
     
-    
-    //: MARK: - Method for loading saved queries from context
-    
-    func loadQueries() {
-        let request : NSFetchRequest<SearchQuery> = SearchQuery.fetchRequest()
-        
-        do{
-            queries = try context.fetch(request)
-        } catch {
-            print("Error loading queriws \(error)")
-        }
-        
-        historyTableView.tableView.reloadData()
-    }
-
-    
-    //: MARK: - Method for removing all saved queries from the context
-    
-    @IBAction func clearQueries() {
-        guard queries != [] else {
+    @IBAction func clearButtonPressed() {
+        guard queries?.queries.count != 0 else {
             let nothingToClearAlert = UIAlertController(title: "Nothing to clear here.", message: nil, preferredStyle: .alert)
             nothingToClearAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(nothingToClearAlert, animated: true)
@@ -82,16 +72,16 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         clearConfirmation.title = "Are you sure you want to clear the history?"
         
         let yesButton = UIAlertAction(title: "Yes, clear it!", style: .destructive) { _ in
-            for query in self.queries {
-                self.context.delete(query)
-            }
-            self.viewWillAppear(true)
+            print("Yes button pressed")
+            self.queries?.clearQueries()
+            self.historyTableView.startInfoLabel.isHidden = false
+            self.historyTableView.tableView.isHidden = true
         }
         
         clearConfirmation.addAction(yesButton)
         clearConfirmation.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        present(clearConfirmation, animated: true)
+        present(clearConfirmation, animated: true, completion: nil)
     }
 
 }

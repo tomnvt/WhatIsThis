@@ -62,7 +62,7 @@ class MainView: UIView {
         
         self.addSubview(saveButton)
         saveButton.snp.makeConstraints( { (make) -> Void in
-            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(70)
             make.height.equalTo(self.snp.height).dividedBy(10)
             make.width.equalTo(saveButton.snp.height)
@@ -71,7 +71,7 @@ class MainView: UIView {
 
         self.addSubview(classifyButton)
         classifyButton.snp.makeConstraints( { (make) -> Void in
-            make.right.equalToSuperview().inset(20)
+            make.left.equalToSuperview().offset(20)
             make.bottom.equalToSuperview().inset(70)
             make.height.equalTo(self.snp.height).dividedBy(10)
             make.width.equalTo(classifyButton.snp.height)

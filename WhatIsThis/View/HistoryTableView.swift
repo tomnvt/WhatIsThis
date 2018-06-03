@@ -7,16 +7,41 @@
 //
 
 import UIKit
+import SwiftRichString
 
 class HistoryTableView: UIView {
     
     var tableView: UITableView!
     var topBar = TopBar(text: "\nHistory")
     let clearButton = UIButton()
+    let startInfoLabel = UILabel()
+    
+    let normal = Style {
+        $0.font = SystemFonts.Helvetica_Light.font(size: 25)
+    }
+    
+    let bold = Style {
+        $0.font = SystemFonts.Helvetica_Bold.font(size: 30)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
 
+        addSubview(startInfoLabel)
+        startInfoLabel.snp.makeConstraints( { (make) -> Void in
+            make.right.left.top.bottom.equalToSuperview()
+        })
+        
+
+        startInfoLabel.backgroundColor = UIColor(hexString: "D9DADA")
+        
+        let styleGroup = StyleGroup(base: normal, ["bold": bold])
+        
+        startInfoLabel.textAlignment = .center
+        startInfoLabel.numberOfLines = 3
+        let startInfoText = "<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING"
+        startInfoLabel.attributedText = startInfoText.set(style: styleGroup)
+        
         self.addSubview(topBar)
         topBar.snp.makeConstraints( { (make) -> Void in
             make.right.left.top.equalToSuperview()
