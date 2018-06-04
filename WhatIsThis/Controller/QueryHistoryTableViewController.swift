@@ -41,6 +41,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
             historyTableView.tableView.isHidden = false
             historyTableView.startInfoLabel.isHidden = true
         }
+        
     }
 
     
@@ -74,7 +75,6 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         clearConfirmation.title = "Are you sure you want to clear the history?"
         
         let yesButton = UIAlertAction(title: "Yes, clear it!", style: .destructive) { _ in
-            print("Yes button pressed")
             self.queries?.clearQueries()
             self.historyTableView.startInfoLabel.isHidden = false
             self.historyTableView.tableView.isHidden = true
@@ -106,9 +106,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
             }
         }
         
-        let noAction = UIAlertAction(title: "No", style: .default) { _ in
-            print("Not gonna search")
-        }
+        let noAction = UIAlertAction(title: "No", style: .default) { _ in }
         
         searchAgainAlert.addAction(noAction)
         searchAgainAlert.addAction(yesAction)

@@ -16,14 +16,12 @@ class SearchQueries {
     
     init() {
         loadQueries()
-        print(queries)
     }
     
     //: MARK: - Method for loading all saved queries from the context
     
     func loadQueries() {
         let request : NSFetchRequest<SearchQuery> = SearchQuery.fetchRequest()
-        
         do{
             queries = try context.fetch(request)
         } catch {

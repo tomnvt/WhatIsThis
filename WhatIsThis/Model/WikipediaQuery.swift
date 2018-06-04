@@ -67,7 +67,13 @@ class WikipediaQuery {
     
     static func save(query: String) {
         let newQuery = SearchQuery(context: self.context)
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let currentDate = formatter.string(from: date)
+        
         newQuery.query = query
+        newQuery.date = currentDate
         self.queries.append(newQuery)
         
         do {
