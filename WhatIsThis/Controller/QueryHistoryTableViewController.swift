@@ -18,6 +18,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        queries = SearchQueries()
 
         view.addSubview(historyTableView)
 
@@ -31,7 +32,6 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(historyTableView.startInfoLabel.isHidden)
         queries = SearchQueries()
         historyTableView.tableView.reloadData()
         if queries?.queries.count == 0 {
@@ -41,22 +41,38 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
             historyTableView.tableView.isHidden = false
             historyTableView.startInfoLabel.isHidden = true
         }
-        
     }
 
     
     // MARK: - Table view data source
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        guard let sectionsForDates = queries?.queriesByDate.count else { return 1 }
+        return sectionsForDates
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var dateStrings = [String]()
+        if let queriesByDateUnwraped = queries?.queriesByDate {
+            dateStrings = Array(queriesByDateUnwraped.keys)
+        }
+        return dateStrings[section]
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return queries?.queries.count ?? 1
+        var queriesStrings = [[String]]()
+        if let queriesByDateUnwraped = queries?.queriesByDate {
+            queriesStrings = Array(queriesByDateUnwraped.values)
+        }
+        return queriesStrings[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = queries?.queries[indexPath.row].query
+        var queriesStrings = [[String]]()
+        if let queriesByDateUnwraped = queries?.queriesByDate {
+            queriesStrings = Array(queriesByDateUnwraped.values)
+        }
+        cell.textLabel!.text = queriesStrings[indexPath.section][indexPath.row]
         return cell
     }
     
@@ -113,5 +129,5 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         
         present(searchAgainAlert, animated: true, completion: nil)
     }
-
+    
 }

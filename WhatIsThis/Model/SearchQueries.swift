@@ -12,11 +12,12 @@ import CoreData
 class SearchQueries {
     
     var queries = [SearchQuery]()
+    var queriesByDate = [String: [String]]()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     init() {
         loadQueries()
-        getQueriesByDate()
+        queriesByDate = getQueriesByDate()
     }
     
     //: MARK: - Method for loading all saved queries from the context
@@ -41,7 +42,6 @@ class SearchQueries {
     
     func getQueriesByDate() -> [String: [String]] {
         var dates = Set<String>()
-        var queriesByDate = [String: [String]]()
         for item in queries {
             dates.insert(item.date!)
         }
