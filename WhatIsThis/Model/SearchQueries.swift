@@ -17,7 +17,7 @@ class SearchQueries {
     
     init() {
         loadQueries()
-        queriesByDate = getQueriesByDate()
+        loadQueriesByDate()
     }
     
     //: MARK: - Method for loading all saved queries from the context
@@ -40,7 +40,7 @@ class SearchQueries {
         loadQueries()
     }
     
-    func getQueriesByDate() -> [String: [String]] {
+    func loadQueriesByDate() {
         var dates = Set<String>()
         for item in queries {
             dates.insert(item.date!)
@@ -54,7 +54,6 @@ class SearchQueries {
             }
             queriesByDate[date] = queriesForGivenDate
         }
-        return queriesByDate
     }
     
 }

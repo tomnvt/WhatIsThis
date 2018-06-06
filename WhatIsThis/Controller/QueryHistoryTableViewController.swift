@@ -11,14 +11,15 @@ import CoreData
 
 class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var queries : SearchQueries?
+    private var queries: SearchQueries?
+    private var queriesByDate = [String: [String]]()
+    
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private let historyTableView = HistoryTableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        queries = SearchQueries()
 
         view.addSubview(historyTableView)
 
@@ -28,11 +29,12 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         historyTableView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         historyTableView.clearButton.addTarget(self, action: #selector(clearButtonPressed), for: .touchUpInside)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         queries = SearchQueries()
+        queriesByDate = unwrapOptional(dictionary: queries?.queriesByDate)
+        
         historyTableView.tableView.reloadData()
         if queries?.queries.count == 0 {
             historyTableView.tableView.isHidden = true
@@ -46,33 +48,20 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     
     // MARK: - Table view data source
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sectionsForDates = queries?.queriesByDate.count else { return 1 }
-        return sectionsForDates
+        return queriesByDate.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var dateStrings = [String]()
-        if let queriesByDateUnwraped = queries?.queriesByDate {
-            dateStrings = Array(queriesByDateUnwraped.keys)
-        }
-        return dateStrings[section]
+        return Array(queriesByDate.keys)[section]
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var queriesStrings = [[String]]()
-        if let queriesByDateUnwraped = queries?.queriesByDate {
-            queriesStrings = Array(queriesByDateUnwraped.values)
-        }
-        return queriesStrings[section].count
+        return Array(queriesByDate.values)[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        var queriesStrings = [[String]]()
-        if let queriesByDateUnwraped = queries?.queriesByDate {
-            queriesStrings = Array(queriesByDateUnwraped.values)
-        }
-        cell.textLabel!.text = queriesStrings[indexPath.section][indexPath.row]
+        cell.textLabel!.text = Array(queriesByDate.values)[indexPath.section][indexPath.row]
         return cell
     }
     
@@ -106,8 +95,21 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     // MARK: - Row tap action
     // After tapping a row, UIAlert asks if the user wants to search the tapped history item again
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let wordToSearchAgain = queries?.queries[indexPath.row].query else { return }
         
+        guard let wordToSearchAgain = tableView.cellForRow(at: indexPath)?.textLabel?.text else { return }
+        
+        searchAgain(wordToSearchAgain: wordToSearchAgain)
+    }
+    
+    func unwrapOptional(dictionary: [String: [String]]?) -> [String: [String]] {
+        var unwrapedDictionary = [String: [String]]()
+        if let dictionaryBeingUnwraped = dictionary {
+            unwrapedDictionary = dictionaryBeingUnwraped
+        }
+        return unwrapedDictionary
+    }
+    
+    func searchAgain(wordToSearchAgain: String) {
         let searchAgainAlert = UIAlertController(title: "Search \n\"\(wordToSearchAgain)\"\n again?", message: nil, preferredStyle: . alert)
         let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
             WikipediaQuery.querySubject.onNext("")
@@ -116,7 +118,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
             
             let fromView: UIView = self.tabBarController!.selectedViewController!.view
             let toView  : UIView = self.tabBarController!.viewControllers![1].view
-
+            
             UIView.transition(from: fromView, to: toView, duration: 0.2, options: UIViewAnimationOptions.transitionCrossDissolve) { (finished:Bool) in
                 self.tabBarController?.selectedIndex = 1
             }
