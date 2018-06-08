@@ -13,9 +13,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
 
     private var queries: SearchQueries?
     private var queriesByDate = [String: [String]]()
-    
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     private let historyTableView = HistoryTableView()
     
     override func viewDidLoad() {
@@ -34,6 +32,10 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     override func viewWillAppear(_ animated: Bool) {
         queries = SearchQueries()
         queriesByDate = unwrapOptional(dictionary: queries?.queriesByDate)
+//        let sortedDictionary = queriesByDate.sorted(by: { $0.0 < $1.0 })
+//        print(sortedDictionary[0].key)
+//        print(sortedDictionary[1].key)
+//        print(sortedDictionary[2].key)
         
         historyTableView.tableView.reloadData()
         if queries?.queries.count == 0 {
@@ -52,7 +54,9 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Array(queriesByDate.keys)[section]
+        let sortedDictionary = queriesByDate.sorted(by: { $0.0 < $1.0 })
+        return sortedDictionary[section].key
+//        return Array(queriesByDate.keys)[section]
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
