@@ -21,12 +21,9 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         super.viewDidLoad()
 
         view.addSubview(historyTableView)
-
         historyTableView.tableView.dataSource = self
         historyTableView.tableView.delegate = self
-
         historyTableView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
         historyTableView.clearButton.addTarget(self, action: #selector(clearButtonPressed), for: .touchUpInside)
     }
     
@@ -60,7 +57,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = queryByDateSorted.reversed()[indexPath.section].value[indexPath.row]
+        cell.textLabel?.text = (queryByDateSorted.reversed()[indexPath.section].value).reversed()[indexPath.row]
         return cell
     }
     

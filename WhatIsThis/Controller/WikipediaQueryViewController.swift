@@ -35,10 +35,15 @@ class WikipediaQueryViewController: UIViewController {
             .subscribe(onNext: {
                 self.hud.dismiss()
                 self.wikipediaView.descriptionTextView.text = $0 + "\n\n\n\n\n"
+                self.setView(view: self.wikipediaView.descriptionTextView, hidden: false)
                 self.wikipediaView.moreButton.isEnabled = true
-                self.wikipediaView.startInfoLabel.isHidden = true
-                self.wikipediaView.descriptionTextView.isHidden = false
-                self.wikipediaView.moreButton.isHidden = false
+            })
+            .disposed(by: bag)
+        WikipediaQuery.queryLengthObservable
+            .subscribe(onNext: {
+                if $0 == false {
+                    self.setView(view: self.wikipediaView.moreButton, hidden: false)
+                }
             })
             .disposed(by: bag)
     }
@@ -49,14 +54,15 @@ class WikipediaQueryViewController: UIViewController {
         
         let popup = PopupDialog(viewController: searchWikiDialogViewController, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true)
         
-        let buttonOne = CancelButton(title: "Cancel", height: 60, action: nil)
+        let cancelButton = CancelButton(title: "Cancel", height: 60, action: nil)
         
-        let buttonTwo = DefaultButton(title: "Search", height: 60, dismissOnTap: true) {
+        let searchButton = DefaultButton(title: "Search", height: 60, dismissOnTap: true) {
+            self.setView(view: self.wikipediaView.startInfoLabel, hidden: true)
             let query = searchWikiDialogViewController.searchTextView.text
             self.updateAfterNewSearch(query: query)
         }
         
-        popup.addButtons([buttonOne, buttonTwo])
+        popup.addButtons([cancelButton, searchButton])
         
         present(popup, animated: true, completion: nil)
         
@@ -69,10 +75,16 @@ class WikipediaQueryViewController: UIViewController {
         WikipediaQuery.requestInfo(result: enteredText, longVersion: false)
     }
     
-    
     @IBAction func moreButtonPressed() {
         hud.show(in: self.view)
         WikipediaQuery.requestInfo(result: WikipediaQuery.query, longVersion: true)
+        self.setView(view: self.wikipediaView.moreButton, hidden: true)
+    }
+    
+    func setView(view: UIView, hidden: Bool) {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            view.isHidden = hidden
+        })
     }
     
 }

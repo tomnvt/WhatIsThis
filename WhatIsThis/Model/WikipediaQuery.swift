@@ -19,6 +19,10 @@ class WikipediaQuery {
     static var queryObservable: Observable<String> {
         return querySubject.asObservable()
     }
+    static let queryLength = PublishSubject<Bool>()
+    static var queryLengthObservable: Observable<Bool> {
+        return queryLength.asObserver()
+    }
     static var queries = [SearchQuery]()
     static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -53,6 +57,7 @@ class WikipediaQuery {
                     let pageid = wikiJSON["query"]["pageids"][0].stringValue
                     self.queryResult = wikiJSON["query"]["pages"][pageid]["extract"].stringValue.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
                     self.querySubject.onNext(self.queryResult)
+                    self.queryLength.onNext(longVersion)
                     print("Result:")
                     print(queryResult)
                 }
