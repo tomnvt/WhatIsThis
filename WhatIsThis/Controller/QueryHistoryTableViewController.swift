@@ -12,7 +12,8 @@ import CoreData
 class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     private var queries: SearchQueries?
-    private var queriesByDate = [String: [String]]()
+    private var queriesByDate = [String : [String]]()
+    private var queryByDateSorted = [(key: String, value: [String])]()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private let historyTableView = HistoryTableView()
     
@@ -32,10 +33,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     override func viewWillAppear(_ animated: Bool) {
         queries = SearchQueries()
         queriesByDate = unwrapOptional(dictionary: queries?.queriesByDate)
-//        let sortedDictionary = queriesByDate.sorted(by: { $0.0 < $1.0 })
-//        print(sortedDictionary[0].key)
-//        print(sortedDictionary[1].key)
-//        print(sortedDictionary[2].key)
+        queryByDateSorted = queriesByDate.sorted(by: { $0.0 < $1.0 })
         
         historyTableView.tableView.reloadData()
         if queries?.queries.count == 0 {
@@ -46,29 +44,25 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
             historyTableView.startInfoLabel.isHidden = true
         }
     }
-
     
     // MARK: - Table view data source
     func numberOfSections(in tableView: UITableView) -> Int {
-        return queriesByDate.count
+        return queryByDateSorted.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sortedDictionary = queriesByDate.sorted(by: { $0.0 < $1.0 })
-        return sortedDictionary[section].key
-//        return Array(queriesByDate.keys)[section]
+        return queryByDateSorted.reversed()[section].key
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Array(queriesByDate.values)[section].count
+        return queryByDateSorted.reversed()[section].value.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel!.text = Array(queriesByDate.values)[indexPath.section][indexPath.row]
+        cell.textLabel?.text = queryByDateSorted.reversed()[indexPath.section].value[indexPath.row]
         return cell
     }
-    
     
     // MARK: - Clear button action
     // After "Clear" button is pressed, UIAlert requests confirmation, then clears the history or stops
@@ -95,13 +89,10 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         present(clearConfirmation, animated: true, completion: nil)
     }
     
-    
     // MARK: - Row tap action
     // After tapping a row, UIAlert asks if the user wants to search the tapped history item again
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         guard let wordToSearchAgain = tableView.cellForRow(at: indexPath)?.textLabel?.text else { return }
-        
         searchAgain(wordToSearchAgain: wordToSearchAgain)
     }
     
