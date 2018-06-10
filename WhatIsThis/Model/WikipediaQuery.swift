@@ -9,6 +9,7 @@
 import Alamofire
 import SwiftyJSON
 import RxSwift
+import Foundation
 
 class WikipediaQuery {
     
@@ -77,7 +78,7 @@ class WikipediaQuery {
         formatter.dateFormat = "dd.MM.yyyy"
         let currentDate = formatter.string(from: date)
         
-        newQuery.query = query
+        newQuery.query = query.replacingOccurrences(of: " ", with: "").uppercased()
         newQuery.date = currentDate
         self.queries.append(newQuery)
         

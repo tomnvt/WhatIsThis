@@ -76,8 +76,8 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         
         let yesButton = UIAlertAction(title: "Yes, clear it!", style: .destructive) { _ in
             self.queries?.clearQueries()
-            self.historyTableView.startInfoLabel.isHidden = false
-            self.historyTableView.tableView.isHidden = true
+            self.setView(view: self.historyTableView.tableView, hidden: true)
+            self.setView(view: self.historyTableView.startInfoLabel, hidden: false)
         }
         
         clearConfirmation.addAction(yesButton)

@@ -81,10 +81,12 @@ class WikipediaQueryViewController: UIViewController {
         self.setView(view: self.wikipediaView.moreButton, hidden: true)
     }
     
+}
+
+extension UIViewController {
     func setView(view: UIView, hidden: Bool) {
         UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
             view.isHidden = hidden
         })
     }
-    
 }
