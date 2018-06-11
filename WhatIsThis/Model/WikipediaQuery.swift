@@ -58,9 +58,8 @@ class WikipediaQuery {
                     let pageid = wikiJSON["query"]["pageids"][0].stringValue
                     self.queryResult = wikiJSON["query"]["pages"][pageid]["extract"].stringValue.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
                     self.querySubject.onNext(self.queryResult)
+                    updateResult()
                     self.queryLength.onNext(longVersion)
-                    print("Result:")
-                    print(queryResult)
                 }
                 if !longVersion && !repeatedSearch {
                     save(query: result)
@@ -78,15 +77,32 @@ class WikipediaQuery {
         formatter.dateFormat = "dd.MM.yyyy"
         let currentDate = formatter.string(from: date)
         
-        newQuery.query = query.replacingOccurrences(of: " ", with: "").uppercased()
+        newQuery.query = query.replacingOccurrences(of: " ", with: "").capitalizingFirstLetter()
         newQuery.date = currentDate
         self.queries.append(newQuery)
         
         do {
             try context.save()
-            print("Saved \(String(describing: newQuery.query))")
         } catch {
             print("Error saving category \(error)")
         }
+    }
+    
+    static func updateResult() {
+        if queryResult == "" {
+            self.querySubject.onNext("Sorry, there is no result for this query. :-(")
+        } else {
+            self.querySubject.onNext(self.queryResult)
+        }
+    }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
     }
 }

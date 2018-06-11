@@ -25,6 +25,7 @@
 		E386F8B420C3E4DE004604B8 /* SearchQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386F8B320C3E4DE004604B8 /* SearchQueries.swift */; };
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
 		E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */; };
+		E3BB8E4120CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BB8E4020CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift */; };
 		E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */; };
 		E3C44509209EF7A2005976F3 /* SearchWikiDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */; };
 		E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D5CB20A799A100534507 /* SearchHistory.xcdatamodeld */; };
@@ -66,6 +67,7 @@
 		E386F8B320C3E4DE004604B8 /* SearchQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueries.swift; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
 		E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryHistoryTableViewController.swift; sourceTree = "<group>"; };
+		E3BB8E4020CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowHideViewWithAnimation.swift"; sourceTree = "<group>"; };
 		E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikiDialogViewController.swift; sourceTree = "<group>"; };
 		E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchWikiDialogViewController.xib; sourceTree = "<group>"; };
 		E3C6D5CC20A799A100534507 /* SearchHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchHistory.xcdatamodel; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				E331162A2097DE41002E5986 /* UIColor+Hex.swift */,
 				E3F8EAB020A8412C00EDB751 /* UIImage+SystemBarButtonExtraction.swift */,
 				E3D06A3B20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift */,
+				E3BB8E4020CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			files = (
 				E3D06A3C20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift in Sources */,
 				E3DF26A020B179E100BD74AE /* WikipediaView.swift in Sources */,
+				E3BB8E4120CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift in Sources */,
 				E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */,
 				E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */,
 				E3F8EAAF20A8336D00EDB751 /* MainTabBarController.swift in Sources */,
