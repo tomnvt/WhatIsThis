@@ -16,7 +16,7 @@ class MainView: UIView {
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
     var startInfoLabel = UILabel()
-    var topBar = TopBar(text: "\nWhat is this?")
+    var topBar = TopBar(text: NSLocalizedString("\nWhat is this??", comment: ""))
     
     let normal = Style {
         $0.font = SystemFonts.Helvetica_Light.font(size: 30)
@@ -43,7 +43,7 @@ class MainView: UIView {
         
         startInfoLabel.textAlignment = .center
         startInfoLabel.numberOfLines = 3
-        let startInfoText = "<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>"
+        let startInfoText = NSLocalizedString("<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>", comment: "")
         startInfoLabel.attributedText = startInfoText.set(style: styleGroup)
         
         self.addSubview(resultLabel)

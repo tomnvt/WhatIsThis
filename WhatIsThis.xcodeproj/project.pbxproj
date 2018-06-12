@@ -21,6 +21,7 @@
 		E3502602209C3979003CF237 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3502601209C3979003CF237 /* Main.storyboard */; };
 		E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */; };
 		E370391F2098E7F300C76B9B /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370391E2098E7F300C76B9B /* ResultLabel.swift */; };
+		E3836B7920D068640093E5DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3836B7820D068640093E5DC /* Localizable.strings */; };
 		E385D18920B60DBB006C7518 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E385D18820B60DBB006C7518 /* SettingsTableView.swift */; };
 		E386F8B420C3E4DE004604B8 /* SearchQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386F8B320C3E4DE004604B8 /* SearchQueries.swift */; };
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
@@ -63,6 +64,7 @@
 		E3502601209C3979003CF237 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 		E370391E2098E7F300C76B9B /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
+		E3836B7820D068640093E5DC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E385D18820B60DBB006C7518 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		E386F8B320C3E4DE004604B8 /* SearchQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueries.swift; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				E3308B5F20928B980004C211 /* Extension */,
 				E32DBB162091C8220083E589 /* CoreML Models */,
 				E329106D208A7F3E00C5B962 /* Support Files */,
+				E3836B7820D068640093E5DC /* Localizable.strings */,
 			);
 			path = WhatIsThis;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C44509209EF7A2005976F3 /* SearchWikiDialogViewController.xib in Resources */,
+				E3836B7920D068640093E5DC /* Localizable.strings in Resources */,
 				E3502602209C3979003CF237 /* Main.storyboard in Resources */,
 				E32CC8A12072D5EA00424691 /* Assets.xcassets in Resources */,
 			);

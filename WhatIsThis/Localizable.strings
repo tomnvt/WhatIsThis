@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  WhatIsThis
+
+  Created by NVT on 12.06.18.
+  Copyright © 2018 NVT. All rights reserved.
+*/
+
+// Main view strings
+"\nWhat is this??" = "\nWhat is this?";
+"<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>" = "<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>";
+"Processing..." = "Processing...";
+"Take Photo" = "Take Photo";
+"Choose Photo" = "Choose Photo";
+"Cancel" = "Cancel";

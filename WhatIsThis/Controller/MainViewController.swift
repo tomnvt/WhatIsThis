@@ -47,7 +47,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             guard let ciimage = CIImage(image: image) else {
                 fatalError("Could not convert image to CIImage.")
             }
-            mainView.resultLabel.text = "Processing..."
+            mainView.resultLabel.text = NSLocalizedString("Processing...", comment: "")
             mainView.resultLabel.backgroundColor = UIColor(hexString: "F9F9F9")
             mainView.startInfoLabel.isHidden = true
             mainView.saveButton.isHidden = false
@@ -94,16 +94,16 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         
         let photoSourcePicker = UIAlertController()
-        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
+        let takePhoto = UIAlertAction(title: NSLocalizedString("Take Photo", comment: ""), style: .default) { [unowned self] _ in
             self.presentPhotoPicker(sourceType: .camera)
         }
-        let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
+        let choosePhoto = UIAlertAction(title: NSLocalizedString("Choose Photo", comment: ""), style: .default) { [unowned self] _ in
             self.presentPhotoPicker(sourceType: .photoLibrary)
         }
         
         photoSourcePicker.addAction(takePhoto)
         photoSourcePicker.addAction(choosePhoto)
-        photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        photoSourcePicker.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
         
         present(photoSourcePicker, animated: true)
     }
