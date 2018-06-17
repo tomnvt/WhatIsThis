@@ -11,7 +11,7 @@ import SwiftRichString
 
 class WikipediaView: UIView {
     
-    var topBar = TopBar(text: "\nWikipedia")
+    var topBar = TopBar(text: NSLocalizedString("\nWikipedia", comment: ""))
     var descriptionTextView = UITextView()
     var moreButton = CustomButton(title: "+")
     var newQueryButton = CustomButton(title: "")
@@ -30,7 +30,7 @@ class WikipediaView: UIView {
         startInfoLabel.backgroundColor = UIColor(hexString: "D9DADA")
         startInfoLabel.textAlignment = .center
         startInfoLabel.numberOfLines = 3
-        startInfoLabel.text = "NO WIKIPEDIA\nQUERY YET"
+        startInfoLabel.text = NSLocalizedString("NO WIKIPEDIA\nQUERY YET", comment: "")
         startInfoLabel.font = SystemFonts.Helvetica_Bold.font(size: 30)
         
         addSubview(topBar)
