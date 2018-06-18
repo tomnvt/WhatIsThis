@@ -6,7 +6,7 @@
   Copyright © 2018 NVT. All rights reserved.
 */
 
-"\nWhat is this??" = "\nCo to je?";
+"\nWhat is this?" = "\nCo to je?";
 "<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>" = "<bold>VYFOŤ NĚCO</bold>\nNEBO\n<bold>VYBER FOTKU</bold>";
 "Processing..." = "Zpracovávám...";
 "Take Photo" = "Fotit";
@@ -14,4 +14,8 @@
 "Cancel" = "Zrušit";
 
 "\nWikipedia" = "\nWikipedie";
-"NO WIKIPEDIA\nQUERY YET" = "DOSUD NEPROBĚHLO\nVYHLEDÁVÁNÍ";
+"NO WIKIPEDIA\nQUERY YET" = "DOSUD\nNEPROBĚHLO\nVYHLEDÁVÁNÍ";
+
+"\nHistory" = "\nHistorie";
+"Clear" = "Smazat";
+"<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NIC TO NENÍ</bold>\nVYHLEDEJ NĚCO";

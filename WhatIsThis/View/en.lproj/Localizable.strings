@@ -6,7 +6,7 @@
   Copyright © 2018 NVT. All rights reserved.
 */
 
-"\nWhat is this?" = "\nWhat Ais this?";
+"\nWhat is this?" = "\nWhat is this?";
 "<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>" = "<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>";
 "Processing..." = "Processing...";
 "Take Photo" = "Take Photo";
@@ -15,3 +15,7 @@
 
 "\nWikipedia" = "\nWikipedia";
 "NO WIKIPEDIA\nQUERY YET" = "NO WIKIPEDIA\nQUERY YET";
+
+"\nHistory" = "\nHistory";
+"Clear" = "Clear";
+"<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING";

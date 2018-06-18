@@ -12,7 +12,7 @@ import SwiftRichString
 class HistoryTableView: UIView {
     
     var tableView: UITableView!
-    var topBar = TopBar(text: "\nHistory")
+    var topBar = TopBar(text: NSLocalizedString("\nHistory", comment: ""))
     let clearButton = UIButton()
     let startInfoLabel = UILabel()
     
@@ -39,7 +39,7 @@ class HistoryTableView: UIView {
         
         startInfoLabel.textAlignment = .center
         startInfoLabel.numberOfLines = 3
-        let startInfoText = "<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING"
+        let startInfoText = NSLocalizedString("<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING", comment: "")
         startInfoLabel.attributedText = startInfoText.set(style: styleGroup)
         
         self.addSubview(topBar)
@@ -64,11 +64,11 @@ class HistoryTableView: UIView {
         })
         
         self.addSubview(clearButton)
-        clearButton.setTitle("Clear", for: .normal)
+        clearButton.setTitle(NSLocalizedString("Clear", comment: ""), for: .normal)
         clearButton.setTitleColor(.blue, for: .normal)
         clearButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalToSuperview().inset(10)
-            make.left.equalTo(snp.right).inset(60)
+            make.left.equalTo(snp.right).inset(80)
             make.top.equalTo(snp.top).offset(24)
             make.bottom.equalTo(topBar.snp.bottom)
         })

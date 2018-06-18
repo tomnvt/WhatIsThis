@@ -16,7 +16,7 @@ class MainView: UIView {
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
     var startInfoLabel = UILabel()
-    var topBar = TopBar(text: NSLocalizedString("\nWhat is this??", comment: ""))
+    var topBar = TopBar(text: NSLocalizedString("\nWhat is this?", comment: ""))
     
     let normal = Style {
         $0.font = SystemFonts.Helvetica_Light.font(size: 30)
