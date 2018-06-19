@@ -55,9 +55,9 @@ class WikipediaQueryViewController: UIViewController {
         
         let popup = PopupDialog(viewController: searchWikiDialogViewController, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true)
         
-        let cancelButton = CancelButton(title: "Cancel", height: 60, action: nil)
+        let cancelButton = CancelButton(title: NSLocalizedString("Cancel", comment: ""), height: 60, action: nil)
         
-        let searchButton = DefaultButton(title: "Search", height: 60, dismissOnTap: true) {
+        let searchButton = DefaultButton(title: NSLocalizedString("Search", comment: ""), height: 60, dismissOnTap: true) {
             let query = searchWikiDialogViewController.searchTextView.text
             self.updateAfterNewSearch(query: query)
         }

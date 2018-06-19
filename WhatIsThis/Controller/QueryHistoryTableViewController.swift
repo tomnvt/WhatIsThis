@@ -72,16 +72,16 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         }
         
         let clearConfirmation = UIAlertController()
-        clearConfirmation.title = "Are you sure you want to clear the history?"
+        clearConfirmation.title = NSLocalizedString("Are you sure you want to clear the history?", comment: "")
         
-        let yesButton = UIAlertAction(title: "Yes, clear it!", style: .destructive) { _ in
+        let yesButton = UIAlertAction(title: NSLocalizedString("Yes, clear it!", comment: ""), style: .destructive) { _ in
             self.queries?.clearQueries()
             self.setView(view: self.historyTableView.tableView, hidden: true)
             self.setView(view: self.historyTableView.startInfoLabel, hidden: false)
         }
         
         clearConfirmation.addAction(yesButton)
-        clearConfirmation.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        clearConfirmation.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
         
         present(clearConfirmation, animated: true, completion: nil)
     }
@@ -102,7 +102,9 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func searchAgain(wordToSearchAgain: String) {
-        let searchAgainAlert = UIAlertController(title: "Search \n\"\(wordToSearchAgain)\"\n again?", message: nil, preferredStyle: . alert)
+        let searchAgainAlert = UIAlertController(title: NSLocalizedString("Search \n\"", comment: "")
+            + wordToSearchAgain
+            + NSLocalizedString("\"\n again?", comment: ""), message: nil, preferredStyle: . alert)
         let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
             WikipediaQuery.querySubject.onNext("")
             WikipediaQuery.query = wordToSearchAgain
@@ -116,7 +118,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
             }
         }
         
-        let noAction = UIAlertAction(title: "No", style: .default) { _ in }
+        let noAction = UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .default) { _ in }
         
         searchAgainAlert.addAction(noAction)
         searchAgainAlert.addAction(yesAction)

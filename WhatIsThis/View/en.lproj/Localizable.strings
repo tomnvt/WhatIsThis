@@ -15,7 +15,14 @@
 
 "\nWikipedia" = "\nWikipedia";
 "NO WIKIPEDIA\nQUERY YET" = "NO WIKIPEDIA\nQUERY YET";
+"Cancel" = "Cancel";
+"Search" = "Search";
 
 "\nHistory" = "\nHistory";
 "Clear" = "Clear";
 "<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING";
+"Search \n" = "Search \n";
+"\n again?" = "\n again?";
+"No" = "No";
+"Are you sure you want to clear the history?" = "Are you sure you want to clear the history?";
+"Yes, clear it!" = "Yes, clear it!";

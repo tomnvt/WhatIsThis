@@ -17,6 +17,7 @@
 		E32DBB1C2091D0D50083E589 /* CoreMLModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */; };
 		E3308B5E20928B750004C211 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */; };
 		E331162B2097DE41002E5986 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E331162A2097DE41002E5986 /* UIColor+Hex.swift */; };
+		E349ABE120D997570039A759 /* SearchWikiDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E349ABE320D997570039A759 /* SearchWikiDialogViewController.xib */; };
 		E34F8BF12091D3B8005CA2A4 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */; };
 		E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */; };
 		E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */; };
@@ -28,7 +29,6 @@
 		E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */; };
 		E3BB8E4120CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BB8E4020CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift */; };
 		E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */; };
-		E3C44509209EF7A2005976F3 /* SearchWikiDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */; };
 		E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D5CB20A799A100534507 /* SearchHistory.xcdatamodeld */; };
 		E3C75E6920C0185800B335A2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C75E6820C0185800B335A2 /* CustomButton.swift */; };
 		E3CB7822208C015A002BF8AD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */; };
@@ -63,6 +63,9 @@
 		E32DBB1B2091D0D50083E589 /* CoreMLModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModels.swift; sourceTree = "<group>"; };
 		E3308B5D20928B750004C211 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
 		E331162A2097DE41002E5986 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		E349ABE220D997570039A759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchWikiDialogViewController.xib; sourceTree = "<group>"; };
+		E349ABE520D9975B0039A759 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SearchWikiDialogViewController.strings; sourceTree = "<group>"; };
+		E349ABE720D997610039A759 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/SearchWikiDialogViewController.strings; sourceTree = "<group>"; };
 		E34F8BEE2091D3B7005CA2A4 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		E34F8BEF2091D3B7005CA2A4 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
 		E34F8BF02091D3B8005CA2A4 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryHistoryTableViewController.swift; sourceTree = "<group>"; };
 		E3BB8E4020CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowHideViewWithAnimation.swift"; sourceTree = "<group>"; };
 		E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikiDialogViewController.swift; sourceTree = "<group>"; };
-		E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchWikiDialogViewController.xib; sourceTree = "<group>"; };
 		E3C6D5CC20A799A100534507 /* SearchHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchHistory.xcdatamodel; sourceTree = "<group>"; };
 		E3C75E6820C0185800B335A2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		E3CB7821208C015A002BF8AD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +146,7 @@
 				E3C75E6820C0185800B335A2 /* CustomButton.swift */,
 				E370391E2098E7F300C76B9B /* ResultLabel.swift */,
 				E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */,
-				E3C44507209EF7A2005976F3 /* SearchWikiDialogViewController.xib */,
+				E349ABE320D997570039A759 /* SearchWikiDialogViewController.xib */,
 				E3F8EAB220A8424D00EDB751 /* TabBarImages.swift */,
 				E3F1FFED20B0C58100B0A144 /* TopBar.swift */,
 			);
@@ -292,7 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3C44509209EF7A2005976F3 /* SearchWikiDialogViewController.xib in Resources */,
+				E349ABE120D997570039A759 /* SearchWikiDialogViewController.xib in Resources */,
 				E32BD52B20D1A3990085E86F /* Localizable.strings in Resources */,
 				E32BD52420D1A3740085E86F /* Main.storyboard in Resources */,
 				E32CC8A12072D5EA00424691 /* Assets.xcassets in Resources */,
@@ -428,6 +430,16 @@
 				E32BD52D20D1A3A50085E86F /* cs */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E349ABE320D997570039A759 /* SearchWikiDialogViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E349ABE220D997570039A759 /* Base */,
+				E349ABE520D9975B0039A759 /* en */,
+				E349ABE720D997610039A759 /* cs */,
+			);
+			name = SearchWikiDialogViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

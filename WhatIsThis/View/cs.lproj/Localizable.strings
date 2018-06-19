@@ -15,7 +15,14 @@
 
 "\nWikipedia" = "\nWikipedie";
 "NO WIKIPEDIA\nQUERY YET" = "DOSUD\nNEPROBĚHLO\nVYHLEDÁVÁNÍ";
+"Cancel" = "Zrušit";
+"Search" = "Vyhledat";
 
 "\nHistory" = "\nHistorie";
 "Clear" = "Smazat";
-"<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NIC TO NENÍ</bold>\nVYHLEDEJ NĚCO";
+"<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NIC TO NENÍ</bold>\nVYHLEDEJTE NĚCO";
+"Search \n" = "Vyhledat \n";
+"\n again?" = "\n znovu?";
+"No" = "Ne";
+"Are you sure you want to clear the history?" = "Určitě chcete smazat historii?";
+"Yes, clear it!" = "Ano, smazat!";
