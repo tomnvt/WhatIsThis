@@ -11,7 +11,9 @@ import SnapKit
 
 class SettingsTableTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    private let settings = ["Speech Synthesis": ["ON", "OFF"], "Classification Model": CoreMLModels().modelNames]
+    private let settings = [NSLocalizedString("Speech Synthesis", comment: ""):
+                        [NSLocalizedString("ON", comment: ""), NSLocalizedString("OFF", comment: "")],
+                            NSLocalizedString("Classification Model", comment: ""): CoreMLModels().modelNames]
     private let defaults = UserDefaults.standard
     private let settingsTableView = SettingsTableView()
     

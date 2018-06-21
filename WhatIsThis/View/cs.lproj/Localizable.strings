@@ -26,3 +26,9 @@
 "No" = "Ne";
 "Are you sure you want to clear the history?" = "Určitě chcete smazat historii?";
 "Yes, clear it!" = "Ano, smazat!";
+
+"\nSettings" = "\nNastavení";
+"Speech Synthesis" = "Syntéza řeči";
+"ON" = "Zapunto";
+"OFF" = "Vypnuto";
+"Classification Model" = "Klasifikační model";

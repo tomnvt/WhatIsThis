@@ -26,3 +26,9 @@
 "No" = "No";
 "Are you sure you want to clear the history?" = "Are you sure you want to clear the history?";
 "Yes, clear it!" = "Yes, clear it!";
+
+"\nSettings" = "\nSettings";
+"Speech Synthesis" = "Speech Synthesis";
+"ON" = "ON";
+"OFF" = "OFF";
+"Classification Model" = "Classification Model";

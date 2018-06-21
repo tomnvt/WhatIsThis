@@ -11,7 +11,7 @@ import UIKit
 class SettingsTableView: UIView {
 
     var tableView: UITableView!
-    var topBar = TopBar(text: "\nSettings")
+    var topBar = TopBar(text: NSLocalizedString("\nSettings", comment: ""))
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
