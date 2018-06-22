@@ -21,8 +21,8 @@
 "\nHistory" = "\nHistorie";
 "Clear" = "Smazat";
 "<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NIC TO NENÍ</bold>\nVYHLEDEJTE NĚCO";
-"Search \n" = "Vyhledat \n";
-"\n again?" = "\n znovu?";
+"Search \n\"" = "Vyhledat \n\"";
+"\"\n again?" = "\"\n znovu?";
 "No" = "Ne";
 "Are you sure you want to clear the history?" = "Určitě chcete smazat historii?";
 "Yes, clear it!" = "Ano, smazat!";
@@ -32,3 +32,9 @@
 "ON" = "Zapunto";
 "OFF" = "Vypnuto";
 "Classification Model" = "Klasifikační model";
+
+"What is this?" = "Co to je?";
+"Wikipedia" = "Wikipedie";
+"History" = "Historie";
+"Settings" = "Nastavení";
+

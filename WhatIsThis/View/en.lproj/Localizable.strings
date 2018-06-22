@@ -21,8 +21,8 @@
 "\nHistory" = "\nHistory";
 "Clear" = "Clear";
 "<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING";
-"Search \n" = "Search \n";
-"\n again?" = "\n again?";
+"Search \n\"" = "Search \n\"";
+"\"\n again?" = "\"\n again?";
 "No" = "No";
 "Are you sure you want to clear the history?" = "Are you sure you want to clear the history?";
 "Yes, clear it!" = "Yes, clear it!";
@@ -32,3 +32,8 @@
 "ON" = "ON";
 "OFF" = "OFF";
 "Classification Model" = "Classification Model";
+
+"What is this?" = "What is this?";
+"Wikipedia" = "Wikipedia";
+"History" = "History";
+"Settings" = "Settings";
