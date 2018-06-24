@@ -43,7 +43,7 @@ class MainView: UIView {
         
         startInfoLabel.textAlignment = .center
         startInfoLabel.numberOfLines = 3
-        let startInfoText = NSLocalizedString("<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>", comment: "")
+        let startInfoText = localized("<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>")
         startInfoLabel.attributedText = startInfoText.set(style: styleGroup)
         
         self.addSubview(resultLabel)

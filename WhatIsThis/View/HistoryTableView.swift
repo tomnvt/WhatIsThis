@@ -39,7 +39,7 @@ class HistoryTableView: UIView {
         
         startInfoLabel.textAlignment = .center
         startInfoLabel.numberOfLines = 3
-        let startInfoText = NSLocalizedString("<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING", comment: "")
+        let startInfoText = localized("<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING")
         startInfoLabel.attributedText = startInfoText.set(style: styleGroup)
         
         self.addSubview(topBar)
@@ -64,7 +64,7 @@ class HistoryTableView: UIView {
         })
         
         self.addSubview(clearButton)
-        clearButton.setTitle(NSLocalizedString("Clear", comment: ""), for: .normal)
+        clearButton.setTitle(localized("Clear"), for: .normal)
         clearButton.setTitleColor(.blue, for: .normal)
         clearButton.snp.makeConstraints( { (make) -> Void in
             make.right.equalToSuperview().inset(10)

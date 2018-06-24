@@ -24,6 +24,7 @@
 		E3517CE220925F5B00431EA6 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */; };
 		E370391F2098E7F300C76B9B /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370391E2098E7F300C76B9B /* ResultLabel.swift */; };
 		E385D18920B60DBB006C7518 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E385D18820B60DBB006C7518 /* SettingsTableView.swift */; };
+		E3863A9720E0414D00872A3F /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3863A9620E0414D00872A3F /* UIView+Localization.swift */; };
 		E386F8B420C3E4DE004604B8 /* SearchQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386F8B320C3E4DE004604B8 /* SearchQueries.swift */; };
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
 		E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */; };
@@ -72,6 +73,7 @@
 		E3517CE120925F5B00431EA6 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 		E370391E2098E7F300C76B9B /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
 		E385D18820B60DBB006C7518 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		E3863A9620E0414D00872A3F /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
 		E386F8B320C3E4DE004604B8 /* SearchQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueries.swift; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
 		E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryHistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				E3F8EAB020A8412C00EDB751 /* UIImage+SystemBarButtonExtraction.swift */,
 				E3D06A3B20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift */,
 				E3BB8E4020CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift */,
+				E3863A9620E0414D00872A3F /* UIView+Localization.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D06A3C20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift in Sources */,
+				E3863A9720E0414D00872A3F /* UIView+Localization.swift in Sources */,
 				E3DF26A020B179E100BD74AE /* WikipediaView.swift in Sources */,
 				E3BB8E4120CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift in Sources */,
 				E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */,

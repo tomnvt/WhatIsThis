@@ -30,7 +30,7 @@ class WikipediaView: UIView {
         startInfoLabel.backgroundColor = UIColor(hexString: "D9DADA")
         startInfoLabel.textAlignment = .center
         startInfoLabel.numberOfLines = 3
-        startInfoLabel.text = NSLocalizedString("NO WIKIPEDIA\nQUERY YET", comment: "")
+        startInfoLabel.text = localized("NO WIKIPEDIA\nQUERY YET")
         startInfoLabel.font = SystemFonts.Helvetica_Bold.font(size: 30)
         
         addSubview(topBar)
