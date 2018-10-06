@@ -108,7 +108,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
         let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
             WikipediaQuery.querySubject.onNext("")
             WikipediaQuery.query = wordToSearchAgain
-            WikipediaQuery.requestInfo(result: wordToSearchAgain, longVersion: false, repeatedSearch: true)
+            WikipediaQuery.requestInfo(queryString: wordToSearchAgain, longVersion: false, repeatedSearch: true)
             
             let fromView: UIView = self.tabBarController!.selectedViewController!.view
             let toView  : UIView = self.tabBarController!.viewControllers![1].view

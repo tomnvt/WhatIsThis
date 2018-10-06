@@ -13,5 +13,6 @@ pod 'JGProgressHUD'
 pod 'PopupDialog', '~> 0.7'
 pod 'RxSwift'
 pod 'SwiftRichString'
+pod 'Moya'
 
 end

@@ -28,6 +28,8 @@
 		E386F8B420C3E4DE004604B8 /* SearchQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386F8B320C3E4DE004604B8 /* SearchQueries.swift */; };
 		E388D42D2083607D00EB04CE /* WikipediaQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */; };
 		E3A05FD720A6E069009F4404 /* QueryHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */; };
+		E3AD59DC21692857003C322A /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD59DB21692857003C322A /* Wikipedia.swift */; };
+		E3AD59DE21694B63003C322A /* CodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD59DD21694B63003C322A /* CodableResponse.swift */; };
 		E3BB8E4120CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BB8E4020CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift */; };
 		E3C44508209EF7A2005976F3 /* SearchWikiDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */; };
 		E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D5CB20A799A100534507 /* SearchHistory.xcdatamodeld */; };
@@ -77,6 +79,8 @@
 		E386F8B320C3E4DE004604B8 /* SearchQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueries.swift; sourceTree = "<group>"; };
 		E388D42C2083607D00EB04CE /* WikipediaQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaQueryViewController.swift; sourceTree = "<group>"; };
 		E3A05FD620A6E069009F4404 /* QueryHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryHistoryTableViewController.swift; sourceTree = "<group>"; };
+		E3AD59DB21692857003C322A /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
+		E3AD59DD21694B63003C322A /* CodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableResponse.swift; sourceTree = "<group>"; };
 		E3BB8E4020CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowHideViewWithAnimation.swift"; sourceTree = "<group>"; };
 		E3C44506209EF7A2005976F3 /* SearchWikiDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikiDialogViewController.swift; sourceTree = "<group>"; };
 		E3C6D5CC20A799A100534507 /* SearchHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchHistory.xcdatamodel; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		E32CC8982072D5EA00424691 /* WhatIsThis */ = {
 			isa = PBXGroup;
 			children = (
+				E3AD59DA2169284A003C322A /* Network */,
 				E3293E68208951D500786AD9 /* Model */,
 				E329106C208A7F2C00C5B962 /* View */,
 				E329106B208A7F1800C5B962 /* Controller */,
@@ -234,6 +239,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		E3AD59DA2169284A003C322A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD59DB21692857003C322A /* Wikipedia.swift */,
+				E3AD59DD21694B63003C322A /* CodableResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,7 +260,6 @@
 				E32CC8932072D5EA00424691 /* Frameworks */,
 				E32CC8942072D5EA00424691 /* Resources */,
 				0670C336A84B315E66146455 /* [CP] Embed Pods Frameworks */,
-				40CE063C62EE26E938B4ED2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,7 +330,9 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRichString/SwiftRichString.framework",
@@ -328,7 +343,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRichString.framework",
@@ -337,21 +354,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatIsThis/Pods-WhatIsThis-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		40CE063C62EE26E938B4ED2E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatIsThis/Pods-WhatIsThis-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B1B4184AF13FFEE7E3DE55B7 /* [CP] Check Pods Manifest.lock */ = {
@@ -380,11 +382,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D06A3C20C2845C000EB54E /* NSMutableAttributedString+Formatting.swift in Sources */,
+				E3AD59DC21692857003C322A /* Wikipedia.swift in Sources */,
 				E3863A9720E0414D00872A3F /* UIView+Localization.swift in Sources */,
 				E3DF26A020B179E100BD74AE /* WikipediaView.swift in Sources */,
 				E3BB8E4120CF06BE007EB555 /* UIViewController+ShowHideViewWithAnimation.swift in Sources */,
 				E3C6D5CD20A799A100534507 /* SearchHistory.xcdatamodeld in Sources */,
 				E34F8BF32091D3B8005CA2A4 /* Inceptionv3.mlmodel in Sources */,
+				E3AD59DE21694B63003C322A /* CodableResponse.swift in Sources */,
 				E3F8EAAF20A8336D00EDB751 /* MainTabBarController.swift in Sources */,
 				E3293E672089240400786AD9 /* WikipediaQuery.swift in Sources */,
 				E34F8BF22091D3B8005CA2A4 /* GoogLeNetPlaces.mlmodel in Sources */,

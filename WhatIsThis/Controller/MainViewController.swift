@@ -10,8 +10,11 @@ import UIKit
 import ImageIO
 import SnapKit
 import RxSwift
+import Moya
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    let provider = MoyaProvider<Wikipedia>()
 
     let resultSubject = PublishSubject<String>()
     var resultObservable: Observable<String> {
@@ -20,7 +23,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     let mainView = MainView()
     
-    var result = ""
+    static var staticResult = ""
     
     let classifier = Classifier()
     
@@ -53,10 +56,10 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             mainView.saveButton.isHidden = false
             DispatchQueue.main.async {
                 self.mainView.resultLabel.text = self.classifier.classify(image: ciimage)
+                MainViewController.staticResult = self.mainView.resultLabel.text!
                 WikipediaQuery.query = self.mainView.resultLabel.text!
-                WikipediaQuery.requestInfo(result: self.mainView.resultLabel.text!, longVersion: false)
+                WikipediaQuery.requestInfo(queryString: self.mainView.resultLabel.text!, longVersion: false)
                 self.mainView.saveButton.isEnabled = true
-                self.resultSubject.onNext(self.result)
             }
         }
     }

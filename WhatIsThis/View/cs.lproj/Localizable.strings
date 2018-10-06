@@ -20,7 +20,7 @@
 
 "\nHistory" = "\nHistorie";
 "Clear" = "Smazat";
-"<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NIC TO NENÍ</bold>\nVYHLEDEJTE NĚCO";
+"<bold>NOTHING\nTO SEE HERE</bold>\nSEARCH FOR SOMETHING" = "<bold>NIC TU NENÍ</bold>\nVYHLEDEJTE NĚCO";
 "Search \n\"" = "Vyhledat \n\"";
 "\"\n again?" = "\"\n znovu?";
 "No" = "Ne";
@@ -29,7 +29,7 @@
 
 "\nSettings" = "\nNastavení";
 "Speech Synthesis" = "Syntéza řeči";
-"ON" = "Zapunto";
+"ON" = "Zapnuto";
 "OFF" = "Vypnuto";
 "Classification Model" = "Klasifikační model";
 

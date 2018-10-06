@@ -10,8 +10,11 @@ import Alamofire
 import SwiftyJSON
 import RxSwift
 import Foundation
+import Moya
 
 class WikipediaQuery {
+    
+    static let provider = MoyaProvider<Wikipedia>()
     
     static private let wikipediaURl = "https://en.wikipedia.org/w/api.php"
     static var query = ""
@@ -27,47 +30,33 @@ class WikipediaQuery {
     static var queries = [SearchQuery]()
     static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    static func requestInfo(result: String, longVersion: Bool, repeatedSearch: Bool = false) {
-        guard result != "" else { return }
-        let result = String(result.split(separator: "\n")[0]).lowercased()
-        let parametersShortQuery : [String:String] = ["format" : "json",
-                                                      "action" : "query",
-                                                      "prop" : "extracts|pageimages",
-                                                      "exintro" : "",
-                                                      "explaintext" : "",
-                                                      "titles" : result,
-                                                      "redirects" : "1",
-                                                      "pithumbsize" : "500",
-                                                      "indexpageids" : ""]
-        
-        let parametersLongQuery : [String:String] = ["action" : "query",
-                                                     "prop" : "extracts",
-                                                     "meta" : "siteinfo",
-                                                     "titles" : result,
-                                                     "format" : "json",
-                                                     "indexpageids" : ""]
-        
-
-        if NetworkReachabilityManager()!.isReachable {
-            
-            let parameters = longVersion ? parametersLongQuery : parametersShortQuery
-            
-            Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
-                if response.result.isSuccess {
-                    let wikiJSON : JSON = JSON(response.result.value!)
-                    let pageid = wikiJSON["query"]["pageids"][0].stringValue
-                    self.queryResult = wikiJSON["query"]["pages"][pageid]["extract"].stringValue.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-                    self.querySubject.onNext(self.queryResult)
-                    updateResult()
-                    self.queryLength.onNext(longVersion)
-                }
-                if !longVersion && !repeatedSearch {
-                    save(query: result)
-                }
-            }
-        } else {
+    static func requestInfo(queryString: String, longVersion: Bool, repeatedSearch: Bool = false) {
+        guard queryString != "" else { return }
+        guard NetworkReachabilityManager()!.isReachable else {
             queryResult = "No internet connection"
+            return
         }
+        let splittedQueryString = String(queryString.split(separator: "\n")[0]).lowercased()
+        WikipediaQuery.provider.request(.queryWithShortResult(splittedQueryString, longVersion)) { result in
+            switch result {
+            case .success(let response):
+                var responseJson = JSON("")
+                do {
+                    responseJson = JSON(try response.mapJSON())
+                } catch {
+                    print(error)
+                }
+                print(responseJson)
+                let pageid = responseJson["query"]["pageids"][0].stringValue
+                self.queryResult = responseJson["query"]["pages"][pageid]["extract"].stringValue.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+                self.querySubject.onNext(self.queryResult)
+                updateResult()
+                self.queryLength.onNext(longVersion)
+            case .failure:
+                print("error")
+            }
+        }
+        
     }
     
     static func save(query: String) {
@@ -95,6 +84,7 @@ class WikipediaQuery {
             self.querySubject.onNext(self.queryResult)
         }
     }
+    
 }
 
 extension String {

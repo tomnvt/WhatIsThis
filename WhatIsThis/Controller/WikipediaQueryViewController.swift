@@ -72,12 +72,12 @@ class WikipediaQueryViewController: UIViewController {
         hud.show(in: self.view)
         guard let enteredText = query else { return }
         WikipediaQuery.query = enteredText
-        WikipediaQuery.requestInfo(result: enteredText, longVersion: false)
+        WikipediaQuery.requestInfo(queryString: enteredText, longVersion: false)
     }
     
     @IBAction func moreButtonPressed() {
         hud.show(in: self.view)
-        WikipediaQuery.requestInfo(result: WikipediaQuery.query, longVersion: true)
+        WikipediaQuery.requestInfo(queryString: WikipediaQuery.query, longVersion: true)
         self.setView(view: self.wikipediaView.moreButton, hidden: true)
     }
     
