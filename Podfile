@@ -14,5 +14,6 @@ pod 'PopupDialog', '~> 0.7'
 pod 'RxSwift'
 pod 'SwiftRichString'
 pod 'Moya'
+pod 'SteviaLayout'
 
 end

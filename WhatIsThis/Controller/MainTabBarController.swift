@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             return false
         }
         
-        UIView.transition(from: fromView, to: toView, duration: 0.2, options: UIViewAnimationOptions.transitionCrossDissolve) { (finished:Bool) in
+        UIView.transition(from: fromView, to: toView, duration: 0.2, options: UIView.AnimationOptions.transitionCrossDissolve) { (finished:Bool) in
             
         }
         return true

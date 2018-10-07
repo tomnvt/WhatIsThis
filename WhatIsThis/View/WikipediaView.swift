@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftRichString
+import Stevia
 
 class WikipediaView: UIView {
     
@@ -17,61 +18,53 @@ class WikipediaView: UIView {
     var newQueryButton = CustomButton(title: "")
     let startInfoLabel = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: UIScreen.main.bounds)
+    convenience init() {
+        self.init(frame: UIScreen.main.bounds)
+        render()
+    }
+
+    func render() {
+        sv(
+            descriptionTextView,
+            startInfoLabel,
+            topBar,
+            moreButton,
+            newQueryButton
+        )
 
         backgroundColor = .white
 
-        addSubview(startInfoLabel)
-        startInfoLabel.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.bottom.equalToSuperview()
-        })
-        
+        startInfoLabel.fillHorizontally().fillVertically()
         startInfoLabel.backgroundColor = UIColor(hexString: "D9DADA")
         startInfoLabel.textAlignment = .center
         startInfoLabel.numberOfLines = 3
         startInfoLabel.text = localized("NO WIKIPEDIA\nQUERY YET")
         startInfoLabel.font = SystemFonts.Helvetica_Bold.font(size: 30)
-        
-        addSubview(topBar)
-        topBar.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(self.snp.bottom).dividedBy(10)
-        })
-        
-        addSubview(descriptionTextView)
-        descriptionTextView.snp.makeConstraints( { (make) -> Void in
-            make.right.left.equalToSuperview().inset(10)
-            make.top.equalTo(topBar.snp.bottom).offset(10)
-            make.bottom.equalToSuperview().inset(52)
-        })
+
+        topBar.fillVertically().fillHorizontally()
+        topBar.Bottom == Bottom / 10
+
+        descriptionTextView.Left == Left + 10
+        descriptionTextView.Right == Right - 10
+        descriptionTextView.Top == topBar.Bottom + 10
+        descriptionTextView.Bottom == Bottom - 10
+        descriptionTextView.isHidden = true
         descriptionTextView.font = .systemFont(ofSize: 16)
         descriptionTextView.isEditable = false
-        descriptionTextView.isHidden = true
-        
-        addSubview(moreButton)
-        moreButton.snp.makeConstraints( { (make) -> Void in
-            make.right.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(70)
-            make.height.equalTo(self.snp.height).dividedBy(10)
-            make.width.equalTo(moreButton.snp.height)
-        })
+
+        moreButton.Right == Right - 20
+        moreButton.Bottom == Bottom - 70
+        moreButton.Height == Height / 10
+        moreButton.Width == moreButton.Height
         moreButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         moreButton.isHidden = true
-        
-        self.addSubview(newQueryButton)
-        newQueryButton.snp.makeConstraints( { (make) -> Void in
-            make.left.equalToSuperview().offset(20)
-            make.bottom.equalToSuperview().inset(70)
-            make.height.equalTo(self.snp.height).dividedBy(10)
-            make.width.equalTo(newQueryButton.snp.height)
-        })
+
+        newQueryButton.Left == Left + 20
+        newQueryButton.Bottom == Bottom - 70
+        newQueryButton.Height == Height / 10
+        newQueryButton.Width == newQueryButton.Height
         newQueryButton.setImage(TabBarImages.searchImage, for: .normal)
-        
+
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
 }

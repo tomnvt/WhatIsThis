@@ -32,7 +32,7 @@ class MainView: UIView {
         imageView.snp.makeConstraints( { (make) -> Void in
             make.right.left.top.bottom.equalToSuperview()
         })
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
         
         addSubview(startInfoLabel)
         startInfoLabel.snp.makeConstraints( { (make) -> Void in

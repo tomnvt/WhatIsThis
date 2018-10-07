@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     
-    class func imageFromSystemBarButton(_ systemItem: UIBarButtonSystemItem, renderingMode:UIImageRenderingMode = .automatic)-> UIImage {
+    class func imageFromSystemBarButton(_ systemItem: UIBarButtonItem.SystemItem, renderingMode:UIImage.RenderingMode = .automatic)-> UIImage {
         
         let tempItem = UIBarButtonItem(barButtonSystemItem: systemItem, target: nil, action: nil)
         

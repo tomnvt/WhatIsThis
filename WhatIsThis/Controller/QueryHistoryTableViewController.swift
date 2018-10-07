@@ -113,7 +113,7 @@ class QueryHistoryTableViewController: UIViewController, UITableViewDataSource, 
             let fromView: UIView = self.tabBarController!.selectedViewController!.view
             let toView  : UIView = self.tabBarController!.viewControllers![1].view
             
-            UIView.transition(from: fromView, to: toView, duration: 0.2, options: UIViewAnimationOptions.transitionCrossDissolve) { (finished:Bool) in
+            UIView.transition(from: fromView, to: toView, duration: 0.2, options: UIView.AnimationOptions.transitionCrossDissolve) { (finished:Bool) in
                 self.tabBarController?.selectedIndex = 1
             }
         }
