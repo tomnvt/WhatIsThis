@@ -8,82 +8,74 @@
 
 import UIKit
 import SwiftRichString
+import Stevia
 
 class MainView: UIView {
-    
+
     var saveButton = CustomButton(title: "Save")
     var classifyButton = CustomButton(title: "")
     var imageView = UIImageView()
     var resultLabel = ResultLabel()
     var startInfoLabel = UILabel()
     var topBar = TopBar(text: NSLocalizedString("\nWhat is this?", comment: ""))
-    
+
     let normal = Style {
         $0.font = SystemFonts.Helvetica_Light.font(size: 30)
     }
-    
+
     let bold = Style {
         $0.font = SystemFonts.Helvetica_Bold.font(size: 30)
     }
-    
-    override init(frame: CGRect) {
-        super.init(frame: UIScreen.main.bounds)
-        self.addSubview(imageView)
-        imageView.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.bottom.equalToSuperview()
-        })
+
+    convenience init() {
+        self.init(frame: UIScreen.main.bounds)
+        render()
+    }
+
+    func render() {
+        backgroundColor = UIColor(hexString: "D9DADA")
+
+        sv(
+            imageView,
+            startInfoLabel,
+            resultLabel,
+            topBar,
+            saveButton,
+            classifyButton
+        )
+
+        imageView.fillVertically().fillHorizontally()
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
-        
-        addSubview(startInfoLabel)
-        startInfoLabel.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.bottom.equalToSuperview()
-        })
-        
+
+        startInfoLabel.fillHorizontally().fillVertically()
         let styleGroup = StyleGroup(base: normal, ["bold": bold])
-        
+
         startInfoLabel.textAlignment = .center
         startInfoLabel.numberOfLines = 3
         let startInfoText = localized("<bold>TAKE A PHOTO</bold>\nOR\n<bold>CHOOSE ONE</bold>")
         startInfoLabel.attributedText = startInfoText.set(style: styleGroup)
-        
-        self.addSubview(resultLabel)
-        resultLabel.snp.makeConstraints( { (make) -> Void in
-            make.right.left.equalToSuperview().inset(50)
-            make.top.equalToSuperview().offset(self.frame.height / 8.5)
-            make.bottom.equalTo(self.snp.bottom).multipliedBy(0.30)
-        })
+
+        topBar.fillHorizontally().fillVertically()
+        topBar.Bottom == Bottom / 10
+
+        resultLabel.Left == Left + 50
+        resultLabel.Right == Right - 50
+        resultLabel.Top == topBar.Bottom + 10
+        resultLabel.Bottom == Bottom * 0.3
         resultLabel.font = resultLabel.font.withSize(self.frame.height / 25)
-        
-        addSubview(topBar)
-        topBar.snp.makeConstraints( { (make) -> Void in
-            make.right.left.top.equalToSuperview()
-            make.bottom.equalTo(self.snp.bottom).dividedBy(10)
-        })
-        
-        self.addSubview(saveButton)
-        saveButton.snp.makeConstraints( { (make) -> Void in
-            make.right.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(70)
-            make.height.equalTo(self.snp.height).dividedBy(10)
-            make.width.equalTo(saveButton.snp.height)
-        })
+
+        classifyButton.Left == Left + 20
+        classifyButton.Bottom == Bottom - 100
+        classifyButton.Height == Height * 0.1
+        classifyButton.Width == saveButton.Height
+        classifyButton.setImage(TabBarImages.cameraImage, for: .normal)
+
+        saveButton.Right == Right - 20
+        saveButton.Bottom == Bottom - 100
+        saveButton.Height == Height * 0.1
+        saveButton.Width == saveButton.Height
         saveButton.isHidden = true
 
-        self.addSubview(classifyButton)
-        classifyButton.snp.makeConstraints( { (make) -> Void in
-            make.left.equalToSuperview().offset(20)
-            make.bottom.equalToSuperview().inset(70)
-            make.height.equalTo(self.snp.height).dividedBy(10)
-            make.width.equalTo(classifyButton.snp.height)
-        })
-        classifyButton.setImage(TabBarImages.cameraImage, for: .normal)
-            
-        self.backgroundColor = UIColor(hexString: "D9DADA")
-        
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
 }
